@@ -9,7 +9,8 @@ import urllib.request
 from collections import Counter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-LIST_IP_PATH = os.path.join(SCRIPT_DIR, "ip_list.txt")
+LIST_IP_TXT_PATH = os.path.join(SCRIPT_DIR, "ip_list.txt")
+LIST_IP_CSV_PATH = os.path.join(SCRIPT_DIR, "ip_list.csv")
 LIST_MD_PATH = os.path.join(SCRIPT_DIR, "ip_list.md")
 CACHE_FILE = os.path.join(SCRIPT_DIR, ".ip_cache.json")
 ENV_FILE = os.path.join(SCRIPT_DIR, ".env")
@@ -104,15 +105,16 @@ def fetch_abuseipdb_info(ip, api_key):
         return None
 
 def main():
-    if not os.path.exists(LIST_IP_PATH):
-        print(f"File {LIST_IP_PATH} tidak ditemukan.")
+    target_file = LIST_IP_TXT_PATH if os.path.exists(LIST_IP_TXT_PATH) else LIST_IP_CSV_PATH
+    if not os.path.exists(target_file):
+        print(f"File {target_file} tidak ditemukan.")
         return
 
-    with open(LIST_IP_PATH, "r") as f:
+    with open(target_file, "r") as f:
         ips = [line.strip() for line in f if line.strip()]
 
     if not ips:
-        print("ip_list.txt kosong. Tidak ada data untuk digenerate.")
+        print("ip_list (txt/csv) kosong. Tidak ada data untuk digenerate.")
         return
 
     cache = load_cache()
@@ -200,10 +202,10 @@ def main():
     lines.append("---")
     lines.append("")
     lines.append("## Metadata Dokumen")
-    lines.append(f"- **Sumber Data**: [`ip_list.txt`](file://{LIST_IP_PATH})")
+    lines.append(f"- **Format Database Tersedia**: [`ip_list.txt`](file://{LIST_IP_TXT_PATH}) dan [`ip_list.csv`](file://{LIST_IP_CSV_PATH})")
     lines.append(f"- **Total IP Terverifikasi**: {total_ips} IP")
     lines.append(f"- **Waktu Pembaruan Terakhir**: {current_timestamp}")
-    lines.append("- **Status Sinkronisasi**: Terurut & Bebas Duplikasi")
+    lines.append("- **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)")
     lines.append("")
     lines.append("---")
     lines.append("")
@@ -261,7 +263,7 @@ def main():
         lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
     else:
         lines.append("| No | IP Address | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN |")
-        lines.append("| :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
+        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
 
     for idx, ip in enumerate(ips, 1):
         d = cache.get(ip, {})
@@ -301,7 +303,7 @@ def main():
     lines.append("## Panduan Pemeliharaan Data")
     lines.append("1. **Menambah IP Baru**: Tambahkan IP baru ke dalam [`ip_new.txt`](file://" + os.path.join(SCRIPT_DIR, "ip_new.txt") + ").")
     lines.append("2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam [`ip_exception.txt`](file://" + os.path.join(SCRIPT_DIR, "ip_exception.txt") + ").")
-    lines.append("3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file://" + os.path.join(SCRIPT_DIR, "run.sh") + ") untuk memproses data dan memperbarui dokumen ini secara otomatis.")
+    lines.append("3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file://" + os.path.join(SCRIPT_DIR, "run.sh") + ") untuk memproses data dan memperbarui file database (`ip_list.txt` & `ip_list.csv`) serta dokumen laporan ini secara otomatis.")
 
     with open(LIST_MD_PATH, "w") as f:
         f.write("\n".join(lines) + "\n")

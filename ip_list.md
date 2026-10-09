@@ -5,10 +5,10 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ---
 
 ## Metadata Dokumen
-- **Sumber Data**: [`ip_list.txt`](file:///Users/hard13/labs/blackened/ip_list.txt)
+- **Format Database Tersedia**: [`ip_list.txt`](file:///Users/hard13/labs/blackened/ip_list.txt) dan [`ip_list.csv`](file:///Users/hard13/labs/blackened/ip_list.csv)
 - **Total IP Terverifikasi**: 58 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-09 10:42:00
-- **Status Sinkronisasi**: Terurut & Bebas Duplikasi
+- **Waktu Pembaruan Terakhir**: 2026-10-09 11:00:12
+- **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
 
@@ -117,4 +117,4 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ## Panduan Pemeliharaan Data
 1. **Menambah IP Baru**: Tambahkan IP baru ke dalam [`ip_new.txt`](file:///Users/hard13/labs/blackened/ip_new.txt).
 2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam [`ip_exception.txt`](file:///Users/hard13/labs/blackened/ip_exception.txt).
-3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file:///Users/hard13/labs/blackened/run.sh) untuk memproses data dan memperbarui dokumen ini secara otomatis.
+3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file:///Users/hard13/labs/blackened/run.sh) untuk memproses data dan memperbarui file database (`ip_list.txt` & `ip_list.csv`) serta dokumen laporan ini secara otomatis.

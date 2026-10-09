@@ -2,20 +2,23 @@
 
 Blackened adalah utilitas otomatisasi berbasis shell script (`run.sh`) dan Python (`generate_md.py`) yang dirancang untuk mengelola, menyortir, membersihkan (sanitasi), mendeduplikasi, mengecualikan (*whitelist*), serta memperkaya daftar IP address (blacklist/threat feed) dengan data geolokasi, ISP, ASN, dan reputasi ancaman AbuseIPDB secara otomatis.
 
+Hasil penyortiran basis data IP disimpan secara simultan dalam **dua format file**: `.txt` (`ip_list.txt`) dan `.csv` (`ip_list.csv`).
+
 ---
 
 ## Gambaran Umum & Fungsi `run.sh`
 
-Script `run.sh` berfungsi sebagai *entrypoint* dan *core processing engine* utama. Script ini bertanggung jawab penuh atas integritas data, siklus hidup file input-output, pemfilteran aturan pengecualian, dan orkestrasi pembaruan dokumentasi intelijen.
+Script `run.sh` berfungsi sebagai *orchestrator* dan *core processing engine* utama. Script ini bertanggung jawab penuh atas integritas data, siklus hidup file input-output, pemfilteran aturan pengecualian, pembuatan ganda format file basis data, dan orkestrasi pembaruan dokumentasi intelijen.
 
 ### Fungsi Utama:
-1. **Penggabungan Data Input**: Menggabungkan IP dari basis data aktif (`ip_list.txt`) dengan IP baru (`ip_new.txt`).
+1. **Penggabungan Data Input**: Menggabungkan IP dari basis data aktif (`ip_list.txt` / `ip_list.csv`) dengan IP baru (`ip_new.txt`).
 2. **Penerapan Aturan Pengecualian (*Exception/Whitelist*)**: Mengeliminasi seluruh IP yang terdaftar pada `ip_exception.txt` secara deterministik.
 3. **Normalisasi & Sanitasi Format**: Membersihkan karakter baris Windows (`\r`), spasi awal/akhir (*trimming*), dan baris kosong.
 4. **Pengurutan Numerik per Oktet & Deduplikasi**: Mengurutkan alamat IP berdasarkan urutan numerik empat oktet IPv4 sekaligus memastikan tidak ada duplikasi entri.
-5. **Pembaruan Atomik (*Atomic Update*)**: Menjaga keutuhan file basis data dengan mekanisme penulisan berkas temporer sebelum proses pergantian (*file swap*).
-6. **Pelaporan Metrik Eksekusi**: Menghitung dan mencetak metrik perubahan data secara transparan pada antarmuka terminal.
-7. **Pemicu Otomatis Modul Intelijen**: Mengeksekusi modul pengayaan `generate_md.py` untuk menyinkronkan laporan `ip_list.md`.
+5. **Output Ganda Otomatis (*Dual Format Generation*)**: Menyimpan hasil pemrosesan ke dalam dua file basis data secara bersamaan: `ip_list.txt` dan `ip_list.csv`.
+6. **Pembaruan Atomik (*Atomic Update*)**: Menjaga keutuhan file basis data dengan mekanisme penulisan berkas temporer sebelum proses pergantian (*file swap*).
+7. **Pelaporan Metrik Eksekusi**: Menghitung dan mencetak metrik perubahan data secara transparan pada antarmuka terminal.
+8. **Pemicu Otomatis Modul Intelijen**: Mengeksekusi modul pengayaan `generate_md.py` untuk menyinkronkan laporan `ip_list.md`.
 
 ---
 
@@ -25,7 +28,8 @@ Script `run.sh` berfungsi sebagai *entrypoint* dan *core processing engine* utam
 
 ```text
 blackened/
-|-- ip_list.txt        # Database utama daftar IP unik dan terurut
+|-- ip_list.txt        # Database utama daftar IP unik dan terurut (Format TXT)
+|-- ip_list.csv        # Database utama daftar IP unik dan terurut (Format CSV)
 |-- ip_list.md         # Laporan intelijen IP (tabel & statistik)
 |-- ip_new.txt         # File input untuk memasukkan daftar IP baru
 |-- ip_exception.txt   # File whitelist/pengecualian IP yang diabaikan
@@ -42,21 +46,28 @@ blackened/
 
 ### 2. Bedah Teknis Baris Kode `run.sh`
 
-#### A. Resolusi Lokasi Dinamis (*Dynamic Path Resolution*)
+#### A. Inisialisasi Jalur & Variabel Berkas
 ```bash
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LIST_IP="$DIR/ip_list.txt"
+LIST_IP_TXT="$DIR/ip_list.txt"
+LIST_IP_CSV="$DIR/ip_list.csv"
 NEW_IP="$DIR/ip_new.txt"
 EXCEPTION_IP="$DIR/ip_exception.txt"
 TEMP_FILE="$DIR/.temp_ip.txt"
 GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 ```
-- Menentukan absolute path lokasi script `run.sh` berada, sehingga perintah dapat dieksekusi dari direktori mana saja tanpa kegagalan referensi path relatif.
+- Menentukan absolute path direktori kerja untuk menjamin eksekusi portabel dari direktori mana saja.
 
-#### B. Validasi & Inisialisasi Berkas
+#### B. Validasi & Auto-Inisialisasi Berkas
 ```bash
-if [ ! -f "$LIST_IP" ]; then
-    touch "$LIST_IP"
+if [ ! -f "$LIST_IP_TXT" ] && [ -f "$LIST_IP_CSV" ]; then
+    cp "$LIST_IP_CSV" "$LIST_IP_TXT"
+elif [ ! -f "$LIST_IP_TXT" ]; then
+    touch "$LIST_IP_TXT"
+fi
+
+if [ ! -f "$LIST_IP_CSV" ]; then
+    cp "$LIST_IP_TXT" "$LIST_IP_CSV"
 fi
 
 if [ ! -f "$EXCEPTION_IP" ]; then
@@ -68,15 +79,14 @@ if [ ! -f "$NEW_IP" ]; then
     exit 1
 fi
 ```
-- Memastikan `ip_list.txt` dan `ip_exception.txt` selalu tersedia melalui `touch`.
-- Memverifikasi keberadaan `ip_new.txt`. Jika tidak ditemukan, eksekusi dihentikan dengan *exit status* 1.
+- Menjamin kedua berkas basis data (`ip_list.txt` dan `ip_list.csv`) serta berkas pengecualian (`ip_exception.txt`) selalu sinkron dan tersedia.
 
 #### C. Pengambilan Metrik Baseline
 ```bash
-COUNT_BEFORE=$(grep -v '^[[:space:]]*$' "$LIST_IP" 2>/dev/null | wc -l | tr -d ' ')
+COUNT_BEFORE=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 COUNT_EXCEPTION=$(grep -v '^[[:space:]]*$' "$EXCEPTION_IP" 2>/dev/null | wc -l | tr -d ' ')
 ```
-- Menghitung total entri IP valid sebelum operasi dijalankan dengan mengabaikan baris kosong dan whitespace.
+- Menghitung total entri IP valid sebelum operasi dijalankan.
 
 #### D. Pipeline Pemrosesan Data Terpadu
 ```bash
@@ -96,30 +106,29 @@ awk '
             print $0
         }
     }
-' "$EXCEPTION_IP" <(cat "$LIST_IP" "$NEW_IP" 2>/dev/null) \
+' "$EXCEPTION_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
     | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u > "$TEMP_FILE"
 ```
 
 Tahapan pipeline:
-1. **Pengecualian Berbasis Hash Table (`awk`)**:
-   - `NR==FNR`: Membaca `ip_exception.txt`, melakukan pembersihan karakter `\r` dan spasi, lalu menyimpannya dalam array asosiatif `exc`.
-   - Blok kedua: Membaca aliran gabungan `ip_list.txt` dan `ip_new.txt`. Baris hanya dicetak jika tidak kosong dan tidak terdapat dalam `exc` (`!($0 in exc)`).
+1. **Pengecualian Hash Table (`awk`)**: Mengecualikan seluruh IP yang terdaftar di `ip_exception.txt` secara instan dan deterministik.
 2. **Pengurutan Numerik & Deduplikasi (`sort`)**:
-   - `-n`: Mengaktifkan pengurutan numerik.
-   - `-t .`: Menjadikan tanda titik (`.`) sebagai pemisah kolom/oktet.
-   - `-k 1,1 -k 2,2 -k 3,3 -k 4,4`: Membandingkan secara berurutan oktet pertama, kedua, ketiga, hingga keempat.
-   - `-u`: Menghapus entri duplikat (*unique filter*).
-3. **Penyimpanan Berkas Sementara**:
-   - Output dialihkan ke `.temp_ip.txt`.
+   - `-n`: Pengurutan numerik.
+   - `-t .`: Tanda titik (`.`) sebagai pembatas oktet IP.
+   - `-k 1,1 -k 2,2 -k 3,3 -k 4,4`: Membandingkan nilai numerik oktet ke-1 hingga ke-4.
+   - `-u`: Menyaring hanya entri unik.
+3. **Penyimpanan Berkas Sementara**: Output ditulis ke berkas temporer `.temp_ip.txt`.
 
-#### E. Pembaruan Atomik & Perhitungan Diferensial
+#### E. Sinkronisasi Berkas Ganda (TXT & CSV) & Kalkulasi Metrik
 ```bash
-mv "$TEMP_FILE" "$LIST_IP"
-COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP" 2>/dev/null | wc -l | tr -d ' ')
+cp "$TEMP_FILE" "$LIST_IP_TXT"
+cp "$TEMP_FILE" "$LIST_IP_CSV"
+rm -f "$TEMP_FILE"
+
+COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 DIFF=$((COUNT_AFTER - COUNT_BEFORE))
 ```
-- Operasi `mv` memastikan pergantian berkas berlangsung secara atomik di level filesystem.
-- Menghitung `DIFF` (selisih perubahan jumlah IP bersih).
+- Menyalin hasil pemrosesan bersih ke `ip_list.txt` dan `ip_list.csv` secara bersamaan, lalu menghapus file temporer.
 
 #### F. Pemicu Generator Laporan
 ```bash
@@ -128,7 +137,7 @@ if [ -f "$GENERATE_MD_SCRIPT" ]; then
     python3 "$GENERATE_MD_SCRIPT"
 fi
 ```
-- Mengeksekusi `generate_md.py` untuk mengumpulkan intelijen data (geolokasi, ISP, ASN, dan AbuseIPDB) serta memperbarui `ip_list.md`.
+- Mengeksekusi `generate_md.py` untuk memperbarui laporan intelijen `ip_list.md`.
 
 ---
 
@@ -145,14 +154,15 @@ flowchart TD
     G --> H[awk: Sanitasi Whitespace & Filter Non-Exception]
     H --> I[sort -n -t . -k 1-4 -u: Urutkan Numerik per Oktet & Deduplikasi]
     I --> J[Tulis Stream ke .temp_ip.txt]
-    J --> K[mv .temp_ip.txt ip_list.txt]
-    K --> L[Hitung COUNT_AFTER & Selisih DIFF]
-    L --> M[Cetak Ringkasan Metrik ke Terminal]
-    M --> N{generate_md.py Tersedia?}
-    N -- Ya --> O[Eksekusi python3 generate_md.py]
-    O --> P[Query API Caching & Update ip_list.md]
-    N -- Tidak --> Q[Selesai]
-    P --> Q[Selesai dengan Sukses]
+    J --> K[cp ke ip_list.txt & cp ke ip_list.csv]
+    K --> L[Hapus .temp_ip.txt]
+    L --> M[Hitung COUNT_AFTER & Selisih DIFF]
+    M --> N[Cetak Ringkasan Metrik ke Terminal]
+    N --> O{generate_md.py Tersedia?}
+    O -- Ya --> P[Eksekusi python3 generate_md.py]
+    P --> Q[Query API Caching & Update ip_list.md]
+    O -- Tidak --> R[Selesai]
+    Q --> R[Selesai dengan Sukses]
 ```
 
 ---
@@ -195,12 +205,13 @@ bash run.sh
          PROSES PENYORTIRAN IP            
 ==========================================
 Jumlah IP sebelumnya            : 58
-Jumlah aturan pengecualian      : 1
-Perubahan IP bersih             : 0
-Total IP unik sekarang          : 58
+Jumlah aturan pengecualian      : 2
+Perubahan IP bersih             : -1
+Total IP unik sekarang          : 57
+Format database tersimpan       : ip_list.txt & ip_list.csv
 ------------------------------------------
 Memperbarui ip_list.md...
-Berhasil memperbarui /Users/hard13/labs/blackened/ip_list.md (Total: 58 IP)
+Berhasil memperbarui /Users/hard13/labs/blackened/ip_list.md (Total: 57 IP)
 ==========================================
 Proses selesai dengan sukses!
 ```

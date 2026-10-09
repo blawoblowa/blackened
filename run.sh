@@ -3,15 +3,22 @@
 # Directory script
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-LIST_IP="$DIR/ip_list.txt"
+LIST_IP_TXT="$DIR/ip_list.txt"
+LIST_IP_CSV="$DIR/ip_list.csv"
 NEW_IP="$DIR/ip_new.txt"
 EXCEPTION_IP="$DIR/ip_exception.txt"
 TEMP_FILE="$DIR/.temp_ip.txt"
 GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 
-# Pastikan file ip_list.txt dan ip_exception.txt ada
-if [ ! -f "$LIST_IP" ]; then
-    touch "$LIST_IP"
+# Pastikan file basis data (ip_list.txt & ip_list.csv) dan ip_exception.txt ada
+if [ ! -f "$LIST_IP_TXT" ] && [ -f "$LIST_IP_CSV" ]; then
+    cp "$LIST_IP_CSV" "$LIST_IP_TXT"
+elif [ ! -f "$LIST_IP_TXT" ]; then
+    touch "$LIST_IP_TXT"
+fi
+
+if [ ! -f "$LIST_IP_CSV" ]; then
+    cp "$LIST_IP_TXT" "$LIST_IP_CSV"
 fi
 
 if [ ! -f "$EXCEPTION_IP" ]; then
@@ -25,7 +32,7 @@ if [ ! -f "$NEW_IP" ]; then
 fi
 
 # Hitung jumlah IP sebelum proses
-COUNT_BEFORE=$(grep -v '^[[:space:]]*$' "$LIST_IP" 2>/dev/null | wc -l | tr -d ' ')
+COUNT_BEFORE=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 COUNT_EXCEPTION=$(grep -v '^[[:space:]]*$' "$EXCEPTION_IP" 2>/dev/null | wc -l | tr -d ' ')
 
 # Gabungkan ip_list.txt dan ip_new.txt, filter pengecualian (ip_exception.txt),
@@ -46,14 +53,16 @@ awk '
             print $0
         }
     }
-' "$EXCEPTION_IP" <(cat "$LIST_IP" "$NEW_IP" 2>/dev/null) \
+' "$EXCEPTION_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
     | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u > "$TEMP_FILE"
 
-# Ganti ip_list.txt dengan hasil yang sudah di-sort dan deduplikasi
-mv "$TEMP_FILE" "$LIST_IP"
+# Sinkronkan hasil pemrosesan ke kedua format: ip_list.txt dan ip_list.csv
+cp "$TEMP_FILE" "$LIST_IP_TXT"
+cp "$TEMP_FILE" "$LIST_IP_CSV"
+rm -f "$TEMP_FILE"
 
 # Hitung jumlah IP setelah proses
-COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP" 2>/dev/null | wc -l | tr -d ' ')
+COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 DIFF=$((COUNT_AFTER - COUNT_BEFORE))
 
 echo "=========================================="
@@ -63,6 +72,7 @@ echo "Jumlah IP sebelumnya            : $COUNT_BEFORE"
 echo "Jumlah aturan pengecualian      : $COUNT_EXCEPTION"
 echo "Perubahan IP bersih             : $DIFF"
 echo "Total IP unik sekarang          : $COUNT_AFTER"
+echo "Format database tersimpan       : ip_list.txt & ip_list.csv"
 echo "------------------------------------------"
 
 # Update ip_list.md secara otomatis
