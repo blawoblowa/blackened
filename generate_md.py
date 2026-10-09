@@ -8,8 +8,8 @@ import urllib.request
 from collections import Counter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-LIST_IP_PATH = os.path.join(SCRIPT_DIR, "list_ip.csv")
-LIST_MD_PATH = os.path.join(SCRIPT_DIR, "list_ip.md")
+LIST_IP_PATH = os.path.join(SCRIPT_DIR, "ip_list.csv")
+LIST_MD_PATH = os.path.join(SCRIPT_DIR, "ip_list.md")
 CACHE_FILE = os.path.join(SCRIPT_DIR, ".ip_cache.json")
 ENV_FILE = os.path.join(SCRIPT_DIR, ".env")
 
@@ -111,7 +111,7 @@ def main():
         ips = [line.strip() for line in f if line.strip()]
 
     if not ips:
-        print("list_ip.csv kosong. Tidak ada data untuk digenerate.")
+        print("ip_list.csv kosong. Tidak ada data untuk digenerate.")
         return
 
     cache = load_cache()
@@ -187,9 +187,9 @@ def main():
                     low_threat += 1
 
     lines = []
-    lines.append("# Detail Intelijen IP Address (`list_ip.md`)")
+    lines.append("# Detail Intelijen IP Address (`ip_list.md`)")
     lines.append("")
-    lines.append(f"Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **{total_ips} IP** yang terdaftar di [`list_ip.csv`](file://{LIST_IP_PATH}).")
+    lines.append(f"Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **{total_ips} IP** yang terdaftar di [`ip_list.csv`](file://{LIST_IP_PATH}).")
     lines.append("")
     lines.append("---")
     lines.append("")
@@ -240,7 +240,7 @@ def main():
         lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
     else:
         lines.append("| No | IP Address | Tipe | ISP / Provider | Organisasi / Cloud | Negara | Provinsi / Region | Kota | ASN | Proxy/VPN |")
-        lines.append("| :-: | :--- | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
+        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
 
     for idx, ip in enumerate(ips, 1):
         d = cache.get(ip, {})

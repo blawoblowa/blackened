@@ -1,6 +1,6 @@
-# Detail Intelijen IP Address (`list_ip.md`)
+# Detail Intelijen IP Address (`ip_list.md`)
 
-Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **58 IP** yang terdaftar di [`list_ip.csv`](file:///Users/hard13/labs/blackened/list_ip.csv).
+Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **58 IP** yang terdaftar di [`ip_list.csv`](file:///Users/hard13/labs/blackened/ip_list.csv).
 
 ---
 
