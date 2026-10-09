@@ -15,6 +15,12 @@ LIST_MD_PATH = os.path.join(SCRIPT_DIR, "ip_list.md")
 CACHE_FILE = os.path.join(SCRIPT_DIR, ".ip_cache.json")
 ENV_FILE = os.path.join(SCRIPT_DIR, ".env")
 
+# Zona waktu GMT+7
+TZ_GMT7 = datetime.timezone(datetime.timedelta(hours=7))
+
+def get_current_time_gmt7():
+    return datetime.datetime.now(TZ_GMT7).strftime("%Y-%m-%d %H:%M:%S (GMT+7)")
+
 def load_env():
     """Membaca file .env jika tersedia."""
     env_vars = {}
@@ -119,6 +125,14 @@ def main():
 
     cache = load_cache()
     api_key = get_abuseipdb_api_key()
+    now_str = get_current_time_gmt7()
+
+    # Inisialisasi timestamp default untuk data cache lama yang belum memiliki added_at
+    for ip, data in cache.items():
+        if isinstance(data, dict) and "added_at" not in data:
+            data["added_at"] = "2026-10-09 07:35:00 (GMT+7)"
+        elif isinstance(data, dict) and "added_at" in data and "(GMT+7)" not in str(data["added_at"]):
+            data["added_at"] = f"{data['added_at']} (GMT+7)"
 
     # 1. Cek IP yang belum ada data GeoIP di cache
     missing_geo_ips = [ip for ip in ips if ip not in cache or cache[ip].get("status") != "success"]
@@ -130,7 +144,14 @@ def main():
                 cache[ip].update(gdata)
             else:
                 cache[ip] = gdata
+            if "added_at" not in cache[ip]:
+                cache[ip]["added_at"] = now_str
         save_cache(cache)
+
+    # Pastikan setiap IP dalam ips memiliki added_at
+    for ip in ips:
+        if ip in cache and "added_at" not in cache[ip]:
+            cache[ip]["added_at"] = now_str
 
     # 2. Cek IP yang belum ada data AbuseIPDB di cache (jika API Key tersedia)
     if api_key:
@@ -141,7 +162,7 @@ def main():
                 abuse_res = fetch_abuseipdb_info(ip, api_key)
                 if abuse_res:
                     if ip not in cache:
-                        cache[ip] = {}
+                        cache[ip] = {"added_at": now_str}
                     cache[ip]["abuse_data"] = {
                         "abuseConfidenceScore": abuse_res.get("abuseConfidenceScore", 0),
                         "totalReports": abuse_res.get("totalReports", 0),
@@ -192,8 +213,6 @@ def main():
                 else:
                     low_threat += 1
 
-    current_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
     lines = []
     lines.append("# Laporan Intelijen IP Address (`ip_list.md`)")
     lines.append("")
@@ -204,7 +223,7 @@ def main():
     lines.append("## Metadata Dokumen")
     lines.append("- **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`")
     lines.append(f"- **Total IP Terverifikasi**: {total_ips} IP")
-    lines.append(f"- **Waktu Pembaruan Terakhir**: {current_timestamp}")
+    lines.append(f"- **Waktu Pembaruan Terakhir**: {now_str}")
     lines.append("- **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)")
     lines.append("")
     lines.append("---")
@@ -259,19 +278,21 @@ def main():
     lines.append("")
     
     if has_abuse_info:
-        lines.append("| No | IP Address | Skor Abuse | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN |")
-        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
+        lines.append("| No | IP Address | Skor Abuse | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN | Waktu Ditambahkan |")
+        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: | :--- |")
     else:
-        lines.append("| No | IP Address | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN |")
-        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
+        lines.append("| No | IP Address | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN | Waktu Ditambahkan |")
+        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: | :--- |")
 
     for idx, ip in enumerate(ips, 1):
         d = cache.get(ip, {})
+        added_time = d.get("added_at", now_str)
+
         if d.get("status") != "success":
             if has_abuse_info:
-                lines.append(f"| {idx} | `{ip}` | - | - | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | - |")
+                lines.append(f"| {idx} | `{ip}` | - | - | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | - | {added_time} |")
             else:
-                lines.append(f"| {idx} | `{ip}` | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | - |")
+                lines.append(f"| {idx} | `{ip}` | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | Unknown | - | {added_time} |")
             continue
 
         tipe = get_type(d)
@@ -293,9 +314,9 @@ def main():
             else:
                 badge = "-"
                 reports_str = "-"
-            lines.append(f"| {idx} | `{ip}` | {badge} | {reports_str} | {tipe} | {isp} | {org} | {country} | {region} | {city} | {asn} | {proxy} |")
+            lines.append(f"| {idx} | `{ip}` | {badge} | {reports_str} | {tipe} | {isp} | {org} | {country} | {region} | {city} | {asn} | {proxy} | {added_time} |")
         else:
-            lines.append(f"| {idx} | `{ip}` | {tipe} | {isp} | {org} | {country} | {region} | {city} | {asn} | {proxy} |")
+            lines.append(f"| {idx} | `{ip}` | {tipe} | {isp} | {org} | {country} | {region} | {city} | {asn} | {proxy} | {added_time} |")
 
     lines.append("")
     lines.append("---")
