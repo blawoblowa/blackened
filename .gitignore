@@ -1,2 +1,4 @@
 .env
 .ip_cache.json
+ip_merchant.txt
+ip_exception.txt
