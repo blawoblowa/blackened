@@ -6,6 +6,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LIST_IP="$DIR/list_ip.csv"
 NEW_IP="$DIR/new_ip.csv"
 TEMP_FILE="$DIR/.temp_ip.csv"
+GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 
 # Pastikan file list_ip.csv ada
 if [ ! -f "$LIST_IP" ]; then
@@ -36,7 +37,19 @@ mv "$TEMP_FILE" "$LIST_IP"
 COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP" 2>/dev/null | wc -l | tr -d ' ')
 ADDED=$((COUNT_AFTER - COUNT_BEFORE))
 
-echo "Proses selesai!"
-echo "Jumlah IP sebelumnya: $COUNT_BEFORE"
-echo "Jumlah IP baru yang ditambahkan: $ADDED"
-echo "Total IP unik sekarang: $COUNT_AFTER"
+echo "=========================================="
+echo "         PROSES PENYORTIRAN IP            "
+echo "=========================================="
+echo "Jumlah IP sebelumnya            : $COUNT_BEFORE"
+echo "Jumlah IP baru yang ditambahkan : $ADDED"
+echo "Total IP unik sekarang          : $COUNT_AFTER"
+echo "------------------------------------------"
+
+# Update list_ip.md secara otomatis
+if [ -f "$GENERATE_MD_SCRIPT" ]; then
+    echo "Memperbarui list_ip.md..."
+    python3 "$GENERATE_MD_SCRIPT"
+fi
+
+echo "=========================================="
+echo "Proses selesai dengan sukses!"
