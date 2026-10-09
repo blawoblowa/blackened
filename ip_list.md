@@ -1,47 +1,57 @@
-# Detail Intelijen IP Address (`ip_list.md`)
+# Laporan Intelijen IP Address (`ip_list.md`)
 
-Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **58 IP** yang terdaftar di [`ip_list.csv`](file:///Users/hard13/labs/blackened/ip_list.csv).
+Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `generate_md.py` untuk menyajikan analisis intelijen geografis, infrastruktur jaringan, dan reputasi keamanan siber seluruh IP yang terdaftar.
 
 ---
 
-## Ringkasan Statistik
+## Metadata Dokumen
+- **Sumber Data**: [`ip_list.txt`](file:///Users/hard13/labs/blackened/ip_list.txt)
+- **Total IP Terverifikasi**: 58 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-09 10:42:00
+- **Status Sinkronisasi**: Terurut & Bebas Duplikasi
 
-### 1. Tingkat Ancaman (AbuseIPDB Threat Level)
-| Kategori Ancaman | Skor Abuse | Jumlah IP | Keterangan |
-| :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 49 | Sangat berbahaya / aktif dilaporkan menyerang |
-| **Sedang (Suspicious)** | 1% - 49% | 5 | Terindikasi aktivitas mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 4 | Belum ada laporan serangan aktif |
+---
 
-### 2. Distribusi Tipe Infrastruktur
-| Tipe | Jumlah | Persentase |
+## Ringkasan Eksekutif & Statistik Intelijen
+
+### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
+| Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tinggi (High Risk)** | >= 50% | 49 | 84.5% | Aktif dilaporkan melakukan serangan siber |
+| **Sedang (Suspicious)** | 1% - 49% | 5 | 8.6% | Terindikasi aktivitas anomali / mencurigakan |
+| **Bersih / Rendah (Clean)** | 0% | 4 | 6.9% | Tidak ada catatan laporan serangan aktif |
+
+*Total akumulasi laporan insiden keamanan global yang tercatat: **64,524 laporan**.*
+
+### 2. Distribusi Tipe Infrastruktur Jaringan
+| Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
 | **Data Center / Hosting** | 44 | 75.9% |
 | **Residential / ISP** | 14 | 24.1% |
 
-### 3. Top 5 Negara Asal
-| Negara | Jumlah IP |
-| :--- | :--- |
-| Indonesia | 9 |
-| India | 8 |
-| Australia | 6 |
-| Japan | 6 |
-| The Netherlands | 5 |
+### 3. Top 5 Negara Asal Terbanyak
+| Peringkat | Negara | Jumlah IP | Persentase |
+| :-: | :--- | :--- | :--- |
+| 1 | Indonesia | 9 | 15.5% |
+| 2 | India | 8 | 13.8% |
+| 3 | Australia | 6 | 10.3% |
+| 4 | Japan | 6 | 10.3% |
+| 5 | The Netherlands | 5 | 8.6% |
 
-### 4. Top 5 ISP / Cloud Provider
-| ISP / Organisasi | Jumlah IP |
-| :--- | :--- |
-| Microsoft Corporation | 23 |
-| Google LLC | 13 |
-| GSL Networks Pty LTD | 3 |
-| U1 DIGITAL SERVICES LTD | 2 |
-| Vietnam Posts and Telecommunications Group | 1 |
+### 4. Top 5 Penyedia Layanan / Cloud Provider
+| Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
+| :-: | :--- | :--- | :--- |
+| 1 | Microsoft Corporation | 23 | 39.7% |
+| 2 | Google LLC | 13 | 22.4% |
+| 3 | GSL Networks Pty LTD | 3 | 5.2% |
+| 4 | U1 DIGITAL SERVICES LTD | 2 | 3.4% |
+| 5 | Vietnam Posts and Telecommunications Group | 1 | 1.7% |
 
 ---
 
-## Tabel Detail IP Address
+## Tabel Detail Intelijen IP Address
 
-| No | IP Address | Abuse Score | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud | Negara | Provinsi | Kota | ASN | Proxy/VPN |
+| No | IP Address | Skor Abuse | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN |
 | :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |
 | 1 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak |
 | 2 | `4.224.122.112` | 100% | 707 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak |
@@ -101,3 +111,10 @@ Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan
 | 56 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak |
 | 57 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya |
 | 58 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak |
+
+---
+
+## Panduan Pemeliharaan Data
+1. **Menambah IP Baru**: Tambahkan IP baru ke dalam [`ip_new.txt`](file:///Users/hard13/labs/blackened/ip_new.txt).
+2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam [`ip_exception.txt`](file:///Users/hard13/labs/blackened/ip_exception.txt).
+3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file:///Users/hard13/labs/blackened/run.sh) untuk memproses data dan memperbarui dokumen ini secara otomatis.

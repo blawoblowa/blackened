@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import datetime
 import json
 import os
 import sys
@@ -8,7 +9,7 @@ import urllib.request
 from collections import Counter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-LIST_IP_PATH = os.path.join(SCRIPT_DIR, "ip_list.csv")
+LIST_IP_PATH = os.path.join(SCRIPT_DIR, "ip_list.txt")
 LIST_MD_PATH = os.path.join(SCRIPT_DIR, "ip_list.md")
 CACHE_FILE = os.path.join(SCRIPT_DIR, ".ip_cache.json")
 ENV_FILE = os.path.join(SCRIPT_DIR, ".env")
@@ -111,7 +112,7 @@ def main():
         ips = [line.strip() for line in f if line.strip()]
 
     if not ips:
-        print("ip_list.csv kosong. Tidak ada data untuk digenerate.")
+        print("ip_list.txt kosong. Tidak ada data untuk digenerate.")
         return
 
     cache = load_cache()
@@ -173,12 +174,15 @@ def main():
     high_threat = 0
     medium_threat = 0
     low_threat = 0
+    total_abuse_reports = 0
 
     if has_abuse_info:
         for ip in ips:
             adata = cache.get(ip, {}).get("abuse_data")
             if adata:
                 score = adata.get("abuseConfidenceScore", 0)
+                reports = adata.get("totalReports", 0)
+                total_abuse_reports += reports
                 if score >= 50:
                     high_threat += 1
                 elif score > 0:
@@ -186,28 +190,43 @@ def main():
                 else:
                     low_threat += 1
 
+    current_timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     lines = []
-    lines.append("# Detail Intelijen IP Address (`ip_list.md`)")
+    lines.append("# Laporan Intelijen IP Address (`ip_list.md`)")
     lines.append("")
-    lines.append(f"Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **{total_ips} IP** yang terdaftar di [`ip_list.csv`](file://{LIST_IP_PATH}).")
+    lines.append("Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `generate_md.py` untuk menyajikan analisis intelijen geografis, infrastruktur jaringan, dan reputasi keamanan siber seluruh IP yang terdaftar.")
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## Ringkasan Statistik")
+    lines.append("## Metadata Dokumen")
+    lines.append(f"- **Sumber Data**: [`ip_list.txt`](file://{LIST_IP_PATH})")
+    lines.append(f"- **Total IP Terverifikasi**: {total_ips} IP")
+    lines.append(f"- **Waktu Pembaruan Terakhir**: {current_timestamp}")
+    lines.append("- **Status Sinkronisasi**: Terurut & Bebas Duplikasi")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## Ringkasan Eksekutif & Statistik Intelijen")
     lines.append("")
     
     if has_abuse_info:
-        lines.append("### 1. Tingkat Ancaman (AbuseIPDB Threat Level)")
-        lines.append("| Kategori Ancaman | Skor Abuse | Jumlah IP | Keterangan |")
-        lines.append("| :--- | :--- | :--- | :--- |")
-        lines.append(f"| **Tinggi (High Risk)** | >= 50% | {high_threat} | Sangat berbahaya / aktif dilaporkan menyerang |")
-        lines.append(f"| **Sedang (Suspicious)** | 1% - 49% | {medium_threat} | Terindikasi aktivitas mencurigakan |")
-        lines.append(f"| **Bersih / Rendah (Clean)** | 0% | {low_threat} | Belum ada laporan serangan aktif |")
+        lines.append("### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)")
+        lines.append("| Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |")
+        lines.append("| :--- | :--- | :--- | :--- | :--- |")
+        pct_high = (high_threat / total_ips) * 100 if total_ips > 0 else 0
+        pct_med = (medium_threat / total_ips) * 100 if total_ips > 0 else 0
+        pct_low = (low_threat / total_ips) * 100 if total_ips > 0 else 0
+        lines.append(f"| **Tinggi (High Risk)** | >= 50% | {high_threat} | {pct_high:.1f}% | Aktif dilaporkan melakukan serangan siber |")
+        lines.append(f"| **Sedang (Suspicious)** | 1% - 49% | {medium_threat} | {pct_med:.1f}% | Terindikasi aktivitas anomali / mencurigakan |")
+        lines.append(f"| **Bersih / Rendah (Clean)** | 0% | {low_threat} | {pct_low:.1f}% | Tidak ada catatan laporan serangan aktif |")
+        lines.append("")
+        lines.append(f"*Total akumulasi laporan insiden keamanan global yang tercatat: **{total_abuse_reports:,} laporan**.*")
         lines.append("")
 
     sec_idx = 2 if has_abuse_info else 1
-    lines.append(f"### {sec_idx}. Distribusi Tipe Infrastruktur")
-    lines.append("| Tipe | Jumlah | Persentase |")
+    lines.append(f"### {sec_idx}. Distribusi Tipe Infrastruktur Jaringan")
+    lines.append("| Tipe Infrastruktur | Jumlah IP | Persentase |")
     lines.append("| :--- | :--- | :--- |")
     for t, count in types.most_common():
         pct = (count / total_ips) * 100 if total_ips > 0 else 0
@@ -215,32 +234,34 @@ def main():
 
     lines.append("")
     sec_idx += 1
-    lines.append(f"### {sec_idx}. Top 5 Negara Asal")
-    lines.append("| Negara | Jumlah IP |")
-    lines.append("| :--- | :--- |")
-    for c, count in countries.most_common(5):
-        lines.append(f"| {c} | {count} |")
+    lines.append(f"### {sec_idx}. Top 5 Negara Asal Terbanyak")
+    lines.append("| Peringkat | Negara | Jumlah IP | Persentase |")
+    lines.append("| :-: | :--- | :--- | :--- |")
+    for rank, (c, count) in enumerate(countries.most_common(5), 1):
+        pct = (count / total_ips) * 100 if total_ips > 0 else 0
+        lines.append(f"| {rank} | {c} | {count} | {pct:.1f}% |")
 
     lines.append("")
     sec_idx += 1
-    lines.append(f"### {sec_idx}. Top 5 ISP / Cloud Provider")
-    lines.append("| ISP / Organisasi | Jumlah IP |")
-    lines.append("| :--- | :--- |")
-    for isp, count in isps.most_common(5):
-        lines.append(f"| {isp} | {count} |")
+    lines.append(f"### {sec_idx}. Top 5 Penyedia Layanan / Cloud Provider")
+    lines.append("| Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |")
+    lines.append("| :-: | :--- | :--- | :--- |")
+    for rank, (isp, count) in enumerate(isps.most_common(5), 1):
+        pct = (count / total_ips) * 100 if total_ips > 0 else 0
+        lines.append(f"| {rank} | {isp} | {count} | {pct:.1f}% |")
 
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## Tabel Detail IP Address")
+    lines.append("## Tabel Detail Intelijen IP Address")
     lines.append("")
     
     if has_abuse_info:
-        lines.append("| No | IP Address | Abuse Score | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud | Negara | Provinsi | Kota | ASN | Proxy/VPN |")
+        lines.append("| No | IP Address | Skor Abuse | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN |")
         lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
     else:
-        lines.append("| No | IP Address | Tipe | ISP / Provider | Organisasi / Cloud | Negara | Provinsi / Region | Kota | ASN | Proxy/VPN |")
-        lines.append("| :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
+        lines.append("| No | IP Address | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN |")
+        lines.append("| :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |")
 
     for idx, ip in enumerate(ips, 1):
         d = cache.get(ip, {})
@@ -273,6 +294,14 @@ def main():
             lines.append(f"| {idx} | `{ip}` | {badge} | {reports_str} | {tipe} | {isp} | {org} | {country} | {region} | {city} | {asn} | {proxy} |")
         else:
             lines.append(f"| {idx} | `{ip}` | {tipe} | {isp} | {org} | {country} | {region} | {city} | {asn} | {proxy} |")
+
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    lines.append("## Panduan Pemeliharaan Data")
+    lines.append("1. **Menambah IP Baru**: Tambahkan IP baru ke dalam [`ip_new.txt`](file://" + os.path.join(SCRIPT_DIR, "ip_new.txt") + ").")
+    lines.append("2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam [`ip_exception.txt`](file://" + os.path.join(SCRIPT_DIR, "ip_exception.txt") + ").")
+    lines.append("3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file://" + os.path.join(SCRIPT_DIR, "run.sh") + ") untuk memproses data dan memperbarui dokumen ini secara otomatis.")
 
     with open(LIST_MD_PATH, "w") as f:
         f.write("\n".join(lines) + "\n")
