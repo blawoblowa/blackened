@@ -1,6 +1,6 @@
 # Detail Intelijen IP Address (`list_ip.md`)
 
-Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **59 IP** yang terdaftar di [`list_ip.csv`](file:///Users/hard13/labs/blackened/list_ip.csv).
+Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan reputasi AbuseIPDB untuk seluruh **58 IP** yang terdaftar di [`list_ip.csv`](file:///Users/hard13/labs/blackened/list_ip.csv).
 
 ---
 
@@ -11,18 +11,18 @@ Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan
 | :--- | :--- | :--- | :--- |
 | **Tinggi (High Risk)** | >= 50% | 49 | Sangat berbahaya / aktif dilaporkan menyerang |
 | **Sedang (Suspicious)** | 1% - 49% | 5 | Terindikasi aktivitas mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 5 | Belum ada laporan serangan aktif |
+| **Bersih / Rendah (Clean)** | 0% | 4 | Belum ada laporan serangan aktif |
 
 ### 2. Distribusi Tipe Infrastruktur
 | Tipe | Jumlah | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 44 | 74.6% |
-| **Residential / ISP** | 15 | 25.4% |
+| **Data Center / Hosting** | 44 | 75.9% |
+| **Residential / ISP** | 14 | 24.1% |
 
 ### 3. Top 5 Negara Asal
 | Negara | Jumlah IP |
 | :--- | :--- |
-| Indonesia | 10 |
+| Indonesia | 9 |
 | India | 8 |
 | Australia | 6 |
 | Japan | 6 |
@@ -80,25 +80,24 @@ Dokumen ini berisi informasi detail geografis, ISP, tipe infrastruktur, ASN, dan
 | 35 | `35.243.87.129` | 100% | 55 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak |
 | 36 | `35.245.109.64` | 42% | 6 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak |
 | 37 | `36.82.93.188` | 100% | 95 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | East Java | Surabaya | AS7713 PT Telekomunikasi Indonesia | Tidak |
-| 38 | `43.251.98.241` | 0% | 0 | Residential / ISP | NETCITI | - | Indonesia | Banten | Tangerang | AS132641 PT Netciti Persada | Tidak |
-| 39 | `45.115.26.203` | 100% | 1,863 | Data Center / Hosting | SolidCore Hosting LTD | Ivacy Limited | The Netherlands | Limburg | Eygelshoven | AS199457 SolidCore Hosting LTD | Ya |
-| 40 | `45.148.10.238` | 100% | 5,048 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | The Netherlands | North Holland | Amsterdam | AS48090 TECHOFF SRV LIMITED | Ya |
-| 41 | `85.11.167.192` | 100% | 536 | Residential / ISP | TechTies Inc. | TechTies Inc | The Netherlands | North Holland | Amsterdam | AS197170 TechTies Inc. | Ya |
-| 42 | `103.14.111.239` | 0% | 1 | Residential / ISP | PT Asia Teknologi Solusi | - | Indonesia | Jakarta | Jakarta | AS56233 PT Asia Teknologi Solusi | Tidak |
-| 43 | `103.120.168.19` | 0% | 2 | Residential / ISP | PT. Eka Mas Republik | Myrepublic | Indonesia | West Java | Bekasi | AS63859 PT. Eka Mas Republik | Tidak |
-| 44 | `104.46.232.28` | 100% | 734 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak |
-| 45 | `104.155.84.24` | 33% | 7 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak |
-| 46 | `104.208.73.227` | 100% | 2,844 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak |
-| 47 | `134.185.85.61` | 100% | 1,074 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-singapore-1) | Singapore | Central Singapore | Singapore | AS31898 Oracle Corporation | Tidak |
-| 48 | `136.70.233.186` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak |
-| 49 | `136.85.30.120` | 100% | 69 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak |
-| 50 | `144.31.247.145` | 0% | 0 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak |
-| 51 | `158.140.180.90` | 34% | 23 | Residential / ISP | MYREPUBLIC | - | Indonesia | Banten | South Tangerang | AS63859 PT. Eka Mas Republik | Tidak |
-| 52 | `160.202.35.102` | 97% | 34 | Residential / ISP | Angkor Data Communication | Mekongnet | Cambodia | Phnom Penh | Phnom Penh | AS38235 ANGKOR DATA COMMUNICATION | Tidak |
-| 53 | `177.104.161.142` | 100% | 1,273 | Residential / ISP | EVEO Serviços de Internet Ltda. | Eveo S.A | Brazil | São Paulo | Brooklin | AS53107 EVEO S.A. | Tidak |
-| 54 | `185.30.32.176` | 100% | 888 | Data Center / Hosting | webgo GmbH | webgo GmbH | Germany | Free and Hanseatic City of Hamburg | Hamburg | AS48324 webgo GmbH | Tidak |
-| 55 | `190.92.174.183` | 100% | 1,949 | Data Center / Hosting | WHG Hosting Services Ltd | WHG Hosting Services Ltd | India | Maharashtra | Navi Mumbai | AS199404 WHG Hosting Services Ltd | Tidak |
-| 56 | `202.152.202.132` | 0% | 0 | Residential / ISP | PT. Bakrie Telecom Tbk | - | Indonesia | West Java | Cikarang | AS63859 PT. Eka Mas Republik | Tidak |
-| 57 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak |
-| 58 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya |
-| 59 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak |
+| 38 | `45.115.26.203` | 100% | 1,863 | Data Center / Hosting | SolidCore Hosting LTD | Ivacy Limited | The Netherlands | Limburg | Eygelshoven | AS199457 SolidCore Hosting LTD | Ya |
+| 39 | `45.148.10.238` | 100% | 5,048 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | The Netherlands | North Holland | Amsterdam | AS48090 TECHOFF SRV LIMITED | Ya |
+| 40 | `85.11.167.192` | 100% | 536 | Residential / ISP | TechTies Inc. | TechTies Inc | The Netherlands | North Holland | Amsterdam | AS197170 TechTies Inc. | Ya |
+| 41 | `103.14.111.239` | 0% | 1 | Residential / ISP | PT Asia Teknologi Solusi | - | Indonesia | Jakarta | Jakarta | AS56233 PT Asia Teknologi Solusi | Tidak |
+| 42 | `103.120.168.19` | 0% | 2 | Residential / ISP | PT. Eka Mas Republik | Myrepublic | Indonesia | West Java | Bekasi | AS63859 PT. Eka Mas Republik | Tidak |
+| 43 | `104.46.232.28` | 100% | 734 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak |
+| 44 | `104.155.84.24` | 33% | 7 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak |
+| 45 | `104.208.73.227` | 100% | 2,844 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak |
+| 46 | `134.185.85.61` | 100% | 1,074 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-singapore-1) | Singapore | Central Singapore | Singapore | AS31898 Oracle Corporation | Tidak |
+| 47 | `136.70.233.186` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak |
+| 48 | `136.85.30.120` | 100% | 69 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak |
+| 49 | `144.31.247.145` | 0% | 0 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak |
+| 50 | `158.140.180.90` | 34% | 23 | Residential / ISP | MYREPUBLIC | - | Indonesia | Banten | South Tangerang | AS63859 PT. Eka Mas Republik | Tidak |
+| 51 | `160.202.35.102` | 97% | 34 | Residential / ISP | Angkor Data Communication | Mekongnet | Cambodia | Phnom Penh | Phnom Penh | AS38235 ANGKOR DATA COMMUNICATION | Tidak |
+| 52 | `177.104.161.142` | 100% | 1,273 | Residential / ISP | EVEO Serviços de Internet Ltda. | Eveo S.A | Brazil | São Paulo | Brooklin | AS53107 EVEO S.A. | Tidak |
+| 53 | `185.30.32.176` | 100% | 888 | Data Center / Hosting | webgo GmbH | webgo GmbH | Germany | Free and Hanseatic City of Hamburg | Hamburg | AS48324 webgo GmbH | Tidak |
+| 54 | `190.92.174.183` | 100% | 1,949 | Data Center / Hosting | WHG Hosting Services Ltd | WHG Hosting Services Ltd | India | Maharashtra | Navi Mumbai | AS199404 WHG Hosting Services Ltd | Tidak |
+| 55 | `202.152.202.132` | 0% | 0 | Residential / ISP | PT. Bakrie Telecom Tbk | - | Indonesia | West Java | Cikarang | AS63859 PT. Eka Mas Republik | Tidak |
+| 56 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak |
+| 57 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya |
+| 58 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak |
