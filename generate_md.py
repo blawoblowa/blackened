@@ -202,7 +202,7 @@ def main():
     lines.append("---")
     lines.append("")
     lines.append("## Metadata Dokumen")
-    lines.append(f"- **Format Database Tersedia**: [`ip_list.txt`](file://{LIST_IP_TXT_PATH}) dan [`ip_list.csv`](file://{LIST_IP_CSV_PATH})")
+    lines.append("- **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`")
     lines.append(f"- **Total IP Terverifikasi**: {total_ips} IP")
     lines.append(f"- **Waktu Pembaruan Terakhir**: {current_timestamp}")
     lines.append("- **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)")
@@ -301,14 +301,14 @@ def main():
     lines.append("---")
     lines.append("")
     lines.append("## Panduan Pemeliharaan Data")
-    lines.append("1. **Menambah IP Baru**: Tambahkan IP baru ke dalam [`ip_new.txt`](file://" + os.path.join(SCRIPT_DIR, "ip_new.txt") + ").")
-    lines.append("2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam [`ip_exception.txt`](file://" + os.path.join(SCRIPT_DIR, "ip_exception.txt") + ").")
-    lines.append("3. **Eksekusi Pembaruan**: Jalankan script [`run.sh`](file://" + os.path.join(SCRIPT_DIR, "run.sh") + ") untuk memproses data dan memperbarui file database (`ip_list.txt` & `ip_list.csv`) serta dokumen laporan ini secara otomatis.")
+    lines.append("1. **Menambah IP Baru**: Tambahkan IP baru ke dalam `ip_new.txt`.")
+    lines.append("2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam `ip_exception.txt`.")
+    lines.append("3. **Eksekusi Pembaruan**: Jalankan script `run.sh` untuk memproses data dan memperbarui file database (`ip_list.txt` & `ip_list.csv`) serta dokumen laporan ini secara otomatis.")
 
     with open(LIST_MD_PATH, "w") as f:
         f.write("\n".join(lines) + "\n")
 
-    print(f"Berhasil memperbarui {LIST_MD_PATH} (Total: {total_ips} IP)")
+    print(f"Berhasil memperbarui ip_list.md (Total: {total_ips} IP)")
 
 if __name__ == "__main__":
     main()

@@ -45,7 +45,7 @@ fi
 
 # Cek apakah file ip_new.txt ada
 if [ ! -f "$NEW_IP" ]; then
-    echo "Error: File $NEW_IP tidak ditemukan!"
+    echo "Error: File ip_new.txt tidak ditemukan!"
     exit 1
 fi
 
@@ -71,7 +71,7 @@ if [ -n "$MERCHANT_CONFLICTS" ]; then
     echo "=========================================="
     echo "    PERINGATAN: IP MERCHANT TERDETEKSI!   "
     echo "=========================================="
-    echo "Ditemukan $CONFLICT_COUNT IP pada $NEW_IP yang terdaftar sebagai IP Merchant:"
+    echo "Ditemukan $CONFLICT_COUNT IP pada ip_new.txt yang terdaftar sebagai IP Merchant:"
     echo "$MERCHANT_CONFLICTS" | while read -r ip; do
         if [ -n "$ip" ]; then
             echo "  - [DITOLAK] $ip"

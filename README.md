@@ -208,7 +208,7 @@ bash run.sh
 ==========================================
     PERINGATAN: IP MERCHANT TERDETEKSI!   
 ==========================================
-Ditemukan 1 IP pada /Users/hard13/labs/blackened/ip_new.txt yang terdaftar sebagai IP Merchant:
+Ditemukan 1 IP pada /path/to/blackened/ip_new.txt yang terdaftar sebagai IP Merchant:
   - [DITOLAK] 85.187.128.33
 Seluruh IP di atas OTOMATIS DITOLAK dan TIDAK dimasukkan ke database.
 ------------------------------------------
@@ -223,7 +223,7 @@ Total IP unik sekarang          : 58
 Format database tersimpan       : ip_list.txt & ip_list.csv
 ------------------------------------------
 Memperbarui ip_list.md...
-Berhasil memperbarui /Users/hard13/labs/blackened/ip_list.md (Total: 58 IP)
+Berhasil memperbarui /path/to/blackened/ip_list.md (Total: 58 IP)
 ==========================================
 Proses selesai dengan sukses!
 ```
