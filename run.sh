@@ -147,12 +147,12 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
         COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
         echo "Melakukan auto-commit dan push ke GitHub..."
         git commit -m "Update IP intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
-        CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
-        if GIT_TERMINAL_PROMPT=0 git push origin "$CURRENT_BRANCH"; then
-            echo "Berhasil push ke GitHub (branch: $CURRENT_BRANCH)"
-        else
-            echo "Peringatan: Gagal melakukan push ke GitHub (periksa konfigurasi kredensial git)."
-        fi
+        # CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
+        # if GIT_TERMINAL_PROMPT=0 git push origin "$CURRENT_BRANCH"; then
+        #     echo "Berhasil push ke GitHub (branch: $CURRENT_BRANCH)"
+        # else
+        #     echo "Peringatan: Gagal melakukan push ke GitHub (periksa konfigurasi kredensial git)."
+        # fi
     else
         echo "Tidak ada perubahan data IP untuk di-commit."
     fi

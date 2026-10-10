@@ -127,11 +127,9 @@ def main():
     api_key = get_abuseipdb_api_key()
     now_str = get_current_time_gmt7()
 
-    # Inisialisasi timestamp default untuk data cache lama yang belum memiliki added_at
+    # Pastikan data cache yang ada memuat penanda zona waktu (GMT+7)
     for ip, data in cache.items():
-        if isinstance(data, dict) and "added_at" not in data:
-            data["added_at"] = "2026-10-09 07:35:00 (GMT+7)"
-        elif isinstance(data, dict) and "added_at" in data and "(GMT+7)" not in str(data["added_at"]):
+        if isinstance(data, dict) and "added_at" in data and "(GMT+7)" not in str(data["added_at"]):
             data["added_at"] = f"{data['added_at']} (GMT+7)"
 
     # 1. Cek IP yang belum ada data GeoIP di cache
