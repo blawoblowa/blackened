@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 91 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-12 05:02:38 (GMT+7)
+- **Total IP Terverifikasi**: 92 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-12 05:03:21 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,33 +17,33 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 72 | 79.1% | Aktif dilaporkan melakukan serangan siber |
-| **Sedang (Suspicious)** | 1% - 49% | 8 | 8.8% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 11 | 12.1% | Tidak ada catatan laporan serangan aktif |
+| **Tinggi (High Risk)** | >= 50% | 73 | 79.3% | Aktif dilaporkan melakukan serangan siber |
+| **Sedang (Suspicious)** | 1% - 49% | 8 | 8.7% | Terindikasi aktivitas anomali / mencurigakan |
+| **Bersih / Rendah (Clean)** | 0% | 11 | 12.0% | Tidak ada catatan laporan serangan aktif |
 
-*Total akumulasi laporan insiden keamanan global yang tercatat: **89,525 laporan**.*
+*Total akumulasi laporan insiden keamanan global yang tercatat: **95,370 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 69 | 75.8% |
-| **Residential / ISP** | 21 | 23.1% |
+| **Data Center / Hosting** | 69 | 75.0% |
+| **Residential / ISP** | 22 | 23.9% |
 | **Mobile / Cellular** | 1 | 1.1% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Indonesia | 12 | 13.2% |
-| 2 | Japan | 10 | 11.0% |
-| 3 | United States | 10 | 11.0% |
-| 4 | India | 9 | 9.9% |
-| 5 | Australia | 8 | 8.8% |
+| 1 | Indonesia | 12 | 13.0% |
+| 2 | Japan | 10 | 10.9% |
+| 3 | United States | 10 | 10.9% |
+| 4 | India | 9 | 9.8% |
+| 5 | Australia | 8 | 8.7% |
 
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Microsoft Corporation | 30 | 33.0% |
-| 2 | Google LLC | 19 | 20.9% |
+| 1 | Microsoft Corporation | 30 | 32.6% |
+| 2 | Google LLC | 19 | 20.7% |
 | 3 | GSL Networks Pty LTD | 3 | 3.3% |
 | 4 | Techoff SRV Limited | 3 | 3.3% |
 | 5 | U1 DIGITAL SERVICES LTD | 2 | 2.2% |
@@ -143,8 +143,9 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 87 | `205.210.31.250` | 0% | 5,821 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-10 21:07:39 (GMT+7) |
 | 88 | `212.237.217.163` | 0% | 0 | Data Center / Hosting | Hostkey B.V. | Hostkey B V | Finland | Uusimaa | Helsinki | AS57043 HOSTKEY B.V. | Tidak | 2026-10-09 18:02:46 (GMT+7) |
 | 89 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-09 10:42:58 (GMT+7) |
-| 90 | `2404:c0:c602:9ec:7491:c01:1937:1480` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | East Kalimantan | Samarinda | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-10 21:15:52 (GMT+7) |
-| 91 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 90 | `213.209.159.133` | 100% | 5,845 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-12 05:03:21 (GMT+7) |
+| 91 | `2404:c0:c602:9ec:7491:c01:1937:1480` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | East Kalimantan | Samarinda | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-10 21:15:52 (GMT+7) |
+| 92 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
 
 ---
 
