@@ -283,6 +283,8 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
         git config user.email "${GIT_USER_EMAIL:-blowablawo@gmail.com}"
     fi
 
+    git pull
+
     git add "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"
     if ! git diff --cached --quiet; then
         COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
