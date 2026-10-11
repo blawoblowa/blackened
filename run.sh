@@ -24,6 +24,20 @@ if [ -f "$ENV_FILE" ]; then
     done < "$ENV_FILE"
 fi
 
+# Fallback muat dari app/.env jika GITHUB_TOKEN belum terdefinisi
+if [ -z "$GITHUB_TOKEN" ] && [ -f "$DIR/../.env" ]; then
+    while IFS= read -r line || [ -n "$line" ]; do
+        line=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+        if [[ ! "$line" =~ ^# ]] && [[ "$line" == *"="* ]]; then
+            key=$(echo "$line" | cut -d= -f1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            val=$(echo "$line" | cut -d= -f2- | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | sed 's/^["'"'"']//;s/["'"'"']$//')
+            if [ -z "${!key}" ]; then
+                export "$key"="$val"
+            fi
+        fi
+    done < "$DIR/../.env"
+fi
+
 # Pastikan file basis data (ip_list.txt & ip_list.csv), ip_exception.txt, dan ip_merchant.txt ada
 if [ ! -f "$LIST_IP_TXT" ] && [ -f "$LIST_IP_CSV" ]; then
     cp "$LIST_IP_CSV" "$LIST_IP_TXT"
@@ -257,17 +271,48 @@ echo "------------------------------------------"
 AUTO_PUSH_LOWER=$(echo "$AUTO_GIT_PUSH" | tr '[:upper:]' '[:lower:]')
 if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_PUSH_LOWER" = "yes" ]; then
     echo "Memeriksa status git untuk ip_list.*..."
+
+    # Hindari safe.directory error di lingkungan Docker container
+    git config --global --add safe.directory "$DIR" 2>/dev/null || true
+
+    # Pastikan identitas git commit terkonfigurasi
+    if ! git config user.name >/dev/null 2>&1; then
+        git config user.name "${GIT_USER_NAME:-blawoblowa}"
+    fi
+    if ! git config user.email >/dev/null 2>&1; then
+        git config user.email "${GIT_USER_EMAIL:-blowablawo@gmail.com}"
+    fi
+
     git add "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"
     if ! git diff --cached --quiet; then
         COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
         echo "Melakukan auto-commit dan push ke GitHub..."
         git commit -m "Update IP intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
-        # CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
-        # if GIT_TERMINAL_PROMPT=0 git push origin "$CURRENT_BRANCH"; then
-        #     echo "Berhasil push ke GitHub (branch: $CURRENT_BRANCH)"
-        # else
-        #     echo "Peringatan: Gagal melakukan push ke GitHub (periksa konfigurasi kredensial git)."
-        # fi
+        CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
+
+        ORIGIN_URL=$(git remote get-url origin 2>/dev/null || echo "")
+        PUSH_TARGET="origin"
+
+        if [ -n "$GITHUB_TOKEN" ]; then
+            if [[ "$ORIGIN_URL" =~ github\.com[:/]([^/]+/[^/.]+)(\.git)?$ ]]; then
+                REPO_PATH="${BASH_REMATCH[1]}"
+                PUSH_TARGET="https://${GITHUB_TOKEN}@github.com/${REPO_PATH}.git"
+            elif [ -n "$ORIGIN_URL" ]; then
+                PUSH_TARGET=$(echo "$ORIGIN_URL" | sed "s#https://github.com/#https://${GITHUB_TOKEN}@github.com/#")
+            fi
+        fi
+
+        if GIT_TERMINAL_PROMPT=0 git push "$PUSH_TARGET" "$CURRENT_BRANCH"; then
+            echo "Berhasil push ke GitHub (branch: $CURRENT_BRANCH)"
+        else
+            echo "Peringatan: Gagal melakukan push ke GitHub."
+            if [ -z "$GITHUB_TOKEN" ]; then
+                echo "Penyebab: Kredensial git / GITHUB_TOKEN belum dikonfigurasi di file .env."
+                echo "Panduan: Tambahkan GITHUB_TOKEN=<personal_access_token> di app/blackened/.env atau app/.env"
+            else
+                echo "Penyebab: Token GitHub ditolak atau tidak memiliki hak akses tulis (write/push) ke repositori."
+            fi
+        fi
     else
         echo "Tidak ada perubahan data IP untuk di-commit."
     fi
