@@ -111,6 +111,63 @@ awk '
 ' "$EXCEPTION_IP" "$MERCHANT_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
     | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u > "$TEMP_FILE"
 
+# Analisis detail status setiap IP masukan dari ip_new.txt
+NEW_INPUT_ANALYSIS=$(awk '
+    # Tahap 1: Baca file ip_merchant.txt
+    FILENAME == ARGV[1] {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "") merchant[$0] = 1
+        next
+    }
+    # Tahap 2: Baca file ip_exception.txt
+    FILENAME == ARGV[2] {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "") exc[$0] = 1
+        next
+    }
+    # Tahap 3: Baca file ip_list.txt (database sebelum pembaruan)
+    FILENAME == ARGV[3] {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "") old[$0] = 1
+        next
+    }
+    # Tahap 4: Analisis baris ip_new.txt
+    {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "" && !seen[$0]++) {
+            if ($0 in merchant) {
+                # Sudah diproses pada banner peringatan merchant
+                next
+            } else if ($0 in exc) {
+                print "EXC:" $0
+            } else if ($0 in old) {
+                print "EXIST:" $0
+            } else {
+                print "NEW:" $0
+            }
+        }
+    }
+' "$MERCHANT_IP" "$EXCEPTION_IP" "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null)
+
+NEW_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^NEW:' | cut -d: -f2-)
+EXIST_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^EXIST:' | cut -d: -f2-)
+EXC_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^EXC:' | cut -d: -f2-)
+
+# Deteksi IP yang dikeluarkan dari database lama (jika ada)
+REMOVED_IPS=$(awk '
+    NR==FNR {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "") current[$0] = 1
+        next
+    }
+    {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "" && !($0 in current)) {
+            print $0
+        }
+    }
+' "$TEMP_FILE" "$LIST_IP_TXT" 2>/dev/null)
+
 # Sinkronkan hasil pemrosesan ke kedua format: ip_list.txt dan ip_list.csv
 cp "$TEMP_FILE" "$LIST_IP_TXT"
 cp "$TEMP_FILE" "$LIST_IP_CSV"
@@ -120,27 +177,85 @@ rm -f "$TEMP_FILE"
 COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 DIFF=$((COUNT_AFTER - COUNT_BEFORE))
 
+# Update ip_list.md secara otomatis & lengkapi data intelijen IP baru ke cache
+if [ -f "$GENERATE_MD_SCRIPT" ]; then
+    echo "Memperbarui data intelijen & dokumen ip_list.md..."
+    python3 "$GENERATE_MD_SCRIPT"
+fi
+
 echo "=========================================="
 echo "         PROSES PENYORTIRAN IP            "
 echo "=========================================="
 echo "Jumlah IP sebelumnya            : $COUNT_BEFORE"
 echo "Jumlah aturan pengecualian      : $COUNT_EXCEPTION"
 echo "Jumlah IP Merchant terproteksi  : $COUNT_MERCHANT"
-echo "Perubahan IP bersih             : $DIFF"
+if [ "$DIFF" -gt 0 ]; then
+    echo "Perubahan IP bersih             : +$DIFF"
+else
+    echo "Perubahan IP bersih             : $DIFF"
+fi
 echo "Total IP unik sekarang          : $COUNT_AFTER"
 echo "Format database tersimpan       : ip_list.txt & ip_list.csv"
 echo "------------------------------------------"
 
-# Update ip_list.md secara otomatis
-if [ -f "$GENERATE_MD_SCRIPT" ]; then
-    echo "Memperbarui ip_list.md..."
-    python3 "$GENERATE_MD_SCRIPT"
+# Tampilkan detail penambahan IP baru beserta informasi intelijen lengkap
+if [ -n "$NEW_IPS" ]; then
+    COUNT_NEW=$(echo "$NEW_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo "Detail Penambahan IP Baru ($COUNT_NEW IP):"
+    if [ -f "$GENERATE_MD_SCRIPT" ]; then
+        python3 "$GENERATE_MD_SCRIPT" --print-details "$NEW_IPS" "BARU"
+    else
+        echo "$NEW_IPS" | while read -r ip; do
+            if [ -n "$ip" ]; then
+                echo "  + [BARU] $ip"
+            fi
+        done
+    fi
+else
+    echo "Detail Penambahan IP:"
+    echo "  (Tidak ada IP baru yang ditambahkan ke database)"
 fi
+
+# Tampilkan IP yang sudah ada sebelumnya di database
+if [ -n "$EXIST_IPS" ]; then
+    COUNT_EXIST=$(echo "$EXIST_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo ""
+    echo "IP yang Sudah Ada di Database ($COUNT_EXIST IP):"
+    echo "$EXIST_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            echo "  * [SUDAH ADA] $ip"
+        fi
+    done
+fi
+
+# Tampilkan IP yang dilewati karena masuk daftar pengecualian
+if [ -n "$EXC_IPS" ]; then
+    COUNT_EXC=$(echo "$EXC_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo ""
+    echo "IP Masuk Daftar Pengecualian / Whitelist ($COUNT_EXC IP):"
+    echo "$EXC_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            echo "  - [DILEWATI] $ip"
+        fi
+    done
+fi
+
+# Tampilkan IP yang dihapus/dikeluarkan dari database (jika ada)
+if [ -n "$REMOVED_IPS" ]; then
+    COUNT_REMOVED=$(echo "$REMOVED_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo ""
+    echo "IP Dikeluarkan dari Database ($COUNT_REMOVED IP):"
+    echo "$REMOVED_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            echo "  - [DIHAPUS] $ip"
+        fi
+    done
+fi
+echo "------------------------------------------"
 
 # Auto commit & push ke GitHub jika diaktifkan di .env (AUTO_GIT_PUSH=true)
 AUTO_PUSH_LOWER=$(echo "$AUTO_GIT_PUSH" | tr '[:upper:]' '[:lower:]')
 if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_PUSH_LOWER" = "yes" ]; then
-    echo "------------------------------------------"
     echo "Memeriksa status git untuk ip_list.*..."
     git add "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"
     if ! git diff --cached --quiet; then

@@ -329,5 +329,50 @@ def main():
 
     print(f"Berhasil memperbarui ip_list.md (Total: {total_ips} IP)")
 
+def print_ip_details(ips_str, tag="BARU"):
+    if not ips_str:
+        return
+    cache = load_cache()
+    ip_list = [ip.strip() for ip in ips_str.split() if ip.strip()]
+    symbol = "+" if tag == "BARU" else "*"
+    for idx, ip in enumerate(ip_list):
+        d = cache.get(ip, {})
+        print(f"  {symbol} [{tag}] {ip}")
+        if d.get("status") != "success":
+            print("    - Status                    : Data intelijen belum tersedia")
+        else:
+            adata = d.get("abuse_data")
+            if adata:
+                score = adata.get("abuseConfidenceScore", 0)
+                reports = adata.get("totalReports", 0)
+                abuse_str = f"{score}% ({reports:,} laporan)"
+            else:
+                abuse_str = "-"
+
+            isp = d.get("isp") or "-"
+            org = d.get("org") or "-"
+            country = d.get("country") or "-"
+            region = d.get("regionName") or "-"
+            city = d.get("city") or "-"
+            asn = d.get("as") or "-"
+            proxy = "Ya" if d.get("proxy") else "Tidak"
+
+            print(f"    - Skor Abuse                : {abuse_str}")
+            print(f"    - ISP / Provider            : {isp}")
+            print(f"    - Organisasi / Cloud Tenant : {org}")
+            print(f"    - Negara                    : {country}")
+            print(f"    - Provinsi                  : {region}")
+            print(f"    - Kota                      : {city}")
+            print(f"    - ASN                       : {asn}")
+            print(f"    - Proxy/VPN                 : {proxy}")
+
+        if idx < len(ip_list) - 1:
+            print("")
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 2 and sys.argv[1] == "--print-details":
+        tag = sys.argv[3] if len(sys.argv) > 3 else "BARU"
+        print_ip_details(sys.argv[2], tag)
+    else:
+        main()
+

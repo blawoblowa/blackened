@@ -319,23 +319,28 @@ Seluruh IP di atas OTOMATIS DITOLAK dan TIDAK dimasukkan ke database.
 ==========================================
          PROSES PENYORTIRAN IP            
 ==========================================
-Jumlah IP sebelumnya            : 58
+Jumlah IP sebelumnya            : 77
 Jumlah aturan pengecualian      : 2
 Jumlah IP Merchant terproteksi  : 1309
-Perubahan IP bersih             : 5
-Total IP unik sekarang          : 63
+Perubahan IP bersih             : +1
+Total IP unik sekarang          : 78
 Format database tersimpan       : ip_list.txt & ip_list.csv
 ------------------------------------------
-Memperbarui ip_list.md...
-Mengambil metadata Geo/ISP untuk 5 IP baru...
-Mengambil data AbuseIPDB untuk 5 IP...
-Berhasil memperbarui ip_list.md (Total: 63 IP)
+Detail Penambahan IP Baru (1 IP):
+  + [BARU] 34.187.181.50
+    - Skor Abuse                : 100% (50 laporan)
+    - ISP / Provider            : Google LLC
+    - Organisasi / Cloud Tenant : Google Cloud (us-west1)
+    - Negara                    : United States
+    - Provinsi                  : Oregon
+    - Kota                      : The Dalles
+    - ASN                       : AS396982 Google LLC
+    - Proxy/VPN                 : Tidak
 ------------------------------------------
 Memeriksa status git untuk ip_list.*...
 Melakukan auto-commit dan push ke GitHub...
-[main a1b2c3d] Update IP intelligence list (Total: 63 IPs - 2026-10-09 18:00:00)
- 3 files changed, 94 insertions(+)
-Berhasil push ke GitHub (branch: main)
+[main a1b2c3d] Update IP intelligence list (Total: 78 IPs - 2026-10-11 11:00:00)
+ 3 files changed, 59 insertions(+), 56 deletions(-)
 ==========================================
 Proses selesai dengan sukses!
 ```
