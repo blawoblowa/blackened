@@ -7,7 +7,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
 - **Total IP Terverifikasi**: 78 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-11 10:52:41 (GMT+7)
+- **Waktu Pembaruan Terakhir**: 2026-10-11 11:00:28 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
