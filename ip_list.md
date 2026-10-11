@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 96 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-12 05:40:52 (GMT+7)
+- **Total IP Terverifikasi**: 97 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-12 05:44:08 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,33 +17,33 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 75 | 78.1% | Aktif dilaporkan melakukan serangan siber |
-| **Sedang (Suspicious)** | 1% - 49% | 8 | 8.3% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 13 | 13.5% | Tidak ada catatan laporan serangan aktif |
+| **Tinggi (High Risk)** | >= 50% | 76 | 78.4% | Aktif dilaporkan melakukan serangan siber |
+| **Sedang (Suspicious)** | 1% - 49% | 8 | 8.2% | Terindikasi aktivitas anomali / mencurigakan |
+| **Bersih / Rendah (Clean)** | 0% | 13 | 13.4% | Tidak ada catatan laporan serangan aktif |
 
-*Total akumulasi laporan insiden keamanan global yang tercatat: **95,496 laporan**.*
+*Total akumulasi laporan insiden keamanan global yang tercatat: **95,512 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 71 | 74.0% |
-| **Residential / ISP** | 24 | 25.0% |
+| **Data Center / Hosting** | 72 | 74.2% |
+| **Residential / ISP** | 24 | 24.7% |
 | **Mobile / Cellular** | 1 | 1.0% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Indonesia | 12 | 12.5% |
-| 2 | Japan | 10 | 10.4% |
-| 3 | United States | 10 | 10.4% |
-| 4 | India | 9 | 9.4% |
-| 5 | Australia | 8 | 8.3% |
+| 1 | Indonesia | 12 | 12.4% |
+| 2 | United States | 11 | 11.3% |
+| 3 | Japan | 10 | 10.3% |
+| 4 | India | 9 | 9.3% |
+| 5 | Australia | 8 | 8.2% |
 
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Microsoft Corporation | 30 | 31.2% |
-| 2 | Google LLC | 20 | 20.8% |
+| 1 | Microsoft Corporation | 30 | 30.9% |
+| 2 | Google LLC | 20 | 20.6% |
 | 3 | GSL Networks Pty LTD | 3 | 3.1% |
 | 4 | Techoff SRV Limited | 3 | 3.1% |
 | 5 | Cloudflare, Inc. | 3 | 3.1% |
@@ -150,6 +150,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 94 | `213.209.159.133` | 100% | 5,845 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-12 05:03:21 (GMT+7) |
 | 95 | `2404:c0:c602:9ec:7491:c01:1937:1480` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | East Kalimantan | Samarinda | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-10 21:15:52 (GMT+7) |
 | 96 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 97 | `2604:a00:101:a:216:3eff:fe2f:c698` | 84% | 16 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-12 05:44:08 (GMT+7) |
 
 ---
 
