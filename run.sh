@@ -6,6 +6,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LIST_IP_TXT="$DIR/ip_list.txt"
 LIST_IP_CSV="$DIR/ip_list.csv"
 NEW_IP="$DIR/ip_new.txt"
+UNBLOCK_IP="$DIR/ip_unblock.txt"
 EXCEPTION_IP="$DIR/ip_exception.txt"
 MERCHANT_IP="$DIR/ip_merchant.txt"
 TEMP_FILE="$DIR/.temp_ip.txt"
@@ -57,6 +58,10 @@ if [ ! -f "$MERCHANT_IP" ]; then
     touch "$MERCHANT_IP"
 fi
 
+if [ ! -f "$UNBLOCK_IP" ]; then
+    touch "$UNBLOCK_IP"
+fi
+
 # Cek apakah file ip_new.txt ada
 if [ ! -f "$NEW_IP" ]; then
     echo "Error: File ip_new.txt tidak ditemukan!"
@@ -82,9 +87,9 @@ MERCHANT_CONFLICTS=$(awk '
 
 if [ -n "$MERCHANT_CONFLICTS" ]; then
     CONFLICT_COUNT=$(echo "$MERCHANT_CONFLICTS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
-    echo "=========================================="
-    echo "    PERINGATAN: IP MERCHANT TERDETEKSI!   "
-    echo "=========================================="
+    echo "==================================="
+    echo "PERINGATAN: IP MERCHANT TERDETEKSI!"
+    echo "==================================="
     echo "Ditemukan $CONFLICT_COUNT IP pada ip_new.txt yang terdaftar sebagai IP Merchant:"
     echo "$MERCHANT_CONFLICTS" | while read -r ip; do
         if [ -n "$ip" ]; then
@@ -115,14 +120,20 @@ awk '
         if ($0 != "") merchant[$0] = 1
         next
     }
-    # Tahap 3: Baca gabungan ip_list.txt & ip_new.txt
+    # Tahap 3: Baca file ip_unblock.txt (IP yang diminta di-unblock / dihapus)
+    FILENAME == ARGV[3] {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "") unblock[$0] = 1
+        next
+    }
+    # Tahap 4: Baca gabungan ip_list.txt & ip_new.txt
     {
         gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "" && !($0 in exc) && !($0 in merchant)) {
+        if ($0 != "" && !($0 in exc) && !($0 in merchant) && !($0 in unblock)) {
             print $0
         }
     }
-' "$EXCEPTION_IP" "$MERCHANT_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
+' "$EXCEPTION_IP" "$MERCHANT_IP" "$UNBLOCK_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
     | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u > "$TEMP_FILE"
 
 # Analisis detail status setiap IP masukan dari ip_new.txt
@@ -182,10 +193,32 @@ REMOVED_IPS=$(awk '
     }
 ' "$TEMP_FILE" "$LIST_IP_TXT" 2>/dev/null)
 
-# Sinkronkan hasil pemrosesan ke kedua format: ip_list.txt dan ip_list.csv
-cp "$TEMP_FILE" "$LIST_IP_TXT"
-cp "$TEMP_FILE" "$LIST_IP_CSV"
+# Deteksi IP pada ip_unblock.txt yang tidak ditemukan di database
+NOT_FOUND_UNBLOCK=$(awk '
+    NR==FNR {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "") old[$0] = 1
+        next
+    }
+    {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "" && !($0 in old)) {
+            print $0
+        }
+    }
+' "$LIST_IP_TXT" "$UNBLOCK_IP" 2>/dev/null)
+
+# Sinkronkan hasil pemrosesan ke kedua format: ip_list.txt dan ip_list.csv jika ada perbedaan
+if ! cmp -s "$TEMP_FILE" "$LIST_IP_TXT" 2>/dev/null; then
+    cp "$TEMP_FILE" "$LIST_IP_TXT"
+    cp "$TEMP_FILE" "$LIST_IP_CSV"
+fi
 rm -f "$TEMP_FILE"
+
+# Kosongkan file ip_unblock.txt setelah selesai diproses
+if [ -f "$UNBLOCK_IP" ]; then
+    > "$UNBLOCK_IP"
+fi
 
 # Hitung jumlah IP setelah proses
 COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
@@ -200,16 +233,16 @@ fi
 echo "=========================================="
 echo "         PROSES PENYORTIRAN IP            "
 echo "=========================================="
-echo "Jumlah IP sebelumnya            : $COUNT_BEFORE"
-echo "Jumlah aturan pengecualian      : $COUNT_EXCEPTION"
-echo "Jumlah IP Merchant terproteksi  : $COUNT_MERCHANT"
+echo "Jumlah IP sebelumnya: $COUNT_BEFORE"
+echo "Jumlah aturan pengecualian: $COUNT_EXCEPTION"
+echo "Jumlah IP Merchant terproteksi: $COUNT_MERCHANT"
 if [ "$DIFF" -gt 0 ]; then
-    echo "Perubahan IP bersih             : +$DIFF"
+    echo "Perubahan IP bersih: +$DIFF"
 else
-    echo "Perubahan IP bersih             : $DIFF"
+    echo "Perubahan IP bersih: $DIFF"
 fi
-echo "Total IP unik sekarang          : $COUNT_AFTER"
-echo "Format database tersimpan       : ip_list.txt & ip_list.csv"
+echo "Total IP unik sekarang: $COUNT_AFTER"
+echo "Format database tersimpan: ip_list.txt & ip_list.csv"
 echo "------------------------------------------"
 
 # Tampilkan detail penambahan IP baru beserta informasi intelijen lengkap
@@ -265,6 +298,18 @@ if [ -n "$REMOVED_IPS" ]; then
         fi
     done
 fi
+
+# Tampilkan IP unblock yang tidak ditemukan di database
+if [ -n "$NOT_FOUND_UNBLOCK" ]; then
+    COUNT_NF=$(echo "$NOT_FOUND_UNBLOCK" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo ""
+    echo "IP Unblock Tidak Ditemukan di Database ($COUNT_NF IP):"
+    echo "$NOT_FOUND_UNBLOCK" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            echo "  ? [TIDAK DITEMUKAN] $ip"
+        fi
+    done
+fi
 echo "------------------------------------------"
 
 # Auto commit & push ke GitHub jika diaktifkan di .env (AUTO_GIT_PUSH=true)
@@ -283,40 +328,48 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
         git config user.email "${GIT_USER_EMAIL:-blowablawo@gmail.com}"
     fi
 
-    git pull
-
-    git add "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"
-    if ! git diff --cached --quiet; then
-        COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
-        echo "Melakukan auto-commit dan push ke GitHub..."
-        git commit -m "Update IP intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
-        CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
-
-        ORIGIN_URL=$(git remote get-url origin 2>/dev/null || echo "")
-        PUSH_TARGET="origin"
-
-        if [ -n "$GITHUB_TOKEN" ]; then
-            if [[ "$ORIGIN_URL" =~ github\.com[:/]([^/]+/[^/.]+)(\.git)?$ ]]; then
-                REPO_PATH="${BASH_REMATCH[1]}"
-                PUSH_TARGET="https://${GITHUB_TOKEN}@github.com/${REPO_PATH}.git"
-            elif [ -n "$ORIGIN_URL" ]; then
-                PUSH_TARGET=$(echo "$ORIGIN_URL" | sed "s#https://github.com/#https://${GITHUB_TOKEN}@github.com/#")
-            fi
-        fi
-
-        if GIT_TERMINAL_PROMPT=0 git push "$PUSH_TARGET" "$CURRENT_BRANCH"; then
-            echo "Berhasil push ke GitHub (branch: $CURRENT_BRANCH)"
-        else
-            echo "Peringatan: Gagal melakukan push ke GitHub."
-            if [ -z "$GITHUB_TOKEN" ]; then
-                echo "Penyebab: Kredensial git / GITHUB_TOKEN belum dikonfigurasi di file .env."
-                echo "Panduan: Tambahkan GITHUB_TOKEN=<personal_access_token> di app/blackened/.env atau app/.env"
+    # Cek apakah ada perubahan pada file ip_list (ip_list.txt, ip_list.csv, ip_list.md)
+    if [ -n "$(git status --porcelain "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md" 2>/dev/null)" ]; then
+        git pull --rebase 2>/dev/null || git pull 2>/dev/null || true
+        git add "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"
+        if ! git diff --cached --quiet -- "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"; then
+            COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
+            echo "Melakukan auto-commit dan push ke GitHub..."
+            if [ -n "$REMOVED_IPS" ] && [ -z "$NEW_IPS" ]; then
+                git commit -m "Remove IP from intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
             else
-                echo "Penyebab: Token GitHub ditolak atau tidak memiliki hak akses tulis (write/push) ke repositori."
+                git commit -m "Update IP intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
             fi
+            CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
+
+            ORIGIN_URL=$(git remote get-url origin 2>/dev/null || echo "")
+            PUSH_TARGET="origin"
+
+            if [ -n "$GITHUB_TOKEN" ]; then
+                if [[ "$ORIGIN_URL" =~ github\.com[:/]([^/]+/[^/.]+)(\.git)?$ ]]; then
+                    REPO_PATH="${BASH_REMATCH[1]}"
+                    PUSH_TARGET="https://${GITHUB_TOKEN}@github.com/${REPO_PATH}.git"
+                elif [ -n "$ORIGIN_URL" ]; then
+                    PUSH_TARGET=$(echo "$ORIGIN_URL" | sed "s#https://github.com/#https://${GITHUB_TOKEN}@github.com/#")
+                fi
+            fi
+
+            if GIT_TERMINAL_PROMPT=0 git push "$PUSH_TARGET" "$CURRENT_BRANCH"; then
+                echo "Berhasil push ke GitHub (branch: $CURRENT_BRANCH)"
+            else
+                echo "Peringatan: Gagal melakukan push ke GitHub."
+                if [ -z "$GITHUB_TOKEN" ]; then
+                    echo "Penyebab: Kredensial git / GITHUB_TOKEN belum dikonfigurasi di file .env."
+                    echo "Panduan: Tambahkan GITHUB_TOKEN=<personal_access_token> di app/blackened/.env atau app/.env"
+                else
+                    echo "Penyebab: Token GitHub ditolak atau tidak memiliki hak akses tulis (write/push) ke repositori."
+                fi
+            fi
+        else
+            echo "Tidak ada perubahan pada file ip_list (csv, md, txt). Commit dan push dilewati."
         fi
     else
-        echo "Tidak ada perubahan data IP untuk di-commit."
+        echo "Tidak ada perubahan pada file ip_list (csv, md, txt). Commit dan push dilewati."
     fi
 fi
 

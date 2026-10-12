@@ -324,8 +324,25 @@ def main():
     lines.append("2. **Mengecualikan IP (*Whitelist*)**: Tambahkan IP yang ingin dikeluarkan ke dalam `ip_exception.txt`.")
     lines.append("3. **Eksekusi Pembaruan**: Jalankan script `run.sh` untuk memproses data dan memperbarui file database (`ip_list.txt` & `ip_list.csv`) serta dokumen laporan ini secara otomatis.")
 
-    with open(LIST_MD_PATH, "w") as f:
-        f.write("\n".join(lines) + "\n")
+    new_content = "\n".join(lines) + "\n"
+
+    # Hanya perbarui file jika ada perubahan aktual pada data/konten (abaikan baris timestamp)
+    if os.path.exists(LIST_MD_PATH):
+        try:
+            with open(LIST_MD_PATH, "r", encoding="utf-8") as f:
+                existing_content = f.read()
+
+            def strip_timestamp(content):
+                return "\n".join([l for l in content.splitlines() if not l.strip().startswith("- **Waktu Pembaruan Terakhir**:")])
+
+            if strip_timestamp(existing_content) == strip_timestamp(new_content):
+                print(f"Tidak ada perubahan data intelijen pada ip_list.md (Total: {total_ips} IP)")
+                return
+        except Exception:
+            pass
+
+    with open(LIST_MD_PATH, "w", encoding="utf-8") as f:
+        f.write(new_content)
 
     print(f"Berhasil memperbarui ip_list.md (Total: {total_ips} IP)")
 
@@ -339,7 +356,7 @@ def print_ip_details(ips_str, tag="BARU"):
         d = cache.get(ip, {})
         print(f"  {symbol} [{tag}] {ip}")
         if d.get("status") != "success":
-            print("    - Status                    : Data intelijen belum tersedia")
+            print("    - Status: Data intelijen belum tersedia")
         else:
             adata = d.get("abuse_data")
             if adata:
@@ -357,13 +374,13 @@ def print_ip_details(ips_str, tag="BARU"):
             asn = d.get("as") or "-"
             proxy = "Ya" if d.get("proxy") else "Tidak"
 
-            print(f"    - Skor Abuse                : {abuse_str}")
-            print(f"    - ISP / Provider            : {isp}")
-            print(f"    - Organisasi / Cloud Tenant : {org}")
-            print(f"    - Negara                    : {country}")
-            print(f"    - Provinsi                  : {region}")
-            print(f"    - Kota                      : {city}")
-            print(f"    - ASN                       : {asn}")
+            print(f"    - Skor Abuse: {abuse_str}")
+            print(f"    - ISP / Provider: {isp}")
+            print(f"    - Organisasi / Cloud Tenant: {org}")
+            print(f"    - Negara: {country}")
+            print(f"    - Provinsi: {region}")
+            print(f"    - Kota: {city}")
+            print(f"    - ASN: {asn}")
             print(f"    - Proxy/VPN                 : {proxy}")
 
         if idx < len(ip_list) - 1:
