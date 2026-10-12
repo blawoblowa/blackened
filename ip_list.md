@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 127 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-13 05:41:23 (GMT+7)
+- **Total IP Terverifikasi**: 129 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-13 06:34:46 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,36 +17,36 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 97 | 76.4% | Aktif dilaporkan melakukan serangan siber |
-| **Sedang (Suspicious)** | 1% - 49% | 13 | 10.2% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 17 | 13.4% | Tidak ada catatan laporan serangan aktif |
+| **Tinggi (High Risk)** | >= 50% | 98 | 76.0% | Aktif dilaporkan melakukan serangan siber |
+| **Sedang (Suspicious)** | 1% - 49% | 14 | 10.9% | Terindikasi aktivitas anomali / mencurigakan |
+| **Bersih / Rendah (Clean)** | 0% | 17 | 13.2% | Tidak ada catatan laporan serangan aktif |
 
-*Total akumulasi laporan insiden keamanan global yang tercatat: **105,787 laporan**.*
+*Total akumulasi laporan insiden keamanan global yang tercatat: **105,841 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 100 | 78.7% |
-| **Residential / ISP** | 26 | 20.5% |
+| **Data Center / Hosting** | 102 | 79.1% |
+| **Residential / ISP** | 26 | 20.2% |
 | **Mobile / Cellular** | 1 | 0.8% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | United States | 21 | 16.5% |
-| 2 | Indonesia | 17 | 13.4% |
-| 3 | Australia | 11 | 8.7% |
-| 4 | Japan | 11 | 8.7% |
-| 5 | India | 10 | 7.9% |
+| 1 | United States | 21 | 16.3% |
+| 2 | Indonesia | 17 | 13.2% |
+| 3 | Australia | 12 | 9.3% |
+| 4 | Japan | 11 | 8.5% |
+| 5 | India | 10 | 7.8% |
 
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Microsoft Corporation | 37 | 29.1% |
-| 2 | Google LLC | 28 | 22.0% |
-| 3 | GSL Networks Pty LTD | 3 | 2.4% |
-| 4 | PT. TELKOM INDONESIA | 3 | 2.4% |
-| 5 | Techoff SRV Limited | 3 | 2.4% |
+| 1 | Microsoft Corporation | 37 | 28.7% |
+| 2 | Google LLC | 28 | 21.7% |
+| 3 | GSL Networks Pty LTD | 3 | 2.3% |
+| 4 | PT. TELKOM INDONESIA | 3 | 2.3% |
+| 5 | Techoff SRV Limited | 3 | 2.3% |
 
 ---
 
@@ -158,29 +158,31 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 102 | `144.31.247.145` | 0% | 0 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
 | 103 | `144.172.94.4` | 100% | 195 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Ya | 2026-10-12 22:31:17 (GMT+7) |
 | 104 | `144.172.104.28` | 0% | 0 | Data Center / Hosting | RouterHosting LLC | FranTech Solutions | United States | Nevada | Las Vegas | AS14956 RouterHosting LLC | Tidak | 2026-10-09 18:02:46 (GMT+7) |
-| 105 | `156.245.205.12` | 100% | 45 | Residential / ISP | Zillion Network Inc. | Hong Kong Lightlayer Technology Co., Limited | Hong Kong | Kowloon | Hong Kong | AS54801 Zillion Network Inc. | Tidak | 2026-10-11 12:08:07 (GMT+7) |
-| 106 | `158.23.176.177` | 100% | 1,834 | Residential / ISP | Microsoft Corporation | Microsoft Azure Cloud (mexicocentral) | Mexico | Querétaro | Querétaro City | AS8075 Microsoft Corporation | Tidak | 2026-10-11 05:54:43 (GMT+7) |
-| 107 | `158.101.21.209` | 100% | 218 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (us-phoenix-1) | United States | Arizona | Phoenix | AS31898 Oracle Corporation | Tidak | 2026-10-12 05:45:50 (GMT+7) |
-| 108 | `158.140.180.90` | 34% | 23 | Residential / ISP | MYREPUBLIC | - | Indonesia | Banten | South Tangerang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 109 | `159.65.82.81` | 100% | 37 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United Kingdom | England | Slough | AS14061 DigitalOcean, LLC | Tidak | 2026-10-10 11:25:03 (GMT+7) |
-| 110 | `160.202.35.102` | 97% | 34 | Residential / ISP | Angkor Data Communication | Mekongnet | Cambodia | Phnom Penh | Phnom Penh | AS38235 ANGKOR DATA COMMUNICATION | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 111 | `173.208.214.226` | 100% | 248 | Data Center / Hosting | WholeSale Internet | Advanced Computer Specialists, LLC | United States | Missouri | Kansas City | AS32097 WholeSale Internet, Inc. | Tidak | 2026-10-11 19:14:51 (GMT+7) |
-| 112 | `177.104.161.142` | 100% | 1,273 | Residential / ISP | EVEO Serviços de Internet Ltda. | Eveo S.A | Brazil | São Paulo | Brooklin | AS53107 EVEO S.A. | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 113 | `178.73.235.125` | 49% | 31 | Data Center / Hosting | GleSYS AB | Internet Vikings International AB | Sweden | Stockholm County | Stockholm | AS42708 Glesys AB | Tidak | 2026-10-13 05:35:11 (GMT+7) |
-| 114 | `180.253.187.145` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Maluku | Ambon City | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-12 12:36:20 (GMT+7) |
-| 115 | `182.5.139.185` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Cirebon | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-13 05:41:23 (GMT+7) |
-| 116 | `185.30.32.176` | 100% | 888 | Data Center / Hosting | webgo GmbH | webgo GmbH | Germany | Free and Hanseatic City of Hamburg | Hamburg | AS48324 webgo GmbH | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 117 | `190.92.174.183` | 100% | 1,949 | Data Center / Hosting | WHG Hosting Services Ltd | WHG Hosting Services Ltd | India | Maharashtra | Navi Mumbai | AS199404 WHG Hosting Services Ltd | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 118 | `195.178.110.22` | 100% | 2,380 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-09 16:17:28 (GMT+7) |
-| 119 | `202.152.202.132` | 0% | 0 | Residential / ISP | PT. Bakrie Telecom Tbk | - | Indonesia | West Java | Cikarang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 120 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 121 | `205.210.31.250` | 0% | 5,821 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-10 21:07:39 (GMT+7) |
-| 122 | `212.237.217.163` | 0% | 0 | Data Center / Hosting | Hostkey B.V. | Hostkey B V | Finland | Uusimaa | Helsinki | AS57043 HOSTKEY B.V. | Tidak | 2026-10-09 18:02:46 (GMT+7) |
-| 123 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-09 10:42:58 (GMT+7) |
-| 124 | `213.209.159.133` | 100% | 5,845 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-12 05:03:21 (GMT+7) |
-| 125 | `2404:c0:c602:9ec:7491:c01:1937:1480` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | East Kalimantan | Samarinda | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-10 21:15:52 (GMT+7) |
-| 126 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 127 | `2604:a00:101:a:216:3eff:fe2f:c698` | 84% | 16 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-12 05:44:08 (GMT+7) |
+| 105 | `155.212.109.130` | 39% | 9 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 06:34:46 (GMT+7) |
+| 106 | `156.245.205.12` | 100% | 45 | Residential / ISP | Zillion Network Inc. | Hong Kong Lightlayer Technology Co., Limited | Hong Kong | Kowloon | Hong Kong | AS54801 Zillion Network Inc. | Tidak | 2026-10-11 12:08:07 (GMT+7) |
+| 107 | `158.23.176.177` | 100% | 1,834 | Residential / ISP | Microsoft Corporation | Microsoft Azure Cloud (mexicocentral) | Mexico | Querétaro | Querétaro City | AS8075 Microsoft Corporation | Tidak | 2026-10-11 05:54:43 (GMT+7) |
+| 108 | `158.101.21.209` | 100% | 218 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (us-phoenix-1) | United States | Arizona | Phoenix | AS31898 Oracle Corporation | Tidak | 2026-10-12 05:45:50 (GMT+7) |
+| 109 | `158.140.180.90` | 34% | 23 | Residential / ISP | MYREPUBLIC | - | Indonesia | Banten | South Tangerang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 110 | `159.65.82.81` | 100% | 37 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United Kingdom | England | Slough | AS14061 DigitalOcean, LLC | Tidak | 2026-10-10 11:25:03 (GMT+7) |
+| 111 | `160.202.35.102` | 97% | 34 | Residential / ISP | Angkor Data Communication | Mekongnet | Cambodia | Phnom Penh | Phnom Penh | AS38235 ANGKOR DATA COMMUNICATION | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 112 | `170.64.163.177` | 100% | 45 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Australia | New South Wales | Sydney | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 06:34:46 (GMT+7) |
+| 113 | `173.208.214.226` | 100% | 248 | Data Center / Hosting | WholeSale Internet | Advanced Computer Specialists, LLC | United States | Missouri | Kansas City | AS32097 WholeSale Internet, Inc. | Tidak | 2026-10-11 19:14:51 (GMT+7) |
+| 114 | `177.104.161.142` | 100% | 1,273 | Residential / ISP | EVEO Serviços de Internet Ltda. | Eveo S.A | Brazil | São Paulo | Brooklin | AS53107 EVEO S.A. | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 115 | `178.73.235.125` | 49% | 31 | Data Center / Hosting | GleSYS AB | Internet Vikings International AB | Sweden | Stockholm County | Stockholm | AS42708 Glesys AB | Tidak | 2026-10-13 05:35:11 (GMT+7) |
+| 116 | `180.253.187.145` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Maluku | Ambon City | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-12 12:36:20 (GMT+7) |
+| 117 | `182.5.139.185` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Cirebon | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-13 05:41:23 (GMT+7) |
+| 118 | `185.30.32.176` | 100% | 888 | Data Center / Hosting | webgo GmbH | webgo GmbH | Germany | Free and Hanseatic City of Hamburg | Hamburg | AS48324 webgo GmbH | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 119 | `190.92.174.183` | 100% | 1,949 | Data Center / Hosting | WHG Hosting Services Ltd | WHG Hosting Services Ltd | India | Maharashtra | Navi Mumbai | AS199404 WHG Hosting Services Ltd | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 120 | `195.178.110.22` | 100% | 2,380 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-09 16:17:28 (GMT+7) |
+| 121 | `202.152.202.132` | 0% | 0 | Residential / ISP | PT. Bakrie Telecom Tbk | - | Indonesia | West Java | Cikarang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 122 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 123 | `205.210.31.250` | 0% | 5,821 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-10 21:07:39 (GMT+7) |
+| 124 | `212.237.217.163` | 0% | 0 | Data Center / Hosting | Hostkey B.V. | Hostkey B V | Finland | Uusimaa | Helsinki | AS57043 HOSTKEY B.V. | Tidak | 2026-10-09 18:02:46 (GMT+7) |
+| 125 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-09 10:42:58 (GMT+7) |
+| 126 | `213.209.159.133` | 100% | 5,845 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-12 05:03:21 (GMT+7) |
+| 127 | `2404:c0:c602:9ec:7491:c01:1937:1480` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | East Kalimantan | Samarinda | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-10 21:15:52 (GMT+7) |
+| 128 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 129 | `2604:a00:101:a:216:3eff:fe2f:c698` | 84% | 16 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-12 05:44:08 (GMT+7) |
 
 ---
 
