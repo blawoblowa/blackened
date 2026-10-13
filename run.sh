@@ -97,7 +97,7 @@ if [ -n "$MERCHANT_CONFLICTS" ]; then
         fi
     done
     echo "Seluruh IP di atas OTOMATIS DITOLAK dan TIDAK dimasukkan ke database."
-    echo "------------------------------------------"
+    echo "--------------------------------"
 fi
 
 # Hitung jumlah IP sebelum proses
@@ -226,13 +226,10 @@ DIFF=$((COUNT_AFTER - COUNT_BEFORE))
 
 # Update ip_list.md secara otomatis & lengkapi data intelijen IP baru ke cache
 if [ -f "$GENERATE_MD_SCRIPT" ]; then
-    echo "Memperbarui data intelijen & dokumen ip_list.md..."
+    echo "Update data intelijen ip_list.md..."
     python3 "$GENERATE_MD_SCRIPT"
 fi
-
-echo "=========================================="
-echo "         PROSES PENYORTIRAN IP            "
-echo "=========================================="
+echo "--------------------------------"
 echo "Jumlah IP sebelumnya: $COUNT_BEFORE"
 echo "Jumlah aturan pengecualian: $COUNT_EXCEPTION"
 echo "Jumlah IP Merchant terproteksi: $COUNT_MERCHANT"
@@ -243,7 +240,7 @@ else
 fi
 echo "Total IP unik sekarang: $COUNT_AFTER"
 echo "Format database tersimpan: ip_list.txt & ip_list.csv"
-echo "------------------------------------------"
+echo "--------------------------------"
 
 # Tampilkan detail penambahan IP baru beserta informasi intelijen lengkap
 if [ -n "$NEW_IPS" ]; then
@@ -310,7 +307,7 @@ if [ -n "$NOT_FOUND_UNBLOCK" ]; then
         fi
     done
 fi
-echo "------------------------------------------"
+echo "--------------------------------"
 
 # Auto commit & push ke GitHub jika diaktifkan di .env (AUTO_GIT_PUSH=true)
 AUTO_PUSH_LOWER=$(echo "$AUTO_GIT_PUSH" | tr '[:upper:]' '[:lower:]')
@@ -334,7 +331,7 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
         git add "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"
         if ! git diff --cached --quiet -- "$LIST_IP_TXT" "$LIST_IP_CSV" "$DIR/ip_list.md"; then
             COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
-            echo "Melakukan auto-commit dan push ke GitHub..."
+            echo "Auto-commit & push ke GitHub..."
             if [ -n "$REMOVED_IPS" ] && [ -z "$NEW_IPS" ]; then
                 git commit -m "Remove IP from intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
             else
@@ -373,5 +370,5 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
     fi
 fi
 
-echo "=========================================="
+echo "--------------------------------"
 echo "Proses selesai dengan sukses!"

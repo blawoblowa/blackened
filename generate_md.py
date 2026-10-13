@@ -57,7 +57,7 @@ def save_cache(cache):
         print(f"Warning: Gagal menyimpan cache: {e}", file=sys.stderr)
 
 def fetch_ip_info_batch(ips_to_fetch):
-    """Mengambil metadata geolokasi & ISP secara batch (50 IP per request)."""
+    """Get metadata geolokasi & ISP secara batch (50 IP per request)."""
     batch_size = 50
     results = {}
     
@@ -84,7 +84,7 @@ def fetch_ip_info_batch(ips_to_fetch):
                     if q:
                         results[q] = item
         except Exception as e:
-            print(f"Warning: Gagal mengambil data batch IP ({e})", file=sys.stderr)
+            print(f"Warning: Gagal get data batch IP ({e})", file=sys.stderr)
         
         if i + batch_size < len(ips_to_fetch):
             time.sleep(0.5)
@@ -92,7 +92,7 @@ def fetch_ip_info_batch(ips_to_fetch):
     return results
 
 def fetch_abuseipdb_info(ip, api_key):
-    """Mengambil data reputasi & riwayat serangan dari AbuseIPDB."""
+    """Get data reputasi & riwayat serangan dari AbuseIPDB."""
     url = f"https://api.abuseipdb.com/api/v2/check?ipAddress={urllib.parse.quote(ip)}&maxAgeInDays=90"
     req = urllib.request.Request(
         url,
@@ -135,7 +135,7 @@ def main():
     # 1. Cek IP yang belum ada data GeoIP di cache
     missing_geo_ips = [ip for ip in ips if ip not in cache or cache[ip].get("status") != "success"]
     if missing_geo_ips:
-        print(f"Mengambil metadata Geo/ISP untuk {len(missing_geo_ips)} IP baru...")
+        print(f"Get metadata Geo/ISP {len(missing_geo_ips)} IP baru...")
         new_geo_data = fetch_ip_info_batch(missing_geo_ips)
         for ip, gdata in new_geo_data.items():
             if ip in cache:
@@ -155,7 +155,7 @@ def main():
     if api_key:
         missing_abuse_ips = [ip for ip in ips if "abuse_data" not in cache.get(ip, {})]
         if missing_abuse_ips:
-            print(f"Mengambil data AbuseIPDB untuk {len(missing_abuse_ips)} IP...")
+            print(f"Get data AbuseIPDB untuk {len(missing_abuse_ips)} IP...")
             for idx, ip in enumerate(missing_abuse_ips, 1):
                 abuse_res = fetch_abuseipdb_info(ip, api_key)
                 if abuse_res:
@@ -344,7 +344,7 @@ def main():
     with open(LIST_MD_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
 
-    print(f"Berhasil memperbarui ip_list.md (Total: {total_ips} IP)")
+    print(f"Berhasil update ip_list.md (Total: {total_ips} IP)")
 
 def print_ip_details(ips_str, tag="BARU"):
     if not ips_str:
