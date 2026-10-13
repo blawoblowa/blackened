@@ -225,6 +225,7 @@ COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -
 DIFF=$((COUNT_AFTER - COUNT_BEFORE))
 
 # Update ip_list.md secara otomatis & lengkapi data intelijen IP baru ke cache
+echo "--------------------------------"
 if [ -f "$GENERATE_MD_SCRIPT" ]; then
     echo "Update data intelijen ip_list.md..."
     python3 "$GENERATE_MD_SCRIPT"
