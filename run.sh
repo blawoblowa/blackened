@@ -518,4 +518,4 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
 fi
 
 echo "--------------------------------"
-echo "Proses selesai dengan sukses!"
+echo "Done!"
