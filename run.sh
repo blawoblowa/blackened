@@ -452,7 +452,7 @@ if [ -n "$NOT_FOUND_UNBLOCK" ]; then
         fi
     done
 fi
-echo "--------------------------------"
+
 
 # Auto commit & push ke GitHub jika diaktifkan di .env (AUTO_GIT_PUSH=true)
 AUTO_PUSH_LOWER=$(echo "$AUTO_GIT_PUSH" | tr '[:upper:]' '[:lower:]')
