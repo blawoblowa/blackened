@@ -103,21 +103,21 @@ fi
 # 2. Deteksi apakah ada baris dengan format IP tidak valid di dalam ip_new.txt
 INVALID_IPS=$(awk '
     function is_valid_ipv4(ip,   octets, n, i, v) {
-        if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+        if (ip !~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/) return 0
         n = split(ip, octets, ".")
         if (n != 4) return 0
         for (i = 1; i <= 4; i++) {
+            if (length(octets[i]) > 3) return 0
             v = octets[i] + 0
             if (v < 0 || v > 255) return 0
-            if (octets[i] ~ /^0[0-9]+$/) return 0
+            if (length(octets[i]) > 1 && octets[i] ~ /^0/) return 0
         }
         return 1
     }
     function is_valid_ipv6(ip) {
         if (ip !~ /^[0-9a-fA-F:]+$/) return 0
         if (ip !~ /:/) return 0
-        if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
-        return 0
+        return 1
     }
     function is_valid_ip(ip) {
         return is_valid_ipv4(ip) || is_valid_ipv6(ip)
@@ -156,21 +156,21 @@ COUNT_MERCHANT=$(grep -v '^[[:space:]]*$' "$MERCHANT_IP" 2>/dev/null | wc -l | t
 # bersihkan whitespace, baris kosong & UTF-8 BOM, lalu urutkan secara numerik per oktet IP (unique)
 awk '
     function is_valid_ipv4(ip,   octets, n, i, v) {
-        if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+        if (ip !~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/) return 0
         n = split(ip, octets, ".")
         if (n != 4) return 0
         for (i = 1; i <= 4; i++) {
+            if (length(octets[i]) > 3) return 0
             v = octets[i] + 0
             if (v < 0 || v > 255) return 0
-            if (octets[i] ~ /^0[0-9]+$/) return 0
+            if (length(octets[i]) > 1 && octets[i] ~ /^0/) return 0
         }
         return 1
     }
     function is_valid_ipv6(ip) {
         if (ip !~ /^[0-9a-fA-F:]+$/) return 0
         if (ip !~ /:/) return 0
-        if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
-        return 0
+        return 1
     }
     function is_valid_ip(ip) {
         return is_valid_ipv4(ip) || is_valid_ipv6(ip)
@@ -207,21 +207,21 @@ awk '
 # Analisis detail status setiap IP masukan dari ip_new.txt
 NEW_INPUT_ANALYSIS=$(awk '
     function is_valid_ipv4(ip,   octets, n, i, v) {
-        if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+        if (ip !~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$/) return 0
         n = split(ip, octets, ".")
         if (n != 4) return 0
         for (i = 1; i <= 4; i++) {
+            if (length(octets[i]) > 3) return 0
             v = octets[i] + 0
             if (v < 0 || v > 255) return 0
-            if (octets[i] ~ /^0[0-9]+$/) return 0
+            if (length(octets[i]) > 1 && octets[i] ~ /^0/) return 0
         }
         return 1
     }
     function is_valid_ipv6(ip) {
         if (ip !~ /^[0-9a-fA-F:]+$/) return 0
         if (ip !~ /:/) return 0
-        if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
-        return 0
+        return 1
     }
     function is_valid_ip(ip) {
         return is_valid_ipv4(ip) || is_valid_ipv6(ip)
@@ -299,6 +299,20 @@ NOT_FOUND_UNBLOCK=$(awk '
         }
     }
 ' "$LIST_IP_TXT" "$UNBLOCK_IP" 2>/dev/null)
+
+# Pengaman integritas data (Fail-safe): Jika database sebelumnya memiliki IP,
+# pastikan file temporer tidak kosong secara tidak wajar
+TEMP_COUNT=$(grep -v '^[[:space:]]*$' "$TEMP_FILE" 2>/dev/null | wc -l | tr -d ' ')
+if [ "$COUNT_BEFORE" -gt 0 ] && [ "$TEMP_COUNT" -eq 0 ]; then
+    echo "==================================="
+    echo "ERROR: INTEGRITAS DATA TERANCAM!"
+    echo "==================================="
+    echo "Hasil pemrosesan menghasilkan 0 IP padahal sebelumnya terdapat $COUNT_BEFORE IP."
+    echo "Operasi penulisan dibatalkan untuk mencegah kehilangan seluruh data IP."
+    echo "--------------------------------"
+    rm -f "$TEMP_FILE"
+    exit 1
+fi
 
 # Sinkronkan hasil pemrosesan ke kedua format: ip_list.txt dan ip_list.csv jika ada perbedaan
 if ! cmp -s "$TEMP_FILE" "$LIST_IP_TXT" 2>/dev/null; then
