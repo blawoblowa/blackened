@@ -88,7 +88,7 @@ MERCHANT_CONFLICTS=$(awk '
 if [ -n "$MERCHANT_CONFLICTS" ]; then
     CONFLICT_COUNT=$(echo "$MERCHANT_CONFLICTS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
     echo "==================================="
-    echo "PERINGATAN: IP MERCHANT TERDETEKSI!"
+    echo "ALERT: IP MERCHANT TERDETEKSI!"
     echo "==================================="
     echo "Ditemukan $CONFLICT_COUNT IP pada ip_new.txt yang terdaftar sebagai IP Merchant:"
     echo "$MERCHANT_CONFLICTS" | while read -r ip; do
@@ -134,7 +134,7 @@ INVALID_IPS=$(awk '
 if [ -n "$INVALID_IPS" ]; then
     INVALID_COUNT=$(echo "$INVALID_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
     echo "==================================="
-    echo "PERINGATAN: FORMAT IP TIDAK VALID!"
+    echo "ALERT: FORMAT IP TIDAK VALID!"
     echo "==================================="
     echo "Ditemukan $INVALID_COUNT entri pada ip_new.txt dengan format IP tidak valid:"
     echo "$INVALID_IPS" | while read -r ip; do
