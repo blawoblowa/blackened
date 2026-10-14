@@ -371,6 +371,8 @@ else
     echo "  (Tidak ada IP baru yang ditambahkan ke database)"
 fi
 
+echo "--------------------------------"
+
 # Sinkronisasi penambahan IP baru ke Cloudflare Rules List (jika dikonfigurasi)
 if [ -n "$NEW_IPS" ] && [ -f "$CF_SCRIPT" ] && [ -n "$CLOUDFLARE_LIST_ID" ] && [ -n "$CLOUDFLARE_API_TOKEN" ]; then
     echo ""
