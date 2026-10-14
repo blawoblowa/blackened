@@ -48,7 +48,7 @@ validate_config() {
         [ -z "$CLOUDFLARE_ACCOUNT_ID" ] && echo "  - CLOUDFLARE_ACCOUNT_ID (Belum diisi)"
         [ -z "$CLOUDFLARE_API_TOKEN" ] && echo "  - CLOUDFLARE_API_TOKEN (Belum diisi)"
         [ -z "$CLOUDFLARE_LIST_ID" ] && echo "  - CLOUDFLARE_LIST_ID (Belum diisi)"
-        echo "------------------------------------------"
+        echo "--------------------------------"
         exit 1
     fi
 }
@@ -65,7 +65,7 @@ build_auth_headers() {
             echo "Global API Key memerlukan email akun Cloudflare."
             echo "Pastikan variabel berikut diset di .env:"
             echo "  CLOUDFLARE_EMAIL=\"email_anda@domain.com\""
-            echo "------------------------------------------"
+            echo "--------------------------------"
             exit 1
         fi
         AUTH_HEADERS=(-H "X-Auth-Email: $cf_email" -H "X-Auth-Key: $CLOUDFLARE_API_TOKEN")
@@ -124,11 +124,11 @@ action_add() {
         exit 1
     fi
 
-    echo "===> Menambahkan IP ke Cloudflare List..."
+    echo "Menambahkan IP ke Cloudflare List..."
     echo "Target List ID : $CLOUDFLARE_LIST_ID"
     echo "Target IP      : $target_ip"
     echo "Komentar       : $comment"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     build_auth_headers
     local response http_code body
@@ -149,7 +149,7 @@ action_add() {
     echo "HTTP Status Code: $http_code"
     echo "Response Body:"
     format_json "$body"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Fungsi: Hapus IP dari List (DELETE via Item ID)
@@ -162,7 +162,7 @@ action_delete() {
         exit 1
     fi
 
-    echo "===> Mencari ID untuk IP: $target_ip pada Cloudflare List..."
+    echo "Mencari ID untuk IP: $target_ip pada Cloudflare List..."
     local item_id
     item_id=$(find_item_id_by_ip "$target_ip")
 
@@ -174,7 +174,7 @@ action_delete() {
 
     echo "Ditemukan Item ID: $item_id"
     echo "Mengirim request penghapusan ke Cloudflare..."
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     build_auth_headers
     local response http_code body
@@ -196,15 +196,15 @@ action_delete() {
     echo "HTTP Status Code: $http_code"
     echo "Response Body:"
     format_json "$body"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Fungsi: Cari / Cek IP di List (GET)
 action_search() {
     local target_ip="$1"
-    echo "===> Mencari IP di Cloudflare List ($CLOUDFLARE_LIST_ID)..."
+    echo "Mencari IP di Cloudflare List ($CLOUDFLARE_LIST_ID)..."
     echo "Target Query: ${target_ip:-<Semua Item>}"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     local url="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/rules/lists/${CLOUDFLARE_LIST_ID}/items"
     if [ -n "$target_ip" ]; then
@@ -223,13 +223,13 @@ action_search() {
     echo "HTTP Status Code: $http_code"
     echo "Response Body:"
     format_json "$body"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Fungsi: Ambil Informasi & Total Item List (GET metadata)
 action_info() {
-    echo "===> Mengambil Informasi & Total IP List ($CLOUDFLARE_LIST_ID)..."
-    echo "------------------------------------------"
+    echo "Mengambil Informasi & Total IP List ($CLOUDFLARE_LIST_ID)..."
+    echo "--------------------------------"
 
     local url="https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/rules/lists/${CLOUDFLARE_LIST_ID}"
 
@@ -251,12 +251,12 @@ action_info() {
         total_items=$(python3 -c "import sys, json; data = json.loads('''$body'''); print(data.get('result', {}).get('num_items', ''))" 2>/dev/null)
         list_name=$(python3 -c "import sys, json; data = json.loads('''$body'''); print(data.get('result', {}).get('name', ''))" 2>/dev/null)
         if [ -n "$total_items" ]; then
-            echo "------------------------------------------"
+            echo "--------------------------------"
             echo "Nama List      : $list_name"
             echo "Total IP (Result): $total_items IP"
         fi
     fi
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Tampilkan petunjuk penggunaan
