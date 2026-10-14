@@ -12,6 +12,7 @@ MERCHANT_IP="$DIR/ip_merchant.txt"
 TEMP_FILE="$DIR/.temp_ip.txt"
 GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 ENV_FILE="$DIR/.env"
+CF_SCRIPT="$DIR/test_cf.sh"
 
 # Muat konfigurasi .env jika tersedia
 if [ -f "$ENV_FILE" ]; then
@@ -370,6 +371,17 @@ else
     echo "  (Tidak ada IP baru yang ditambahkan ke database)"
 fi
 
+# Sinkronisasi penambahan IP baru ke Cloudflare Rules List (jika dikonfigurasi)
+if [ -n "$NEW_IPS" ] && [ -f "$CF_SCRIPT" ] && [ -n "$CLOUDFLARE_LIST_ID" ] && [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+    echo ""
+    echo "Sinkronisasi ke Cloudflare Rules List..."
+    echo "$NEW_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            bash "$CF_SCRIPT" add "$ip" "Added via Blackened Threat Intel"
+        fi
+    done
+fi
+
 # Tampilkan IP yang sudah ada sebelumnya di database
 if [ -n "$EXIST_IPS" ]; then
     COUNT_EXIST=$(echo "$EXIST_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
@@ -414,6 +426,17 @@ if [ -n "$REMOVED_IPS" ]; then
     echo "$REMOVED_IPS" | while read -r ip; do
         if [ -n "$ip" ]; then
             echo "  - [DIHAPUS] $ip"
+        fi
+    done
+fi
+
+# Sinkronisasi penghapusan IP dari Cloudflare Rules List (jika dikonfigurasi)
+if [ -n "$REMOVED_IPS" ] && [ -f "$CF_SCRIPT" ] && [ -n "$CLOUDFLARE_LIST_ID" ] && [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+    echo ""
+    echo "Sinkronisasi penghapusan ke Cloudflare Rules List..."
+    echo "$REMOVED_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            bash "$CF_SCRIPT" delete "$ip"
         fi
     done
 fi
