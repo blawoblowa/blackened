@@ -342,15 +342,15 @@ if [ -f "$GENERATE_MD_SCRIPT" ]; then
 fi
 echo "--------------------------------"
 echo "Jumlah IP sebelumnya: $COUNT_BEFORE"
-echo "Jumlah aturan pengecualian: $COUNT_EXCEPTION"
-echo "Jumlah IP Merchant terproteksi: $COUNT_MERCHANT"
+echo "Jumlah IP Exception: $COUNT_EXCEPTION"
+echo "Jumlah IP Merchant: $COUNT_MERCHANT"
 if [ "$DIFF" -gt 0 ]; then
-    echo "Perubahan IP bersih: +$DIFF"
+    echo "Perubahan IP: +$DIFF"
 else
-    echo "Perubahan IP bersih: $DIFF"
+    echo "Perubahan IP: $DIFF"
 fi
-echo "Total IP unik sekarang: $COUNT_AFTER"
-echo "Format database tersimpan: ip_list.txt & ip_list.csv"
+echo "Total IP unique: $COUNT_AFTER"
+echo "Format database: ip_list.txt & ip_list.csv"
 echo "--------------------------------"
 
 # Tampilkan detail penambahan IP baru beserta informasi intelijen lengkap
@@ -510,10 +510,10 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
                 fi
             fi
         else
-            echo "Tidak ada perubahan pada file ip_list (csv, md, txt). Commit dan push dilewati."
+            echo "Tidak ada perubahan pada file ip_list (csv, md, txt). Commit dan push skipped."
         fi
     else
-        echo "Tidak ada perubahan pada file ip_list (csv, md, txt). Commit dan push dilewati."
+        echo "Tidak ada perubahan pada file ip_list (csv, md, txt). Commit dan push skipped."
     fi
 fi
 
