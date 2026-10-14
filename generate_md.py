@@ -386,10 +386,26 @@ def print_ip_details(ips_str, tag="BARU"):
         if idx < len(ip_list) - 1:
             print("")
 
+def clean_cache(ips_str):
+    if not ips_str:
+        return
+    cache = load_cache()
+    ip_list = [ip.strip() for ip in ips_str.split() if ip.strip()]
+    cleaned = 0
+    for ip in ip_list:
+        if ip in cache:
+            del cache[ip]
+            cleaned += 1
+    if cleaned > 0:
+        save_cache(cache)
+        print(f"Membersihkan {cleaned} entri IP dari cache lokal (.ip_cache.json).")
+
 if __name__ == "__main__":
     if len(sys.argv) > 2 and sys.argv[1] == "--print-details":
         tag = sys.argv[3] if len(sys.argv) > 3 else "BARU"
         print_ip_details(sys.argv[2], tag)
+    elif len(sys.argv) > 2 and sys.argv[1] == "--clean-cache":
+        clean_cache(sys.argv[2])
     else:
         main()
 

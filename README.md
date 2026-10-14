@@ -1,6 +1,6 @@
 # Blackened - IP Management & Threat Intelligence Utility
 
-Blackened adalah utilitas otomatisasi berbasis *shell script* (`run.sh`) dan modul Python (`generate_md.py`) yang dirancang untuk mengelola, menyortir, membersihkan (sanitasi), mendeduplikasi, mengecualikan (*whitelist*), memproteksi IP Merchant resmi, serta memperkaya daftar IP address (*threat intelligence feed*) dengan data geolokasi, ISP, ASN, reputasi ancaman AbuseIPDB, dan riwayat waktu penambahan (*timestamp* GMT+7) secara otomatis.
+Blackened adalah utilitas otomatisasi berbasis *shell script* (`run.sh`) dan modul Python (`generate_md.py`) yang dirancang untuk mengelola, memvalidasi sintaks, menyortir, membersihkan (sanitasi), mendeduplikasi, mengecualikan (*whitelist*), memproteksi IP Merchant resmi, meng-unblock (menghapus IP), serta memperkaya daftar IP address (*threat intelligence feed*) dengan data geolokasi, ISP, ASN, reputasi ancaman AbuseIPDB, dan riwayat waktu penambahan (*timestamp* GMT+7) secara otomatis.
 
 Hasil penyortiran basis data IP disimpan secara simultan dalam **dua format file**: `.txt` (`ip_list.txt`) dan `.csv` (`ip_list.csv`), serta menghasilkan dokumen laporan intelijen komprehensif (`ip_list.md`).
 
@@ -30,18 +30,22 @@ Hasil penyortiran basis data IP disimpan secara simultan dalam **dua format file
 
 ### A. Modul Orkestrasi & Pemrosesan (`run.sh`)
 - **Resolusi Jalur Dinamis (*Dynamic Path Resolution*)**: Mengidentifikasi direktori kerja secara independen dari lokasi pemanggilan terminal (`pwd`), memungkinkan skrip dijalankan dari direktori mana pun atau via cron job.
+- **Validasi Sintaks Format Alamat IP**: Memvalidasi integritas alamat IPv4 (4 oktet 0-255 tanpa ambiguitas leading zero) dan IPv6. Baris masukan yang bukan format IP valid (misalnya nama domain atau string cacat) otomatis ditolak dan dilaporkan di terminal.
 - **Proteksi IP Merchant & Peringatan Otomatis**: Memindai file input `ip_new.txt` terhadap daftar `ip_merchant.txt`. Jika terdeteksi adanya IP merchant resmi, sistem menampilkan banner peringatan di terminal, menandai IP sebagai ditolak (`[DITOLAK]`), dan secara otomatis mengecualikannya dari database.
 - **Penyaringan Pengecualian (*Whitelist / Exception Filtering*)**: Mengecualikan IP yang terdaftar di `ip_exception.txt` menggunakan *in-memory hash table* berbasis `awk` berkinerja tinggi.
+- **Mekanisme Penghapusan / Unblock IP (`ip_unblock.txt`)**: Mengeluarkan IP dari database secara langsung, mengosongkan antrean unblock secara otomatis setelah eksekusi, serta menghasilkan pesan commit khusus saat hanya ada proses penghapusan.
+- **Pembersihan Cache Otomatis untuk IP yang Dikeluarkan**: IP yang dikeluarkan/di-unblock dari database otomatis dihapus dari berkas cache lokal `.ip_cache.json` untuk menjaga efisiensi penyimpanan.
 - **Sanitasi Data Multi-Tahap**: Menghapus karakter Line Ending Windows (`\r`), UTF-8 BOM (`\xef\xbb\xbf`), spasi awal/akhir (*trimming*), dan baris kosong.
 - **Pengurutan Numerik per Oktet & Deduplikasi**: Mengurutkan alamat IPv4 berdasarkan nilai numerik 4 oktet secara hierarkis (`sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4`) dan menghapus duplikasi entri dalam satu lintasan (*single-pass*).
 - **Sinkronisasi Format Ganda (*Dual Database Output*)**: Menyimpan hasil pemrosesan bersih ke `ip_list.txt` dan `ip_list.csv` secara bersamaan dan konsisten.
 - **Pembaruan Atomik (*Atomic Update*)**: Menulis berkas temporer (`.temp_ip.txt`) sebelum proses pergantian (*file swap*) untuk mencegah korupsi data saat eksekusi terputus.
-- **Auto Commit & Push GitHub (Non-Blocking)**: Mendukung pengunggahan otomatis berkas `ip_list.txt`, `ip_list.csv`, dan `ip_list.md` ke repositori remote (`AUTO_GIT_PUSH=true`) dengan proteksi *non-blocking* (`GIT_TERMINAL_PROMPT=0`).
+- **Auto Commit & Push GitHub (Non-Blocking)**: Mendukung pengunggahan otomatis berkas `ip_list.txt`, `ip_list.csv`, dan `ip_list.md` ke repositori remote (`AUTO_GIT_PUSH=true`) dengan proteksi *non-blocking* (`GIT_TERMINAL_PROMPT=0`) serta integrasi `GITHUB_TOKEN`.
 
 ### B. Modul Pengayaan Intelijen (`generate_md.py`)
 - **Pengayaan Geografis & Jaringan (GeoIP Batch Lookup)**: Mengambil metadata negara, provinsi/wilayah, kota, ISP, organisasi/cloud tenant, ASN, dan indikator proxy/VPN dalam batch 50 IP per *request* (`http://ip-api.com/batch`).
 - **Integrasi AbuseIPDB (Threat Intelligence)**: Mengambil skor kepastian ancaman (*Abuse Confidence Score*), total akumulasi laporan serangan global, dan jenis penggunaan jaringan (*usage type*) secara otomatis jika API Key dikonfigurasi.
 - **Sistem Caching Persisten (`.ip_cache.json`)**: Menyimpan seluruh metadata hasil query API secara lokal. IP yang telah ada di-*cache* tidak akan di-query ulang, sehingga pemrosesan berkala berlangsung instan dan hemat kuota API.
+- **Utilitas Pembersihan Cache CLI (`--clean-cache`)**: Modul mendukung sub-perintah untuk menghapus entri cache spesifik saat IP dikeluarkan dari database.
 - **Pelacakan Riwayat Timestamp (GMT+7)**: Mencatat waktu penambahan IP ke database dalam format zona waktu GMT+7 / WIB (`YYYY-MM-DD HH:MM:SS (GMT+7)`).
 - **Ringkasan Eksekutif & Analisis Statistik**: Menyajikan klasifikasi tingkat risiko ancaman (Tinggi, Sedang, Bersih), total akumulasi insiden serangan global, distribusi tipe infrastruktur jaringan (Hosting/Data Center, Mobile, Residential), serta Top 5 Negara dan Top 5 ISP/Cloud Provider.
 - **Sanitasi Tabel Markdown**: Mengonversi karakter pipe (`|`) pada nama ISP, organisasi, dan ASN menjadi slash (`/`) agar format tabel Markdown tetap rapi dan tidak rusak.
@@ -66,6 +70,7 @@ blackened/
 |-- ip_list.csv        # Basis data daftar IP bersih dan terurut (Format CSV)
 |-- ip_list.md         # Laporan intelijen IP lengkap (tabel & analitik)
 |-- ip_new.txt         # Berkas masukan daftar IP baru yang akan diproses
+|-- ip_unblock.txt     # Berkas masukan daftar IP yang akan di-unblock / dihapus
 |-- ip_exception.txt   # Berkas whitelist/pengecualian manual (diabaikan dari database)
 |-- ip_merchant.txt    # Berkas whitelist resmi IP Merchant terproteksi
 |-- run.sh             # Skrip orkestrasi utama (Bash entrypoint)
@@ -84,13 +89,14 @@ blackened/
 ### A. Bedah Logika & Pipeline `run.sh`
 
 #### 1. Inisialisasi Jalur & Pemuatan Variabel Lingkungan
-Skrip menentukan direktori absolut berdasarkan lokasi berkas `run.sh` berada, lalu memuat variabel dari `.env`:
+Skrip menentukan direktori absolut berdasarkan lokasi berkas `run.sh` berada, lalu memuat variabel dari `.env` dan direktori induk:
 ```bash
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 LIST_IP_TXT="$DIR/ip_list.txt"
 LIST_IP_CSV="$DIR/ip_list.csv"
 NEW_IP="$DIR/ip_new.txt"
+UNBLOCK_IP="$DIR/ip_unblock.txt"
 EXCEPTION_IP="$DIR/ip_exception.txt"
 MERCHANT_IP="$DIR/ip_merchant.txt"
 TEMP_FILE="$DIR/.temp_ip.txt"
@@ -98,54 +104,47 @@ GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 ENV_FILE="$DIR/.env"
 ```
 
-Jika berkas `.env` ada, nilai variabel diparsing secara aman (mengabaikan komentar `#`, memotong spasi berlebih, dan membersihkan tanda kutip).
-
-#### 2. Pemeriksaan dan Inisialisasi Berkas Basis Data
-Skrip memastikan berkas `ip_list.txt`, `ip_list.csv`, `ip_exception.txt`, dan `ip_merchant.txt` tersedia. Jika salah satu format database belum ada, skrip menyinkronkan data antar format (`.csv` ke `.txt` atau sebaliknya).
-
-#### 3. Pemindaian Proteksi IP Merchant (`ip_merchant.txt`)
-Sebelum penggabungan data, skrip memverifikasi apakah ada IP di `ip_new.txt` yang termasuk dalam daftar `ip_merchant.txt`:
+#### 2. Validasi Sintaks IP & Pemindaian Proteksi IP Merchant
+Sebelum pemrosesan, skrip memvalidasi format IP pada `ip_new.txt` dan memindai konflik terhadap `ip_merchant.txt`:
 ```bash
-MERCHANT_CONFLICTS=$(awk '
-    NR==FNR {
-        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "") merchant[$0] = 1
-        next
+# Validasi sintaks format IPv4 / IPv6
+function is_valid_ipv4(ip,   octets, n, i, v) {
+    if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+    n = split(ip, octets, ".")
+    if (n != 4) return 0
+    for (i = 1; i <= 4; i++) {
+        v = octets[i] + 0
+        if (v < 0 || v > 255) return 0
+        if (octets[i] ~ /^0[0-9]+$/) return 0
     }
-    {
-        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "" && ($0 in merchant)) {
-            print $0
-        }
-    }
-' "$MERCHANT_IP" "$NEW_IP" 2>/dev/null | sort -u)
+    return 1
+}
+function is_valid_ipv6(ip) {
+    if (ip !~ /^[0-9a-fA-F:]+$/) return 0
+    if (ip !~ /:/) return 0
+    if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
+    return 0
+}
 ```
-Jika ditemukan kecocokan, skrip memunculkan banner peringatan di terminal dan menolak seluruh IP tersebut.
+Jika ditemukan IP tidak valid atau terdaftar sebagai merchant, skrip menampilkan banner peringatan dan menolak IP tersebut secara otomatis.
 
-#### 4. Pembersihan Data, Filter Whitelist Ganda, dan Sort Numerik
+#### 3. Pembersihan Data, Filter Whitelist Ganda, Unblock, dan Sort Numerik
 Pemrosesan dilakukan dalam satu *stream pipeline* berkinerja tinggi:
 ```bash
 awk '
     # Tahap 1: Muat aturan pengecualian
-    FILENAME == ARGV[1] {
-        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "") exc[$0] = 1
-        next
-    }
+    FILENAME == ARGV[1] { exc[$0] = 1; next }
     # Tahap 2: Muat daftar merchant terproteksi
-    FILENAME == ARGV[2] {
-        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "") merchant[$0] = 1
-        next
-    }
-    # Tahap 3: Filter gabungan ip_list.txt dan ip_new.txt
+    FILENAME == ARGV[2] { merchant[$0] = 1; next }
+    # Tahap 3: Muat daftar unblock
+    FILENAME == ARGV[3] { unblock[$0] = 1; next }
+    # Tahap 4: Filter gabungan data
     {
-        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "" && !($0 in exc) && !($0 in merchant)) {
+        if ($0 != "" && is_valid_ip($0) && !($0 in exc) && !($0 in merchant) && !($0 in unblock)) {
             print $0
         }
     }
-' "$EXCEPTION_IP" "$MERCHANT_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
+' "$EXCEPTION_IP" "$MERCHANT_IP" "$UNBLOCK_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
     | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u > "$TEMP_FILE"
 ```
 
@@ -155,11 +154,14 @@ Penjelasan opsi utilitas `sort`:
 - `-k 1,1 -k 2,2 -k 3,3 -k 4,4`: Mengurutkan kolom oktet ke-1, dilanjutkan oktet ke-2, ke-3, hingga ke-4.
 - `-u`: Menghilangkan seluruh duplikasi entri (*unique*).
 
-#### 5. Pembaruan Atomik & Eksekusi Generator
-Hasil dari `.temp_ip.txt` disalin ke `ip_list.txt` dan `ip_list.csv` sebelum file temporer dihapus. Selanjutnya, skrip memanggil `generate_md.py`.
+#### 4. Pembaruan Atomik, Pembersihan Cache, & Eksekusi Generator
+1. Hasil dari `.temp_ip.txt` disalin ke `ip_list.txt` dan `ip_list.csv` jika ada perbedaan (`cmp -s`).
+2. Berkas `ip_unblock.txt` dikosongkan secara otomatis setelah seluruh entri selesai diproses.
+3. Modul `generate_md.py` dipanggil untuk memperbarui laporan `ip_list.md`.
+4. Jika ada IP yang di-unblock (`REMOVED_IPS`), skrip mengeksekusi `python3 generate_md.py --clean-cache "$REMOVED_IPS"` untuk membersihkan cache lokal.
 
-#### 6. Integrasi Git Otomatis (*Auto Push*)
-Jika `AUTO_GIT_PUSH=true`, skrip menambahkan perubahan database ke *staging area*, membuat *commit* dengan pesan terperinci, dan melakukan `git push` dengan flag `GIT_TERMINAL_PROMPT=0` guna mencegah proses tergantung (*hanging*) jika kredensial terminal belum disiapkan.
+#### 5. Integrasi Git Otomatis (*Auto Push*)
+Jika `AUTO_GIT_PUSH=true`, skrip menambahkan perubahan database ke *staging area*, membuat *commit* (dengan deteksi pesan commit khusus penambahan atau penghapusan unblock), dan melakukan `git push` secara aman menggunakan `GITHUB_TOKEN`.
 
 ---
 
@@ -174,18 +176,8 @@ def get_current_time_gmt7():
     return datetime.datetime.now(TZ_GMT7).strftime("%Y-%m-%d %H:%M:%S (GMT+7)")
 ```
 
-#### 2. Mekanisme Batch Lookup GeoIP
-Untuk efisiensi dan kepatuhan terhadap batas *rate limit* API pihak ketiga, permintaan geolokasi dikirim dalam blok 50 IP per panggilan HTTP POST:
-```python
-# Payload dikirimkan ke http://ip-api.com/batch
-payload = [
-    {
-        "query": ip,
-        "fields": "status,message,country,countryCode,regionName,city,isp,org,as,mobile,proxy,hosting,query"
-    }
-    for ip in chunk
-]
-```
+#### 2. Mekanisme Batch Lookup GeoIP & Caching
+Permintaan geolokasi dikirim dalam blok 50 IP per panggilan HTTP POST ke `http://ip-api.com/batch`. Seluruh hasil disimpan persisten di `.ip_cache.json`.
 
 #### 3. Integrasi AbuseIPDB API
 Jika variabel `ABUSEIPDB_API_KEY` tersedia, script mengambil informasi reputasi keamanan via endpoint:
@@ -222,7 +214,7 @@ Struktur penyimpanan JSON lokal dirancang terstruktur dan menyimpan *state* wakt
     "proxy": false,
     "hosting": true,
     "query": "20.24.217.162",
-    "added_at": "2026-10-09 07:35:00 (GMT+7)",
+    "added_at": "2026-10-09 10:42:58 (GMT+7)",
     "abuse_data": {
       "abuseConfidenceScore": 100,
       "totalReports": 137,
@@ -242,28 +234,24 @@ flowchart TD
     A[Mulai: bash run.sh] --> B[Inisialisasi Path & Baca .env]
     B --> C{ip_new.txt Ditemukan?}
     C -- Tidak --> D[Tampilkan Error & Keluar]
-    C -- Ya --> E[Pindai ip_new.txt vs ip_merchant.txt]
-    E --> F{Ada Konflik IP Merchant?}
+    C -- Ya --> E[Pindai Format IP & Cek IP Merchant]
+    E --> F{Ada Format Tidak Valid / Merchant?}
     F -- Ya --> G[Tampilkan Banner Peringatan & Daftar Ditolak]
     F -- Tidak --> H[Lanjutkan Proses]
     G --> H
-    H --> I[awk: Filter Exception & Merchant + Sanitasi + sort -u]
+    H --> I[awk: Filter Exception, Merchant, Unblock + Validasi IP + sort -u]
     I --> J[Tulis Hasil ke .temp_ip.txt]
     J --> K[Sinkronisasi ke ip_list.txt & ip_list.csv]
-    K --> L[Hapus File Temporer .temp_ip.txt]
-    L --> M[Cetak Metrik Penyortiran ke Terminal]
-    M --> N{generate_md.py Tersedia?}
-    N -- Ya --> O[Jalankan generate_md.py]
-    O --> P[Evaluasi .ip_cache.json]
-    P -- Ada IP Baru --> Q[Batch Request GeoIP & AbuseIPDB + Catat Timestamp GMT+7]
-    P -- Cache Lengkap --> R[Render Tabel 13 Kolom & Statistik Analitik]
-    Q --> R
-    R --> S[Perbarui Dokumen ip_list.md]
-    N -- Tidak --> T
-    S --> T{AUTO_GIT_PUSH Diaktifkan?}
-    T -- Ya --> U[git add, commit & push ke Remote Repository]
-    T -- Tidak --> V[Proses Selesai]
-    U --> V[Selesai dengan Sukses]
+    K --> L[Hapus .temp_ip.txt & Kosongkan ip_unblock.txt]
+    L --> M[Update ip_list.md via generate_md.py]
+    M --> N{Ada IP Di-unblock?}
+    N -- Ya --> O[Panggil generate_md.py --clean-cache]
+    N -- Tidak --> P[Cetak Detail & Metrik ke Terminal]
+    O --> P
+    P --> Q{AUTO_GIT_PUSH Diaktifkan?}
+    Q -- Ya --> R[git add, commit & push ke Remote Repository]
+    Q -- Tidak --> S[Selesai]
+    R --> S[Selesai dengan Sukses]
 ```
 
 ---
@@ -283,13 +271,17 @@ ABUSEIPDB_API_KEY=masukkan_api_key_disini
 
 # Aktifkan auto commit & push ke GitHub (true / false)
 AUTO_GIT_PUSH=true
+
+# Personal Access Token GitHub (opsional untuk autentikasi push)
+GITHUB_TOKEN=ghp_masukkan_token_disini
 ```
 
 ### B. Manajemen Berkas Masukan (*Input Files*)
 
-1. **Memasukkan IP Baru**: Masukkan daftar alamat IPv4 ke dalam `ip_new.txt` (satu IP per baris).
-2. **Mengecualikan IP Manual (*Whitelist*)**: Masukkan IP yang ingin dihapus atau dicegah masuk ke database ke dalam `ip_exception.txt`.
-3. **Proteksi IP Merchant Resmi**: Masukkan IP merchant ke dalam `ip_merchant.txt`. IP ini akan otomatis terdeteksi, diberi peringatan penolakan, dan tidak akan dimasukkan ke database.
+1. **Memasukkan IP Baru**: Masukkan daftar alamat IPv4 atau IPv6 ke dalam `ip_new.txt` (satu IP per baris).
+2. **Menghapus / Meng-unblock IP**: Masukkan daftar IP yang ingin dihapus dari database ke dalam `ip_unblock.txt`. Skrip akan mengeluarkan IP tersebut dari database, membersihkan cache lokalnya, dan mengosongkan berkas `ip_unblock.txt` secara otomatis.
+3. **Mengecualikan IP Manual (*Whitelist*)**: Masukkan IP yang ingin dicegah masuk ke database secara permanen ke dalam `ip_exception.txt`.
+4. **Proteksi IP Merchant Resmi**: Masukkan IP merchant ke dalam `ip_merchant.txt`. IP ini akan otomatis terdeteksi, diberi peringatan penolakan, dan diproteksi dari pemblokiran.
 
 ### C. Menjalankan Skrip
 Pastikan izin eksekusi skrip telah diberikan:
@@ -309,39 +301,50 @@ bash run.sh
 ### D. Contoh Output Eksekusi Terminal
 
 ```text
-==========================================
-    PERINGATAN: IP MERCHANT TERDETEKSI!   
-==========================================
+===================================
+PERINGATAN: FORMAT IP TIDAK VALID!
+===================================
+Ditemukan 1 entri pada ip_new.txt dengan format IP tidak valid:
+  ! [TIDAK VALID] google.com
+Seluruh entri di atas OTOMATIS DIABAIKAN dan TIDAK dimasukkan ke database.
+--------------------------------
+===================================
+PERINGATAN: IP MERCHANT TERDETEKSI!
+===================================
 Ditemukan 1 IP pada ip_new.txt yang terdaftar sebagai IP Merchant:
   - [DITOLAK] 85.187.128.33
 Seluruh IP di atas OTOMATIS DITOLAK dan TIDAK dimasukkan ke database.
-------------------------------------------
-==========================================
-         PROSES PENYORTIRAN IP            
-==========================================
-Jumlah IP sebelumnya            : 77
-Jumlah aturan pengecualian      : 2
-Jumlah IP Merchant terproteksi  : 1309
-Perubahan IP bersih             : +1
-Total IP unik sekarang          : 78
-Format database tersimpan       : ip_list.txt & ip_list.csv
-------------------------------------------
+--------------------------------
+Update data intelijen ip_list.md...
+Berhasil update ip_list.md (Total: 219 IP)
+--------------------------------
+Jumlah IP sebelumnya: 212
+Jumlah aturan pengecualian: 2
+Jumlah IP Merchant terproteksi: 1309
+Perubahan IP bersih: +7
+Total IP unik sekarang: 219
+Format database tersimpan: ip_list.txt & ip_list.csv
+--------------------------------
 Detail Penambahan IP Baru (1 IP):
   + [BARU] 34.187.181.50
-    - Skor Abuse                : 100% (50 laporan)
-    - ISP / Provider            : Google LLC
-    - Organisasi / Cloud Tenant : Google Cloud (us-west1)
-    - Negara                    : United States
-    - Provinsi                  : Oregon
-    - Kota                      : The Dalles
-    - ASN                       : AS396982 Google LLC
+    - Skor Abuse: 100% (50 laporan)
+    - ISP / Provider: Google LLC
+    - Organisasi / Cloud Tenant: Google Cloud (us-west1)
+    - Negara: United States
+    - Provinsi: Oregon
+    - Kota: The Dalles
+    - ASN: AS396982 Google LLC
     - Proxy/VPN                 : Tidak
-------------------------------------------
+
+Format IP Tidak Valid (1 IP):
+  ! [TIDAK VALID] google.com
+--------------------------------
 Memeriksa status git untuk ip_list.*...
-Melakukan auto-commit dan push ke GitHub...
-[main a1b2c3d] Update IP intelligence list (Total: 78 IPs - 2026-10-11 11:00:00)
- 3 files changed, 59 insertions(+), 56 deletions(-)
-==========================================
+Auto-commit & push ke GitHub...
+[main bd45e03] Update IP intelligence list (Total: 219 IPs - 2026-10-14 15:30:29)
+ 3 files changed, 209 insertions(+), 188 deletions(-)
+Berhasil push ke GitHub (branch: main)
+--------------------------------
 Proses selesai dengan sukses!
 ```
 
@@ -349,7 +352,7 @@ Proses selesai dengan sukses!
 
 ## 6. Praktik Terbaik & Pemeliharaan
 
-1. **Pembersihan `ip_new.txt`**: Setelah `run.sh` selesai dieksekusi dan seluruh IP telah masuk ke `ip_list.txt` dan `ip_list.csv`, Anda dapat mengosongkan atau menghapus isi `ip_new.txt` sebelum menambahkan daftar IP berikutnya.
+1. **Pembersihan `ip_new.txt`**: Setelah `run.sh` selesai dieksekusi dan seluruh IP telah masuk ke database, Anda dapat mengosongkan atau menghapus isi `ip_new.txt` sebelum menambahkan daftar IP berikutnya.
 2. **Kerahasiaan Kredensial**: Jangan pernah melakukan commit file `.env`, `ip_merchant.txt`, atau `ip_exception.txt` yang memuat data sensitif ke repositori publik. Pastikan file-file tersebut terdaftar dalam `.gitignore`.
-3. **Penyimpanan Cache**: Jangan menghapus `.ip_cache.json` kecuali jika Anda ingin memperbarui (*refresh*) seluruh data reputasi dan metadata geografis dari awal.
+3. **Penyimpanan Cache**: Berkas `.ip_cache.json` dirawat secara otomatis (entri unblock dibersihkan dan entri baru di-cache). Jangan menghapus `.ip_cache.json` secara manual kecuali jika ingin memperbarui seluruh data intelijen dari awal.
 4. **Pembaruan Berkala**: Skrip `run.sh` dapat dijadwalkan secara berkala menggunakan `cron` untuk otomatisasi sinkronisasi data intelijen ancaman IP secara berkelanjutan.

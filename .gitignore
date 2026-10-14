@@ -3,3 +3,6 @@
 ip_merchant.txt
 ip_exception.txt
 ip_new.txt
+.DS_Store
+__pycache__/
+*.pyc

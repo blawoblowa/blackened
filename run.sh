@@ -100,14 +100,82 @@ if [ -n "$MERCHANT_CONFLICTS" ]; then
     echo "--------------------------------"
 fi
 
+# 2. Deteksi apakah ada baris dengan format IP tidak valid di dalam ip_new.txt
+INVALID_IPS=$(awk '
+    function is_valid_ipv4(ip,   octets, n, i, v) {
+        if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+        n = split(ip, octets, ".")
+        if (n != 4) return 0
+        for (i = 1; i <= 4; i++) {
+            v = octets[i] + 0
+            if (v < 0 || v > 255) return 0
+            if (octets[i] ~ /^0[0-9]+$/) return 0
+        }
+        return 1
+    }
+    function is_valid_ipv6(ip) {
+        if (ip !~ /^[0-9a-fA-F:]+$/) return 0
+        if (ip !~ /:/) return 0
+        if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
+        return 0
+    }
+    function is_valid_ip(ip) {
+        return is_valid_ipv4(ip) || is_valid_ipv6(ip)
+    }
+
+    {
+        gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+        if ($0 != "" && !is_valid_ip($0)) {
+            print $0
+        }
+    }
+' "$NEW_IP" 2>/dev/null | sort -u)
+
+if [ -n "$INVALID_IPS" ]; then
+    INVALID_COUNT=$(echo "$INVALID_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo "==================================="
+    echo "PERINGATAN: FORMAT IP TIDAK VALID!"
+    echo "==================================="
+    echo "Ditemukan $INVALID_COUNT entri pada ip_new.txt dengan format IP tidak valid:"
+    echo "$INVALID_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            echo "  ! [TIDAK VALID] $ip"
+        fi
+    done
+    echo "Seluruh entri di atas OTOMATIS DIABAIKAN dan TIDAK dimasukkan ke database."
+    echo "--------------------------------"
+fi
+
 # Hitung jumlah IP sebelum proses
 COUNT_BEFORE=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 COUNT_EXCEPTION=$(grep -v '^[[:space:]]*$' "$EXCEPTION_IP" 2>/dev/null | wc -l | tr -d ' ')
 COUNT_MERCHANT=$(grep -v '^[[:space:]]*$' "$MERCHANT_IP" 2>/dev/null | wc -l | tr -d ' ')
 
-# Gabungkan ip_list.txt dan ip_new.txt, filter pengecualian (ip_exception.txt) & proteksi merchant (ip_merchant.txt),
+# Gabungkan ip_list.txt dan ip_new.txt, validasi format IP, filter pengecualian (ip_exception.txt),
+# proteksi merchant (ip_merchant.txt) & unblock (ip_unblock.txt),
 # bersihkan whitespace, baris kosong & UTF-8 BOM, lalu urutkan secara numerik per oktet IP (unique)
 awk '
+    function is_valid_ipv4(ip,   octets, n, i, v) {
+        if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+        n = split(ip, octets, ".")
+        if (n != 4) return 0
+        for (i = 1; i <= 4; i++) {
+            v = octets[i] + 0
+            if (v < 0 || v > 255) return 0
+            if (octets[i] ~ /^0[0-9]+$/) return 0
+        }
+        return 1
+    }
+    function is_valid_ipv6(ip) {
+        if (ip !~ /^[0-9a-fA-F:]+$/) return 0
+        if (ip !~ /:/) return 0
+        if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
+        return 0
+    }
+    function is_valid_ip(ip) {
+        return is_valid_ipv4(ip) || is_valid_ipv6(ip)
+    }
+
     # Tahap 1: Baca file ip_exception.txt
     FILENAME == ARGV[1] {
         gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
@@ -129,7 +197,7 @@ awk '
     # Tahap 4: Baca gabungan ip_list.txt & ip_new.txt
     {
         gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
-        if ($0 != "" && !($0 in exc) && !($0 in merchant) && !($0 in unblock)) {
+        if ($0 != "" && is_valid_ip($0) && !($0 in exc) && !($0 in merchant) && !($0 in unblock)) {
             print $0
         }
     }
@@ -138,6 +206,27 @@ awk '
 
 # Analisis detail status setiap IP masukan dari ip_new.txt
 NEW_INPUT_ANALYSIS=$(awk '
+    function is_valid_ipv4(ip,   octets, n, i, v) {
+        if (ip !~ /^([0-9]{1,3}\.){3}[0-9]{1,3}$/) return 0
+        n = split(ip, octets, ".")
+        if (n != 4) return 0
+        for (i = 1; i <= 4; i++) {
+            v = octets[i] + 0
+            if (v < 0 || v > 255) return 0
+            if (octets[i] ~ /^0[0-9]+$/) return 0
+        }
+        return 1
+    }
+    function is_valid_ipv6(ip) {
+        if (ip !~ /^[0-9a-fA-F:]+$/) return 0
+        if (ip !~ /:/) return 0
+        if (ip ~ /^([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4}$/) return 1
+        return 0
+    }
+    function is_valid_ip(ip) {
+        return is_valid_ipv4(ip) || is_valid_ipv6(ip)
+    }
+
     # Tahap 1: Baca file ip_merchant.txt
     FILENAME == ARGV[1] {
         gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
@@ -160,7 +249,9 @@ NEW_INPUT_ANALYSIS=$(awk '
     {
         gsub(/\r/, ""); gsub(/^\xef\xbb\xbf/, ""); gsub(/^[[:space:]]+|[[:space:]]+$/, "")
         if ($0 != "" && !seen[$0]++) {
-            if ($0 in merchant) {
+            if (!is_valid_ip($0)) {
+                print "INVALID:" $0
+            } else if ($0 in merchant) {
                 # Sudah diproses pada banner peringatan merchant
                 next
             } else if ($0 in exc) {
@@ -177,6 +268,7 @@ NEW_INPUT_ANALYSIS=$(awk '
 NEW_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^NEW:' | cut -d: -f2-)
 EXIST_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^EXIST:' | cut -d: -f2-)
 EXC_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^EXC:' | cut -d: -f2-)
+INVALID_INPUT_IPS=$(echo "$NEW_INPUT_ANALYSIS" | grep '^INVALID:' | cut -d: -f2-)
 
 # Deteksi IP yang dikeluarkan dari database lama (jika ada)
 REMOVED_IPS=$(awk '
@@ -224,11 +316,14 @@ fi
 COUNT_AFTER=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr -d ' ')
 DIFF=$((COUNT_AFTER - COUNT_BEFORE))
 
-# Update ip_list.md secara otomatis & lengkapi data intelijen IP baru ke cache
+# Update ip_list.md secara otomatis & bersihkan cache IP yang di-unblock
 echo "--------------------------------"
 if [ -f "$GENERATE_MD_SCRIPT" ]; then
     echo "Update data intelijen ip_list.md..."
     python3 "$GENERATE_MD_SCRIPT"
+    if [ -n "$REMOVED_IPS" ]; then
+        python3 "$GENERATE_MD_SCRIPT" --clean-cache "$REMOVED_IPS"
+    fi
 fi
 echo "--------------------------------"
 echo "Jumlah IP sebelumnya: $COUNT_BEFORE"
@@ -281,6 +376,18 @@ if [ -n "$EXC_IPS" ]; then
     echo "$EXC_IPS" | while read -r ip; do
         if [ -n "$ip" ]; then
             echo "  - [DILEWATI] $ip"
+        fi
+    done
+fi
+
+# Tampilkan entri yang dilewati karena format IP tidak valid
+if [ -n "$INVALID_INPUT_IPS" ]; then
+    COUNT_INV=$(echo "$INVALID_INPUT_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
+    echo ""
+    echo "Format IP Tidak Valid ($COUNT_INV IP):"
+    echo "$INVALID_INPUT_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            echo "  ! [TIDAK VALID] $ip"
         fi
     done
 fi
