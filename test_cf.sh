@@ -84,6 +84,41 @@ format_json() {
     fi
 }
 
+# Helper: Menunggu konfirmasi operasi bulk asinkron Cloudflare
+wait_for_bulk_operation() {
+    local op_id="$1"
+    if [ -z "$op_id" ]; then
+        return 0
+    fi
+
+    echo "Menunggu konfirmasi operasi Cloudflare (ID: $op_id)..."
+    for i in {1..6}; do
+        sleep 1
+        local op_resp op_status op_error
+        op_resp=$(curl -s -X GET \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/rules/lists/bulk_operations/${op_id}" \
+            "${AUTH_HEADERS[@]}" \
+            -H "Content-Type: application/json")
+
+        op_status=$(echo "$op_resp" | python3 -c "import sys, json; print(json.load(sys.stdin).get('result', {}).get('status', ''))" 2>/dev/null)
+        if [ "$op_status" = "completed" ]; then
+            echo "Status Operasi Cloudflare: SUKSES (completed)"
+            return 0
+        elif [ "$op_status" = "failed" ]; then
+            op_error=$(echo "$op_resp" | python3 -c "import sys, json; print(json.load(sys.stdin).get('result', {}).get('error', 'Unknown error'))" 2>/dev/null)
+            echo "Status Operasi Cloudflare: GAGAL (failed)"
+            echo "Penyebab Error: $op_error"
+            if [[ "$op_error" =~ "maximum number of items" ]]; then
+                echo "--------------------------------"
+                echo "PERINGATAN KUOTA AKUN PENUH:"
+                echo "Akun Cloudflare ini telah mencapai batas maksimum (10.000 IP item) di seluruh Rules Lists."
+                echo "Jalankan '$0 info' untuk melihat rincian penggunaan kuota akun."
+            fi
+            return 1
+        fi
+    done
+}
+
 # Fungsi: Cari ID item berdasarkan IP di Cloudflare List
 find_item_id_by_ip() {
     local ip="$1"
@@ -95,19 +130,20 @@ find_item_id_by_ip() {
         -H "Content-Type: application/json")
 
     if command -v python3 >/dev/null 2>&1; then
-        python3 -c "
+        echo "$response" | python3 -c '
 import sys, json
+target_ip = sys.argv[1].strip()
 try:
-    data = json.loads('''$response''')
-    items = data.get('result', [])
+    data = json.load(sys.stdin)
+    items = data.get("result", [])
     for it in items:
-        if it.get('ip') == '$ip':
-            print(it.get('id', ''))
+        if it.get("ip") == target_ip:
+            print(it.get("id", ""))
             sys.exit(0)
 except Exception:
     pass
-print('')
-" 2>/dev/null
+print("")
+' "$ip" 2>/dev/null
     else
         echo "$response" | grep -o '"id":"[a-f0-9]*"' | head -n1 | cut -d'"' -f4
     fi
@@ -150,6 +186,13 @@ action_add() {
     echo "Response Body:"
     format_json "$body"
     echo "--------------------------------"
+
+    local op_id
+    op_id=$(echo "$body" | python3 -c "import sys, json; print(json.load(sys.stdin).get('result', {}).get('operation_id', ''))" 2>/dev/null)
+    if [ -n "$op_id" ]; then
+        wait_for_bulk_operation "$op_id"
+        echo "--------------------------------"
+    fi
 }
 
 # Fungsi: Hapus IP dari List (DELETE via Item ID)
@@ -197,6 +240,13 @@ action_delete() {
     echo "Response Body:"
     format_json "$body"
     echo "--------------------------------"
+
+    local op_id
+    op_id=$(echo "$body" | python3 -c "import sys, json; print(json.load(sys.stdin).get('result', {}).get('operation_id', ''))" 2>/dev/null)
+    if [ -n "$op_id" ]; then
+        wait_for_bulk_operation "$op_id"
+        echo "--------------------------------"
+    fi
 }
 
 # Fungsi: Cari / Cek IP di List (GET)
@@ -226,7 +276,7 @@ action_search() {
     echo "--------------------------------"
 }
 
-# Fungsi: Ambil Informasi & Total Item List (GET metadata)
+# Fungsi: Ambil Informasi & Total Item List (GET metadata) beserta kuota akun
 action_info() {
     echo "Mengambil Informasi & Total IP List ($CLOUDFLARE_LIST_ID)..."
     echo "--------------------------------"
@@ -246,15 +296,46 @@ action_info() {
     echo "Response Body:"
     format_json "$body"
 
+    # Ambil seluruh list di akun untuk memeriksa batas kuota akun (maksimal 10.000 item)
+    local all_lists_resp
+    all_lists_resp=$(curl -s -X GET "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/rules/lists" \
+        "${AUTH_HEADERS[@]}" \
+        -H "Content-Type: application/json")
+
     if command -v python3 >/dev/null 2>&1; then
-        local total_items list_name
-        total_items=$(python3 -c "import sys, json; data = json.loads('''$body'''); print(data.get('result', {}).get('num_items', ''))" 2>/dev/null)
-        list_name=$(python3 -c "import sys, json; data = json.loads('''$body'''); print(data.get('result', {}).get('name', ''))" 2>/dev/null)
-        if [ -n "$total_items" ]; then
-            echo "--------------------------------"
-            echo "Nama List      : $list_name"
-            echo "Total IP (Result): $total_items IP"
-        fi
+        python3 -c '
+import sys, json
+
+try:
+    target_data = json.loads(sys.argv[1])
+    target_res = target_data.get("result", {})
+    t_name = target_res.get("name", "N/A")
+    t_items = target_res.get("num_items", 0)
+
+    print("--------------------------------")
+    print(f"Nama List Target : {t_name}")
+    print(f"Total IP di List : {t_items} IP")
+    print("--------------------------------")
+
+    all_data = json.loads(sys.argv[2])
+    lists = all_data.get("result", [])
+    total_acc_items = 0
+    print("Rincian Rules Lists di Akun Cloudflare:")
+    for l in lists:
+        name = l.get("name", "")
+        cnt = l.get("num_items", 0)
+        total_acc_items += cnt
+        lid = l.get("id", "")
+        print(f"  - {name} ({lid}): {cnt} IP")
+
+    print("--------------------------------")
+    print(f"Total Item di Seluruh Akun: {total_acc_items} / 10.000 IP")
+    if total_acc_items >= 10000:
+        print("PERINGATAN: Kuota Rules Lists akun telah MENCAPAI BATAS MAKSIMUM (10.000 IP).")
+        print("Cloudflare akan MENOLAK penambahan IP baru sampai kuota IP pada akun dikurangi.")
+except Exception as e:
+    pass
+' "$body" "$all_lists_resp"
     fi
     echo "--------------------------------"
 }

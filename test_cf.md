@@ -238,3 +238,5 @@ Response Body:
 | **HTTP 404 Not Found** | `CLOUDFLARE_ACCOUNT_ID` atau List ID (`CLOUDFLARE_LIST_ID`) salah. | Periksa kembali ID akun Cloudflare dan ID daftar pada dashboard. |
 | **HTTP 400 Bad Request** | Format IP tidak valid atau IP sudah ada di dalam list (duplikasi). | Pastikan input IP memenuhi standar IPv4/IPv6 valid. Periksa duplikasi dengan `./test_cf.sh search <ip>`. |
 | **HTTP 409 Conflict** | Ada operasi bulk lain yang sedang berlangsung di akun tersebut. | Tunggu beberapa detik hingga Cloudflare menyelesaikan operasi sebelumnya, kemudian jalankan kembali. |
+| **Operasi Gagal: This account has reached the maximum number of items** | Total akumulasi IP dari seluruh Rules Lists di akun Cloudflare telah mencapai batas maksimum kuota (10.000 IP item). | Kurangi atau hapus IP tidak terpakai dari list lain di akun (seperti list `known_ip_vpn`), atau upgrade paket Cloudflare. |
+
