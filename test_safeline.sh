@@ -56,7 +56,7 @@ validate_config() {
         [ -z "$SAFELINE_URL" ] && echo "  - SAFELINE_URL (Belum diisi)"
         [ -z "$SAFELINE_TOKEN" ] && echo "  - SAFELINE_TOKEN (Belum diisi)"
         [ -z "$SAFELINE_GROUP" ] && echo "  - SAFELINE_GROUP (Belum diisi)"
-        echo "------------------------------------------"
+        echo "--------------------------------"
         exit 1
     fi
 }
@@ -140,7 +140,7 @@ action_search() {
     local target_ip="$1"
     echo "===> Mencari IP di SafeLine IP Group ($SAFELINE_GROUP)..."
     echo "Target Query : ${target_ip:-<Semua Item>}"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     local raw_data
     raw_data=$(get_ip_group_data)
@@ -180,7 +180,7 @@ try:
 
     print(f"Group ID      : {target_group} ({group_name})")
     print(f"Total IP      : {len(ips)} IP (Laporan API: {total})")
-    print("------------------------------------------")
+    print("--------------------------------")
 
     if target_ip:
         if target_ip in ips:
@@ -198,7 +198,7 @@ except Exception as e:
     else
         format_json "$raw_data"
     fi
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Fungsi: Tambah IP ke SafeLine IP Group (PUT array dengan mempertahankan seluruh IP existing)
@@ -214,7 +214,7 @@ action_add() {
 
     echo "===> Menambahkan IP ke SafeLine WAF Group ($SAFELINE_GROUP)..."
     echo "Target IP    : $target_ip"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     local raw_data
     raw_data=$(get_ip_group_data)
@@ -326,7 +326,7 @@ except Exception as e:
     else
         echo "Peringatan: SafeLine mengembalikan HTTP status $http_code."
     fi
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Fungsi: Hapus IP dari SafeLine IP Group (PUT array tanpa IP tersebut)
@@ -341,7 +341,7 @@ action_delete() {
 
     echo "===> Menghapus IP dari SafeLine WAF Group ($SAFELINE_GROUP)..."
     echo "Target IP    : $target_ip"
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     local raw_data
     raw_data=$(get_ip_group_data)
@@ -450,7 +450,7 @@ except Exception as e:
     else
         echo "Peringatan: SafeLine mengembalikan HTTP status $http_code."
     fi
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Fungsi: Sinkronisasi seluruh IP dari file lokal (misal: ip_list.txt) ke SafeLine WAF
@@ -462,7 +462,7 @@ action_sync() {
     fi
 
     echo "===> Sinkronisasi IP dari $source_file ke SafeLine IP Group ($SAFELINE_GROUP)..."
-    echo "------------------------------------------"
+    echo "--------------------------------"
 
     local raw_data
     raw_data=$(get_ip_group_data)
@@ -566,7 +566,7 @@ except Exception as e:
     else
         echo "Peringatan: SafeLine mengembalikan HTTP status $http_code."
     fi
-    echo "------------------------------------------"
+    echo "--------------------------------"
 }
 
 # Tampilkan petunjuk penggunaan
