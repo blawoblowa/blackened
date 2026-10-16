@@ -139,7 +139,6 @@ get_ip_group_data() {
 action_search() {
     local target_ip="$1"
     echo "===> Mencari IP di SafeLine IP Group ($SAFELINE_GROUP)..."
-    echo "Target URL   : $BASE_URL"
     echo "Target Query : ${target_ip:-<Semua Item>}"
     echo "------------------------------------------"
 
@@ -214,7 +213,6 @@ action_add() {
     fi
 
     echo "===> Menambahkan IP ke SafeLine WAF Group ($SAFELINE_GROUP)..."
-    echo "Target URL   : $BASE_URL"
     echo "Target IP    : $target_ip"
     echo "------------------------------------------"
 
@@ -342,7 +340,6 @@ action_delete() {
     fi
 
     echo "===> Menghapus IP dari SafeLine WAF Group ($SAFELINE_GROUP)..."
-    echo "Target URL   : $BASE_URL"
     echo "Target IP    : $target_ip"
     echo "------------------------------------------"
 
@@ -465,7 +462,6 @@ action_sync() {
     fi
 
     echo "===> Sinkronisasi IP dari $source_file ke SafeLine IP Group ($SAFELINE_GROUP)..."
-    echo "Target URL   : $BASE_URL"
     echo "------------------------------------------"
 
     local raw_data
