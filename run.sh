@@ -5,15 +5,61 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 LIST_IP_TXT="$DIR/ip_list.txt"
 LIST_IP_CSV="$DIR/ip_list.csv"
-NEW_IP="$DIR/ip_new.txt"
-UNBLOCK_IP="$DIR/ip_unblock.txt"
+# (CR-BLOKOTO-01 tahap 2) Berkas masukan bisa diganti lewat env; bawaan = perilaku lama (dipakai /block & /unblock WA).
+# Antrean blok otomatis memakai berkas sendiri per IP sehingga tidak pernah menyentuh ip_new.txt / ip_unblock.txt milik WA.
+NEW_IP="${NEW_IP_FILE:-$DIR/ip_new.txt}"
+UNBLOCK_IP="${UNBLOCK_IP_FILE:-$DIR/ip_unblock.txt}"
 EXCEPTION_IP="$DIR/ip_exception.txt"
 MERCHANT_IP="$DIR/ip_merchant.txt"
-TEMP_FILE="$DIR/.temp_ip.txt"
+TEMP_FILE=""   # (CR-BLOKOTO-01) dibuat unik per proses dengan mktemp setelah kunci didapat (dulu .temp_ip.txt bersama)
 GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 ENV_FILE="$DIR/.env"
 CF_SCRIPT="$DIR/test_cf.sh"
 SL_SCRIPT="$DIR/test_safeline.sh"
+
+# (CR-BLOKOTO-01 tahap 2) KUNCI TUNGGAL: /block, /unblock, dan antrean blok otomatis dijalankan SATU PER SATU.
+# Di kontainer (Linux) dipakai flock pada $DIR/.run.lock — kunci lepas otomatis saat proses selesai/mati.
+# Bila flock tidak ada (mis. dijalankan manual di macOS), dipakai kunci folder $DIR/.run.lock.d (mkdir atomik);
+# kunci folder yang lebih tua dari RUN_LOCK_STALE detik (bawaan 900) dianggap sisa proses mati dan dibersihkan.
+# Catatan: kunci host (mkdir) dan kunci kontainer (flock) tidak saling melihat — saat bot berjalan, jalankan run.sh lewat kontainer.
+RUN_LOCK_WAIT="${RUN_LOCK_WAIT:-300}"
+LOCK_DIR_FALLBACK=""
+SORT_TMP=""
+bersihkan_run() {
+    [ -n "$TEMP_FILE" ] && rm -f "$TEMP_FILE"
+    [ -n "$SORT_TMP" ] && rm -f "$SORT_TMP"
+    [ -n "$LOCK_DIR_FALLBACK" ] && rm -rf "$LOCK_DIR_FALLBACK"
+}
+trap bersihkan_run EXIT
+if command -v flock >/dev/null 2>&1; then
+    exec 9>"$DIR/.run.lock"
+    if ! flock -w "$RUN_LOCK_WAIT" 9; then
+        echo "ERROR: run.sh sedang dipakai proses lain lebih dari $RUN_LOCK_WAIT detik. Perintah tidak dijalankan, silakan ulangi."
+        exit 75
+    fi
+else
+    _tunggu=0
+    until mkdir "$DIR/.run.lock.d" 2>/dev/null; do
+        _umur=$(( $(date +%s) - $(stat -c %Y "$DIR/.run.lock.d" 2>/dev/null || stat -f %m "$DIR/.run.lock.d" 2>/dev/null || date +%s) ))
+        if [ "$_umur" -gt "${RUN_LOCK_STALE:-900}" ]; then
+            rm -rf "$DIR/.run.lock.d"
+            continue
+        fi
+        if [ "$_tunggu" -ge "$RUN_LOCK_WAIT" ]; then
+            echo "ERROR: run.sh sedang dipakai proses lain lebih dari $RUN_LOCK_WAIT detik. Perintah tidak dijalankan, silakan ulangi."
+            exit 75
+        fi
+        sleep 1
+        _tunggu=$((_tunggu + 1))
+    done
+    LOCK_DIR_FALLBACK="$DIR/.run.lock.d"
+fi
+TEMP_FILE=$(mktemp "$DIR/.temp_ip.XXXXXX") || { echo "ERROR: gagal membuat file sementara."; exit 1; }
+
+# (CR-BLOKOTO-01, CP S5) Seluruh isi run.sh dijalankan dengan fd 9 (kunci) DITUTUP untuk proses anak: bash menyimpan salinan fd kunci
+# (close-on-exec) selama blok ini, jadi kunci tetap dipegang run.sh, tetapi proses anak yang hidup lebih lama (mis. git gc --auto di
+# latar) TIDAK ikut menahan kunci setelah run.sh selesai.
+{
 
 # Muat konfigurasi .env jika tersedia
 if [ -f "$ENV_FILE" ]; then
@@ -66,7 +112,7 @@ fi
 
 # Cek apakah file ip_new.txt ada
 if [ ! -f "$NEW_IP" ]; then
-    echo "Error: File ip_new.txt tidak ditemukan!"
+    echo "Error: File $(basename "$NEW_IP") tidak ditemukan!"
     exit 1
 fi
 
@@ -153,6 +199,7 @@ COUNT_BEFORE=$(grep -v '^[[:space:]]*$' "$LIST_IP_TXT" 2>/dev/null | wc -l | tr 
 COUNT_EXCEPTION=$(grep -v '^[[:space:]]*$' "$EXCEPTION_IP" 2>/dev/null | wc -l | tr -d ' ')
 COUNT_MERCHANT=$(grep -v '^[[:space:]]*$' "$MERCHANT_IP" 2>/dev/null | wc -l | tr -d ' ')
 
+SORT_TMP=$(mktemp "$DIR/.sort_ip.XXXXXX") || { echo "ERROR: gagal membuat file sementara."; exit 1; }
 # Gabungkan ip_list.txt dan ip_new.txt, validasi format IP, filter pengecualian (ip_exception.txt),
 # proteksi merchant (ip_merchant.txt) & unblock (ip_unblock.txt),
 # bersihkan whitespace, baris kosong & UTF-8 BOM, lalu urutkan secara numerik per oktet IP (unique)
@@ -203,8 +250,14 @@ awk '
             print $0
         }
     }
-' "$EXCEPTION_IP" "$MERCHANT_IP" "$UNBLOCK_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) \
-    | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u > "$TEMP_FILE"
+' "$EXCEPTION_IP" "$MERCHANT_IP" "$UNBLOCK_IP" <(cat "$LIST_IP_TXT" "$NEW_IP" 2>/dev/null) > "$SORT_TMP"
+# (CR-BLOKOTO-01) Perbaikan sort IPv6: dulu SEMUA baris diurutkan "sort -n -t . -k1..-k4 -u" sehingga dua IPv6 yang
+# berawalan angka sama (mis. 2400:9800:1::1 dan 2400:9800:2::2) dianggap kembar dan salah satunya HILANG dari database.
+# Kini IPv4 tetap diurutkan numerik per oktet; IPv6 diurutkan terpisah (unik persis) dan ditaruh setelah IPv4.
+{
+    grep -v ':' "$SORT_TMP" | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 -u
+    grep ':' "$SORT_TMP" | sort -u
+} > "$TEMP_FILE"
 
 # Analisis detail status setiap IP masukan dari ip_new.txt
 NEW_INPUT_ANALYSIS=$(awk '
@@ -503,9 +556,9 @@ if [ "$AUTO_PUSH_LOWER" = "true" ] || [ "$AUTO_PUSH_LOWER" = "1" ] || [ "$AUTO_P
             COMMIT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
             echo "Auto-commit & push ke GitHub..."
             if [ -n "$REMOVED_IPS" ] && [ -z "$NEW_IPS" ]; then
-                git commit -m "Remove IP from intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
+                git commit -m "Remove IP from intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})${AUTO_SOURCE:+ [sumber: $AUTO_SOURCE]}"
             else
-                git commit -m "Update IP intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})"
+                git commit -m "Update IP intelligence list (Total: ${COUNT_AFTER} IPs - ${COMMIT_DATE})${AUTO_SOURCE:+ [sumber: $AUTO_SOURCE]}"
             fi
             CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
 
@@ -542,3 +595,4 @@ fi
 
 echo "--------------------------------"
 echo "Done!"
+} 9>&-
