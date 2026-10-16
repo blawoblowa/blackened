@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 255 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-16 07:37:44 (GMT+7)
+- **Total IP Terverifikasi**: 252 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-16 07:44:48 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,36 +17,36 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 164 | 64.3% | Aktif dilaporkan melakukan serangan siber |
-| **Sedang (Suspicious)** | 1% - 49% | 64 | 25.1% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 27 | 10.6% | Tidak ada catatan laporan serangan aktif |
+| **Tinggi (High Risk)** | >= 50% | 162 | 64.3% | Aktif dilaporkan melakukan serangan siber |
+| **Sedang (Suspicious)** | 1% - 49% | 64 | 25.4% | Terindikasi aktivitas anomali / mencurigakan |
+| **Bersih / Rendah (Clean)** | 0% | 26 | 10.3% | Tidak ada catatan laporan serangan aktif |
 
-*Total akumulasi laporan insiden keamanan global yang tercatat: **169,598 laporan**.*
+*Total akumulasi laporan insiden keamanan global yang tercatat: **169,545 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 191 | 74.9% |
-| **Residential / ISP** | 63 | 24.7% |
+| **Data Center / Hosting** | 188 | 74.6% |
+| **Residential / ISP** | 63 | 25.0% |
 | **Mobile / Cellular** | 1 | 0.4% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | United States | 56 | 22.0% |
-| 2 | The Netherlands | 44 | 17.3% |
-| 3 | Indonesia | 23 | 9.0% |
+| 1 | United States | 55 | 21.8% |
+| 2 | The Netherlands | 43 | 17.1% |
+| 3 | Indonesia | 23 | 9.1% |
 | 4 | Australia | 17 | 6.7% |
-| 5 | Japan | 14 | 5.5% |
+| 5 | Japan | 14 | 5.6% |
 
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Microsoft Corporation | 48 | 18.8% |
-| 2 | Google LLC | 43 | 16.9% |
+| 1 | Microsoft Corporation | 48 | 19.0% |
+| 2 | Google LLC | 42 | 16.7% |
 | 3 | Alex Largman | 17 | 6.7% |
-| 4 | Fast Servers (Pty) Ltd | 12 | 4.7% |
-| 5 | DigitalOcean, LLC | 11 | 4.3% |
+| 4 | Fast Servers (Pty) Ltd | 12 | 4.8% |
+| 5 | DigitalOcean, LLC | 11 | 4.4% |
 
 ---
 
@@ -54,63 +54,63 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 | No | IP Address | Skor Abuse | Total Laporan | Tipe | ISP / Provider | Organisasi / Cloud Tenant | Negara | Provinsi / Wilayah | Kota | ASN | Proxy/VPN | Waktu Ditambahkan |
 | :-: | :--- | :-: | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: | :--- |
-| 1 | `4.224.122.112` | 100% | 707 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 2 | `4.240.25.22` | 100% | 2,013 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 3 | `5.183.255.19` | 4% | 7 | Residential / ISP | Alex Largman | TrafficTransitSolution LLC | The Netherlands | North Holland | Amsterdam | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 4 | `5.183.255.32` | 21% | 5 | Residential / ISP | Alex Largman | TrafficTransitSolution LLC | The Netherlands | North Holland | Amsterdam | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:12:18 (GMT+7) |
-| 5 | `5.183.255.86` | 20% | 6 | Residential / ISP | Alex Largman | TrafficTransitSolution LLC | The Netherlands | North Holland | Amsterdam | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:11:32 (GMT+7) |
-| 6 | `13.70.107.184` | 100% | 2,715 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 7 | `13.70.110.189` | 100% | 177 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-12 21:59:09 (GMT+7) |
-| 8 | `14.102.84.70` | 100% | 111 | Residential / ISP | GSL Networks Pty LTD | VPN Consumer Jakarta, Indonesia | Indonesia | Jakarta | Jakarta Pusat | AS137409 GSL Networks Pty LTD | Ya | 2026-10-09 10:42:58 (GMT+7) |
-| 9 | `14.102.84.90` | 100% | 108 | Residential / ISP | GSL Networks Pty LTD | VPN Consumer Jakarta, Indonesia | Indonesia | Jakarta | Jakarta Pusat | AS137409 GSL Networks Pty LTD | Ya | 2026-10-09 10:42:58 (GMT+7) |
-| 10 | `14.102.84.209` | 100% | 110 | Residential / ISP | GSL Networks Pty LTD | VPN Consumer Jakarta, Indonesia | Indonesia | Jakarta | Jakarta Pusat | AS137409 GSL Networks Pty LTD | Ya | 2026-10-09 10:42:58 (GMT+7) |
-| 11 | `14.225.219.71` | 100% | 191 | Residential / ISP | Vietnam Posts and Telecommunications Group | VNPT | Vietnam | Hanoi | Hanoi | AS135905 VIETNAM POSTS AND TELECOMMUNICATIONS GROUP | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 12 | `18.4.4.80` | 0% | 0 | Residential / ISP | Massachusetts Institute of Technology | Massachusetts Institute of Technology | United States | Massachusetts | Cambridge | AS3 Massachusetts Institute of Technology | Tidak | 2026-10-12 12:36:20 (GMT+7) |
-| 13 | `20.24.217.162` | 100% | 137 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 14 | `20.58.177.98` | 100% | 2,783 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 15 | `20.58.186.118` | 100% | 763 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 16 | `20.58.188.171` | 100% | 393 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-14 20:40:35 (GMT+7) |
-| 17 | `20.70.173.30` | 100% | 1,918 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 18 | `20.70.184.248` | 100% | 625 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-10 11:25:03 (GMT+7) |
-| 19 | `20.92.77.159` | 100% | 2,260 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 20 | `20.92.83.244` | 100% | 1,291 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 16:17:28 (GMT+7) |
-| 21 | `20.193.50.139` | 100% | 703 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-15 16:44:01 (GMT+7) |
-| 22 | `20.193.52.123` | 100% | 193 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-13 02:03:43 (GMT+7) |
-| 23 | `20.194.5.96` | 100% | 2,031 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 24 | `20.194.96.114` | 100% | 2,452 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 25 | `20.194.96.223` | 100% | 204 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-13 06:40:46 (GMT+7) |
-| 26 | `20.197.26.190` | 100% | 501 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-13 17:08:07 (GMT+7) |
-| 27 | `20.198.74.230` | 100% | 1,945 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 28 | `20.200.208.154` | 100% | 673 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-15 16:44:01 (GMT+7) |
-| 29 | `20.200.211.114` | 100% | 1,386 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-12 17:01:20 (GMT+7) |
-| 30 | `20.201.77.247` | 100% | 1,219 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (brazilsouth) | Brazil | Sao Paulo | São Paulo | AS8075 Microsoft Corporation | Tidak | 2026-10-13 12:46:26 (GMT+7) |
-| 31 | `20.204.16.113` | 100% | 1,283 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 32 | `20.210.128.125` | 100% | 2,451 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 33 | `20.210.166.54` | 100% | 716 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 34 | `20.210.186.186` | 100% | 2,703 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 35 | `20.211.90.37` | 100% | 2,563 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 36 | `20.213.164.192` | 100% | 2,279 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-13 05:35:11 (GMT+7) |
-| 37 | `20.213.164.196` | 100% | 2,103 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 38 | `20.214.170.255` | 100% | 1,288 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 39 | `20.219.11.16` | 100% | 2,337 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 40 | `20.219.14.152` | 100% | 2,844 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 41 | `20.219.160.77` | 100% | 1,090 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 42 | `20.219.194.129` | 100% | 343 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-12 08:53:15 (GMT+7) |
-| 43 | `20.239.176.5` | 100% | 1,131 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak | 2026-10-11 05:54:43 (GMT+7) |
-| 44 | `20.249.5.100` | 100% | 2,855 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 45 | `23.20.70.198` | 4% | 1 | Data Center / Hosting | Amazon.com | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-14 15:30:21 (GMT+7) |
-| 46 | `23.100.83.23` | 100% | 2,277 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralus) | United States | Iowa | Des Moines | AS8075 Microsoft Corporation | Tidak | 2026-10-12 16:40:07 (GMT+7) |
-| 47 | `23.132.132.30` | 3% | 1 | Data Center / Hosting | Uscloud Inc | Arosscloud Inc | United States | Colorado | Denver | AS402169 Uscloud Inc | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 48 | `23.132.164.29` | 100% | 340 | Data Center / Hosting | Netiface America | 10GIG.HOST | The Netherlands | North Holland | Amsterdam | AS401626 Netiface America, Inc. | Tidak | 2026-10-13 05:35:11 (GMT+7) |
-| 49 | `34.7.203.103` | 100% | 36 | Data Center / Hosting | Google LLC | Google Cloud (europe-west4) | Netherlands | Groningen | Groningen | AS396982 Google LLC | Tidak | 2026-10-15 09:31:03 (GMT+7) |
-| 50 | `34.19.238.132` | 100% | 52 | Data Center / Hosting | Google LLC | Google Cloud (northamerica-northeast1) | Canada | Quebec | Montreal | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 51 | `34.31.139.148` | 66% | 10 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-14 21:21:36 (GMT+7) |
-| 52 | `34.69.36.57` | 100% | 49 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-11 12:08:07 (GMT+7) |
-| 53 | `34.78.64.142` | 100% | 619 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-10 21:13:04 (GMT+7) |
-| 54 | `34.84.50.46` | 100% | 114 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 55 | `34.85.111.243` | 100% | 42 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-11 12:08:07 (GMT+7) |
-| 56 | `34.104.255.36` | 100% | 23 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-14 23:27:36 (GMT+7) |
-| 57 | `34.107.43.64` | 100% | 37 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-16 07:37:44 (GMT+7) |
+| 1 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 2 | `4.224.122.112` | 100% | 707 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 3 | `4.240.25.22` | 100% | 2,013 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 4 | `5.183.255.19` | 4% | 7 | Residential / ISP | Alex Largman | TrafficTransitSolution LLC | The Netherlands | North Holland | Amsterdam | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 5 | `5.183.255.32` | 21% | 5 | Residential / ISP | Alex Largman | TrafficTransitSolution LLC | The Netherlands | North Holland | Amsterdam | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:12:18 (GMT+7) |
+| 6 | `5.183.255.86` | 20% | 6 | Residential / ISP | Alex Largman | TrafficTransitSolution LLC | The Netherlands | North Holland | Amsterdam | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:11:32 (GMT+7) |
+| 7 | `13.70.107.184` | 100% | 2,715 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 8 | `13.70.110.189` | 100% | 177 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-12 21:59:09 (GMT+7) |
+| 9 | `14.102.84.70` | 100% | 111 | Residential / ISP | GSL Networks Pty LTD | VPN Consumer Jakarta, Indonesia | Indonesia | Jakarta | Jakarta Pusat | AS137409 GSL Networks Pty LTD | Ya | 2026-10-09 10:42:58 (GMT+7) |
+| 10 | `14.102.84.90` | 100% | 108 | Residential / ISP | GSL Networks Pty LTD | VPN Consumer Jakarta, Indonesia | Indonesia | Jakarta | Jakarta Pusat | AS137409 GSL Networks Pty LTD | Ya | 2026-10-09 10:42:58 (GMT+7) |
+| 11 | `14.102.84.209` | 100% | 110 | Residential / ISP | GSL Networks Pty LTD | VPN Consumer Jakarta, Indonesia | Indonesia | Jakarta | Jakarta Pusat | AS137409 GSL Networks Pty LTD | Ya | 2026-10-09 10:42:58 (GMT+7) |
+| 12 | `14.225.219.71` | 100% | 191 | Residential / ISP | Vietnam Posts and Telecommunications Group | VNPT | Vietnam | Hanoi | Hanoi | AS135905 VIETNAM POSTS AND TELECOMMUNICATIONS GROUP | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 13 | `18.4.4.80` | 0% | 0 | Residential / ISP | Massachusetts Institute of Technology | Massachusetts Institute of Technology | United States | Massachusetts | Cambridge | AS3 Massachusetts Institute of Technology | Tidak | 2026-10-12 12:36:20 (GMT+7) |
+| 14 | `20.24.217.162` | 100% | 137 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 15 | `20.58.177.98` | 100% | 2,783 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 16 | `20.58.186.118` | 100% | 763 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 17 | `20.58.188.171` | 100% | 393 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-14 20:40:35 (GMT+7) |
+| 18 | `20.70.173.30` | 100% | 1,918 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 19 | `20.70.184.248` | 100% | 625 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-10 11:25:03 (GMT+7) |
+| 20 | `20.92.77.159` | 100% | 2,260 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 21 | `20.92.83.244` | 100% | 1,291 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 16:17:28 (GMT+7) |
+| 22 | `20.193.50.139` | 100% | 703 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-15 16:44:01 (GMT+7) |
+| 23 | `20.193.52.123` | 100% | 193 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-13 02:03:43 (GMT+7) |
+| 24 | `20.194.5.96` | 100% | 2,031 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 25 | `20.194.96.114` | 100% | 2,452 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 26 | `20.194.96.223` | 100% | 204 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-13 06:40:46 (GMT+7) |
+| 27 | `20.197.26.190` | 100% | 501 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-13 17:08:07 (GMT+7) |
+| 28 | `20.198.74.230` | 100% | 1,945 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 29 | `20.200.208.154` | 100% | 673 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-15 16:44:01 (GMT+7) |
+| 30 | `20.200.211.114` | 100% | 1,386 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-12 17:01:20 (GMT+7) |
+| 31 | `20.201.77.247` | 100% | 1,219 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (brazilsouth) | Brazil | Sao Paulo | São Paulo | AS8075 Microsoft Corporation | Tidak | 2026-10-13 12:46:26 (GMT+7) |
+| 32 | `20.204.16.113` | 100% | 1,283 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 33 | `20.210.128.125` | 100% | 2,451 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 34 | `20.210.166.54` | 100% | 716 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 35 | `20.210.186.186` | 100% | 2,703 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 36 | `20.211.90.37` | 100% | 2,563 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 37 | `20.213.164.192` | 100% | 2,279 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-13 05:35:11 (GMT+7) |
+| 38 | `20.213.164.196` | 100% | 2,103 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (australiaeast) | Australia | New South Wales | The Rocks | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 39 | `20.214.170.255` | 100% | 1,288 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 40 | `20.219.11.16` | 100% | 2,337 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 41 | `20.219.14.152` | 100% | 2,844 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 42 | `20.219.160.77` | 100% | 1,090 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 43 | `20.219.194.129` | 100% | 343 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralindia) | India | Maharashtra | Pune | AS8075 Microsoft Corporation | Tidak | 2026-10-12 08:53:15 (GMT+7) |
+| 44 | `20.239.176.5` | 100% | 1,131 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak | 2026-10-11 05:54:43 (GMT+7) |
+| 45 | `20.249.5.100` | 100% | 2,855 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (koreacentral) | South Korea | Seoul | Seoul | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 46 | `23.20.70.198` | 4% | 1 | Data Center / Hosting | Amazon.com | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-14 15:30:21 (GMT+7) |
+| 47 | `23.100.83.23` | 100% | 2,277 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralus) | United States | Iowa | Des Moines | AS8075 Microsoft Corporation | Tidak | 2026-10-12 16:40:07 (GMT+7) |
+| 48 | `23.132.132.30` | 3% | 1 | Data Center / Hosting | Uscloud Inc | Arosscloud Inc | United States | Colorado | Denver | AS402169 Uscloud Inc | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 49 | `23.132.164.29` | 100% | 340 | Data Center / Hosting | Netiface America | 10GIG.HOST | The Netherlands | North Holland | Amsterdam | AS401626 Netiface America, Inc. | Tidak | 2026-10-13 05:35:11 (GMT+7) |
+| 50 | `34.7.203.103` | 100% | 36 | Data Center / Hosting | Google LLC | Google Cloud (europe-west4) | Netherlands | Groningen | Groningen | AS396982 Google LLC | Tidak | 2026-10-15 09:31:03 (GMT+7) |
+| 51 | `34.19.238.132` | 100% | 52 | Data Center / Hosting | Google LLC | Google Cloud (northamerica-northeast1) | Canada | Quebec | Montreal | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 52 | `34.31.139.148` | 66% | 10 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-14 21:21:36 (GMT+7) |
+| 53 | `34.69.36.57` | 100% | 49 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-11 12:08:07 (GMT+7) |
+| 54 | `34.78.64.142` | 100% | 619 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-10 21:13:04 (GMT+7) |
+| 55 | `34.84.50.46` | 100% | 114 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 56 | `34.85.111.243` | 100% | 42 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-11 12:08:07 (GMT+7) |
+| 57 | `34.104.255.36` | 100% | 23 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-14 23:27:36 (GMT+7) |
 | 58 | `34.126.123.208` | 100% | 34 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-12 17:53:27 (GMT+7) |
 | 59 | `34.126.128.161` | 100% | 56 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
 | 60 | `34.138.170.177` | 100% | 42 | Data Center / Hosting | Google LLC | Google Cloud (us-east1) | United States | South Carolina | North Charleston | AS396982 Google LLC | Tidak | 2026-10-13 02:09:52 (GMT+7) |
@@ -306,9 +306,6 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 250 | `2600:1900:4120:ceed:0:429::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west2) | United States | California | Los Angeles | AS396982 Google LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
 | 251 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
 | 252 | `2604:4300:a:30e:463d:e7f9:c8a6:d18b` | 100% | 38 | Data Center / Hosting | Nocix, LLC | Nocix, LLC | United States | Missouri | North Kansas City | AS33387 Nocix, LLC | Tidak | 2026-10-16 06:25:23 (GMT+7) |
-| 253 | `2604:a00:101:a:216:3eff:fe2f:c698` | 84% | 16 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-12 05:44:08 (GMT+7) |
-| 254 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 255 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 05:07:19 (GMT+7) |
 
 ---
 
