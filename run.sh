@@ -13,6 +13,7 @@ TEMP_FILE="$DIR/.temp_ip.txt"
 GENERATE_MD_SCRIPT="$DIR/generate_md.py"
 ENV_FILE="$DIR/.env"
 CF_SCRIPT="$DIR/test_cf.sh"
+SL_SCRIPT="$DIR/test_safeline.sh"
 
 # Muat konfigurasi .env jika tersedia
 if [ -f "$ENV_FILE" ]; then
@@ -384,6 +385,17 @@ if [ -n "$NEW_IPS" ] && [ -f "$CF_SCRIPT" ] && [ -n "$CLOUDFLARE_LIST_ID" ] && [
     done
 fi
 
+# Sinkronisasi penambahan IP baru ke SafeLine WAF IP Group (jika dikonfigurasi)
+if [ -n "$NEW_IPS" ] && [ -f "$SL_SCRIPT" ] && [ -n "$SAFELINE_URL" ] && [ -n "$SAFELINE_TOKEN" ] && [ -n "$SAFELINE_GROUP" ]; then
+    echo ""
+    echo "Sinkronisasi ke SafeLine WAF IP Group..."
+    echo "$NEW_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            bash "$SL_SCRIPT" add "$ip" "Added via Blackened Threat Intel"
+        fi
+    done
+fi
+
 # Tampilkan IP yang sudah ada sebelumnya di database
 if [ -n "$EXIST_IPS" ]; then
     COUNT_EXIST=$(echo "$EXIST_IPS" | grep -v '^[[:space:]]*$' | wc -l | tr -d ' ')
@@ -439,6 +451,17 @@ if [ -n "$REMOVED_IPS" ] && [ -f "$CF_SCRIPT" ] && [ -n "$CLOUDFLARE_LIST_ID" ] 
     echo "$REMOVED_IPS" | while read -r ip; do
         if [ -n "$ip" ]; then
             bash "$CF_SCRIPT" delete "$ip"
+        fi
+    done
+fi
+
+# Sinkronisasi penghapusan IP dari SafeLine WAF IP Group (jika dikonfigurasi)
+if [ -n "$REMOVED_IPS" ] && [ -f "$SL_SCRIPT" ] && [ -n "$SAFELINE_URL" ] && [ -n "$SAFELINE_TOKEN" ] && [ -n "$SAFELINE_GROUP" ]; then
+    echo ""
+    echo "Sinkronisasi penghapusan ke SafeLine WAF IP Group..."
+    echo "$REMOVED_IPS" | while read -r ip; do
+        if [ -n "$ip" ]; then
+            bash "$SL_SCRIPT" delete "$ip"
         fi
     done
 fi
