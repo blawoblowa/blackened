@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 399 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-21 19:12:14 (GMT+7)
+- **Total IP Terverifikasi**: 400 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-22 00:27:19 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,24 +17,24 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 282 | 70.7% | Aktif dilaporkan melakukan serangan siber |
+| **Tinggi (High Risk)** | >= 50% | 282 | 70.5% | Aktif dilaporkan melakukan serangan siber |
 | **Sedang (Suspicious)** | 1% - 49% | 75 | 18.8% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 42 | 10.5% | Tidak ada catatan laporan serangan aktif |
+| **Bersih / Rendah (Clean)** | 0% | 43 | 10.8% | Tidak ada catatan laporan serangan aktif |
 
 *Total akumulasi laporan insiden keamanan global yang tercatat: **198,003 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 314 | 78.7% |
-| **Residential / ISP** | 84 | 21.1% |
-| **Mobile / Cellular** | 1 | 0.3% |
+| **Data Center / Hosting** | 315 | 78.8% |
+| **Residential / ISP** | 84 | 21.0% |
+| **Mobile / Cellular** | 1 | 0.2% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
 | 1 | United States | 99 | 24.8% |
-| 2 | The Netherlands | 47 | 11.8% |
+| 2 | The Netherlands | 48 | 12.0% |
 | 3 | Indonesia | 34 | 8.5% |
 | 4 | Singapore | 27 | 6.8% |
 | 5 | Germany | 24 | 6.0% |
@@ -42,10 +42,10 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Google LLC | 134 | 33.6% |
+| 1 | Google LLC | 134 | 33.5% |
 | 2 | Microsoft Corporation | 52 | 13.0% |
-| 3 | Alex Largman | 17 | 4.3% |
-| 4 | DigitalOcean, LLC | 13 | 3.3% |
+| 3 | Alex Largman | 17 | 4.2% |
+| 4 | DigitalOcean, LLC | 13 | 3.2% |
 | 5 | Fast Servers (Pty) Ltd | 12 | 3.0% |
 
 ---
@@ -453,6 +453,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 397 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
 | 398 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
 | 399 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
+| 400 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
 
 ---
 
