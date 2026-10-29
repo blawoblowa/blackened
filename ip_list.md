@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 727 IP
-- **Waktu Pembaruan Terakhir**: 2026-10-29 15:24:19 (GMT+7)
+- **Total IP Terverifikasi**: 729 IP
+- **Waktu Pembaruan Terakhir**: 2026-10-29 16:01:08 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,24 +17,24 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 443 | 60.9% | Aktif dilaporkan melakukan serangan siber |
-| **Sedang (Suspicious)** | 1% - 49% | 90 | 12.4% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 194 | 26.7% | Tidak ada catatan laporan serangan aktif |
+| **Tinggi (High Risk)** | >= 50% | 443 | 60.8% | Aktif dilaporkan melakukan serangan siber |
+| **Sedang (Suspicious)** | 1% - 49% | 90 | 12.3% | Terindikasi aktivitas anomali / mencurigakan |
+| **Bersih / Rendah (Clean)** | 0% | 196 | 26.9% | Tidak ada catatan laporan serangan aktif |
 
-*Total akumulasi laporan insiden keamanan global yang tercatat: **318,976 laporan**.*
+*Total akumulasi laporan insiden keamanan global yang tercatat: **319,162 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 580 | 79.8% |
-| **Residential / ISP** | 141 | 19.4% |
+| **Data Center / Hosting** | 582 | 79.8% |
+| **Residential / ISP** | 141 | 19.3% |
 | **Mobile / Cellular** | 6 | 0.8% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | United States | 187 | 25.7% |
-| 2 | The Netherlands | 60 | 8.3% |
+| 1 | United States | 188 | 25.8% |
+| 2 | The Netherlands | 60 | 8.2% |
 | 3 | Indonesia | 57 | 7.8% |
 | 4 | Germany | 53 | 7.3% |
 | 5 | Singapore | 41 | 5.6% |
@@ -42,8 +42,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
-| 1 | Google LLC | 244 | 33.6% |
-| 2 | Microsoft Corporation | 56 | 7.7% |
+| 1 | Google LLC | 244 | 33.5% |
+| 2 | Microsoft Corporation | 57 | 7.8% |
 | 3 | Hurricane Electric LLC | 19 | 2.6% |
 | 4 | Alex Largman | 17 | 2.3% |
 | 5 | DigitalOcean, LLC | 17 | 2.3% |
@@ -483,304 +483,306 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 427 | `103.47.145.22` | 100% | 42 | Data Center / Hosting | Gaditek Associates | - | The Netherlands | Limburg | Eygelshoven | AS199457 SolidCore Hosting LTD | Ya | 2026-10-14 14:10:22 (GMT+7) |
 | 428 | `103.75.73.20` | 0% | 0 | Data Center / Hosting | TRT | Tran Thuan Technology and Services Company Limited | Vietnam | Ho Chi Minh | Ho Chi Minh City | AS149078 VPSMMO TECHNOLOGY COMPANY LIMITED | Tidak | 2026-10-25 06:35:14 (GMT+7) |
 | 429 | `103.75.173.4` | 0% | 0 | Data Center / Hosting | QUALYS, Inc. | Qualys Security Tech Services Pvt. Ltd | India | Maharashtra | Navi Mumbai | AS27385 QUALYS, Inc. | Tidak | 2026-10-26 05:27:34 (GMT+7) |
-| 430 | `103.75.173.27` | 1% | 1 | Data Center / Hosting | QUALYS, Inc. | Qualys Security Tech Services Pvt. Ltd | India | Maharashtra | Navi Mumbai | AS27385 QUALYS, Inc. | Tidak | 2026-10-26 17:40:30 (GMT+7) |
-| 431 | `103.77.106.172` | 100% | 31 | Residential / ISP | PT Berkah Solusi Teknologi Informasi | - | Indonesia | Jakarta | Jakarta | AS135450 PT Berkah Solusi Teknologi Informasi | Tidak | 2026-10-14 15:30:21 (GMT+7) |
-| 432 | `103.109.244.9` | 0% | 0 | Data Center / Hosting | HostRoyale Technologies Pvt Ltd | HostRoyale Technologies Pvt Ltd | Belgium | Flanders | Antwerp | AS39486 HostRoyale Technologies Pvt Ltd | Ya | 2026-10-28 15:37:47 (GMT+7) |
-| 433 | `103.109.244.19` | 0% | 0 | Data Center / Hosting | HostRoyale Technologies Pvt Ltd | HostRoyale Technologies Pvt Ltd | Belgium | Flanders | Antwerp | AS39486 HostRoyale Technologies Pvt Ltd | Ya | 2026-10-28 15:54:44 (GMT+7) |
-| 434 | `103.115.20.244` | 17% | 6 | Residential / ISP | PMYNET | - | Indonesia | West Java | Subang | AS149925 PT Sakti Wijaya Network | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 435 | `103.117.145.182` | 0% | 0 | Residential / ISP | Netsec Limited | Netsec | Hong Kong | Kowloon | Hong Kong | AS45753 Netsec Limited | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 436 | `103.117.145.186` | 0% | 0 | Residential / ISP | Netsec Limited | Netsec | Hong Kong | Kowloon | Hong Kong | AS45753 Netsec Limited | Tidak | 2026-10-23 10:40:06 (GMT+7) |
-| 437 | `103.120.168.19` | 0% | 2 | Residential / ISP | PT. Eka Mas Republik | Myrepublic | Indonesia | West Java | Bekasi | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 438 | `103.121.23.2` | 0% | 2 | Residential / ISP | PT. Eka Mas Republik | Myrepublic | Indonesia | West Java | Depok | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 439 | `103.121.182.114` | 0% | 0 | Residential / ISP | PT. Cyberindo Aditama | CBN | Indonesia | Jakarta | Jakarta | AS135478 PT. Cyberindo Aditama | Tidak | 2026-10-28 09:56:23 (GMT+7) |
-| 440 | `103.130.18.36` | 85% | 33 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-18 22:07:23 (GMT+7) |
-| 441 | `103.130.18.149` | 75% | 25 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-15 16:44:01 (GMT+7) |
-| 442 | `103.130.18.154` | 8% | 7 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-28 00:49:55 (GMT+7) |
-| 443 | `103.130.18.230` | 97% | 37 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-19 16:43:16 (GMT+7) |
-| 444 | `103.136.59.159` | 0% | 4 | Residential / ISP | MORATELINDONAP | - | Indonesia | Banten | Tangerang | AS131111 PT Mora Telematika Indonesia | Tidak | 2026-10-19 01:38:44 (GMT+7) |
-| 445 | `103.168.147.235` | 100% | 291 | Data Center / Hosting | PT Herza Digital Indonesia | Herza.ID | Indonesia | Jakarta | South Jakarta | AS140443 PT Herza Digital Indonesia | Ya | 2026-10-16 16:18:35 (GMT+7) |
-| 446 | `103.173.139.100` | 25% | 6 | Residential / ISP | PT Serayu Multi Connection | PT Serayu Multi Connection | Indonesia | Central Java | Semarang | AS147078 PT Serayu Multi Connection | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 447 | `103.173.140.185` | 100% | 77 | Residential / ISP | WIFIAN ID | Diazanetworks | Indonesia | Central Java | Brak | AS58485 WIFIAN ID | Tidak | 2026-10-27 09:28:14 (GMT+7) |
-| 448 | `103.235.74.79` | 37% | 7 | Residential / ISP | PT Ikubaru Indonesia | PT Ikubaru Indonesia | Indonesia | Jakarta | Jakarta | AS135444 PT Ikubaru Indonesia | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 449 | `103.253.27.137` | 97% | 26 | Mobile / Cellular | EN Technologies Pte Ltd | AXGN | Singapore | South West | Singapore | AS133210 EN Technologies Pte Ltd | Ya | 2026-10-23 16:16:47 (GMT+7) |
-| 450 | `104.43.242.236` | 100% | 106 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralus) | United States | Iowa | Des Moines | AS8075 Microsoft Corporation | Tidak | 2026-10-14 11:15:34 (GMT+7) |
-| 451 | `104.46.232.28` | 100% | 734 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 452 | `104.155.84.24` | 33% | 7 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 453 | `104.164.173.150` | 28% | 25 | Data Center / Hosting | EGIHosting | EGIHosting | United States | California | Santa Clara | AS18779 EGIHosting | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 454 | `104.196.71.146` | 100% | 32 | Data Center / Hosting | Google LLC | Google Cloud (us-east1) | United States | South Carolina | North Charleston | AS396982 Google LLC | Tidak | 2026-10-18 17:25:00 (GMT+7) |
-| 455 | `104.196.193.152` | 100% | 69 | Data Center / Hosting | Google LLC | Google Cloud (us-east1) | United States | South Carolina | North Charleston | AS396982 Google LLC | Tidak | 2026-10-18 16:11:29 (GMT+7) |
-| 456 | `104.198.83.12` | 100% | 37 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-25 02:10:54 (GMT+7) |
-| 457 | `104.199.36.53` | 100% | 868 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-13 10:11:50 (GMT+7) |
-| 458 | `104.208.73.227` | 100% | 2,844 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 459 | `107.161.145.178` | 0% | 0 | Residential / ISP | LightWave Networks | LightWave Networks | United States | Pennsylvania | Philadelphia | AS12167 LightWave Networks | Tidak | 2026-10-28 15:27:55 (GMT+7) |
-| 460 | `108.181.61.26` | 0% | 0 | Data Center / Hosting | Psychz Networks | TELUS Communications Inc. | India | Maharashtra | Mumbai | AS40676 Psychz Networks | Tidak | 2026-10-28 15:37:47 (GMT+7) |
-| 461 | `109.69.64.25` | 0% | 0 | Data Center / Hosting | PLUTEX GmbH | PLUTEX GmbH | Germany | Bremen | Bremen | AS49855 PLUTEX GmbH | Tidak | 2026-10-28 15:37:47 (GMT+7) |
-| 462 | `109.69.66.45` | 0% | 0 | Data Center / Hosting | PLUTEX GmbH | PLUTEX GmbH | Germany | Bremen | Bremen | AS49855 PLUTEX GmbH | Tidak | 2026-10-28 15:44:49 (GMT+7) |
-| 463 | `109.71.247.180` | 100% | 161 | Data Center / Hosting | JSC "TIMEWEB" | JSC "TIMEWEB" | Russia | Moscow | Moscow | AS9123 JSC TIMEWEB | Tidak | 2026-10-18 23:36:19 (GMT+7) |
-| 464 | `109.203.189.32` | 12% | 2 | Data Center / Hosting | Free Range Cloud Hosting Inc. | Mnttr | United States | New York | New York | AS53356 Free Range Cloud Hosting Inc. | Tidak | 2026-10-21 09:26:09 (GMT+7) |
-| 465 | `109.235.61.161` | 0% | 0 | Data Center / Hosting | Vautron Rechenzentrum AG | - | Germany | Bavaria | Regensburg | AS25504 Vautron Rechenzentrum AG | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 466 | `109.248.149.165` | 0% | 0 | Data Center / Hosting | SIA RixHost | Dataclub S.A | Latvia | Riga | Riga | AS52048 SIA RixHost | Tidak | 2026-10-28 15:35:23 (GMT+7) |
-| 467 | `110.78.149.115` | 3% | 1 | Residential / ISP | CAT-BB | - | Thailand | Chon Buri | Pattaya | AS131090 National Telecom Public Company Limited | Tidak | 2026-10-28 03:22:59 (GMT+7) |
-| 468 | `114.12.4.254` | 0% | 0 | Mobile / Cellular | PT. INDOSAT Tbk | - | Indonesia | Jakarta | North Jakarta | AS4761 INDOSAT Internet Network Provider | Tidak | 2026-10-25 18:34:39 (GMT+7) |
-| 469 | `114.12.14.41` | 0% | 0 | Mobile / Cellular | IOH-B2B | - | Indonesia | Central Java | Semarang | AS4761 INDOSAT Internet Network Provider | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 470 | `114.122.79.218` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Bandung | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-12 22:31:17 (GMT+7) |
-| 471 | `116.202.32.247` | 100% | 58 | Data Center / Hosting | Hetzner Online GmbH | Hetzner Online GmbH | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-10-12 12:36:20 (GMT+7) |
-| 472 | `121.41.14.112` | 69% | 26 | Data Center / Hosting | Hangzhou Alibaba Advertising Co., Ltd. | Alibaba.com LLC | China | Zhejiang | Hangzhou | AS37963 Hangzhou Alibaba Advertising Co.,Ltd. | Tidak | 2026-10-12 11:50:07 (GMT+7) |
-| 473 | `124.123.44.65` | 100% | 151 | Residential / ISP | Beam Telecom | Beam Telecom Pvt Ltd | India | Telangana | Hyderabad | AS55577 Atria Convergence Technologies Ltd., | Tidak | 2026-10-17 11:45:49 (GMT+7) |
-| 474 | `129.121.127.81` | 100% | 541 | Residential / ISP | Oracle Corporation | - | United States | Virginia | Ashburn | AS31898 Oracle Corporation | Tidak | 2026-10-15 16:45:21 (GMT+7) |
-| 475 | `130.12.180.117` | 100% | 5,045 | Data Center / Hosting | Netiface LLC | Virtualine Technologies | The Netherlands | North Holland | Amsterdam | AS202412 Omegatech LTD | Tidak | 2026-10-14 15:30:21 (GMT+7) |
-| 476 | `130.49.10.54` | 21% | 4 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 477 | `130.49.10.121` | 32% | 6 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 478 | `130.49.10.145` | 36% | 9 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 479 | `130.49.10.187` | 14% | 3 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 480 | `130.49.10.191` | 11% | 4 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 481 | `130.49.79.38` | 0% | 2 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Zeeland | Zierikzee | AS35830 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 482 | `130.49.79.62` | 0% | 3 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Zeeland | Zierikzee | AS35830 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 483 | `130.49.79.180` | 28% | 10 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Zeeland | Zierikzee | AS35830 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 484 | `131.100.1.42` | 0% | 0 | Data Center / Hosting | Anexia Cloud Solutions GmbH | Anexia South America Sociedad Anonima | Colombia | Antioquia | Medellín | AS42473 Anexia Cloud Solutions GmbH | Tidak | 2026-10-28 15:48:51 (GMT+7) |
-| 485 | `131.153.96.186` | 0% | 0 | Data Center / Hosting | PHOENIX NAP, LLC. | Secured Servers LLC | Serbia | Belgrade | Belgrade | AS207134 PHOENIX NAP, LLC. | Tidak | 2026-10-28 15:54:44 (GMT+7) |
-| 486 | `132.196.60.168` | 100% | 1,003 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralus) | United States | Iowa | Des Moines | AS8075 Microsoft Corporation | Tidak | 2026-10-12 22:31:17 (GMT+7) |
-| 487 | `133.18.105.82` | 1% | 1 | Residential / ISP | KAGOYA JAPAN Inc. | - | Japan | Kyoto | Fushimi-ku | AS24282 KAGOYA JAPAN Inc. | Tidak | 2026-10-11 12:40:32 (GMT+7) |
-| 488 | `134.185.85.61` | 100% | 1,074 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-singapore-1) | Singapore | Central Singapore | Singapore | AS31898 Oracle Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 489 | `134.209.25.199` | 100% | 1,181 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United Kingdom | England | Slough | AS14061 DigitalOcean, LLC | Tidak | 2026-10-23 15:53:27 (GMT+7) |
-| 490 | `134.209.87.132` | 78% | 13 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | The Netherlands | North Holland | Amsterdam | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 16:25:09 (GMT+7) |
-| 491 | `135.225.181.163` | 39% | 16 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (swedencentral) | Sweden | Gävleborg County | Gävle | AS8075 Microsoft Corporation | Tidak | 2026-10-23 21:15:13 (GMT+7) |
-| 492 | `136.64.164.70` | 100% | 82 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-25 13:56:02 (GMT+7) |
-| 493 | `136.66.53.74` | 100% | 99 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-19 16:43:16 (GMT+7) |
-| 494 | `136.66.58.120` | 100% | 125 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-21 19:12:14 (GMT+7) |
-| 495 | `136.67.85.222` | 100% | 38 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-15 09:35:18 (GMT+7) |
-| 496 | `136.69.198.59` | 100% | 61 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 05:39:57 (GMT+7) |
-| 497 | `136.69.253.165` | 100% | 49 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 08:31:59 (GMT+7) |
-| 498 | `136.70.25.185` | 100% | 63 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 06:46:58 (GMT+7) |
-| 499 | `136.70.72.114` | 100% | 92 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-19 07:05:23 (GMT+7) |
-| 500 | `136.70.99.135` | 100% | 31 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-16 09:39:50 (GMT+7) |
-| 501 | `136.70.233.186` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 502 | `136.71.78.193` | 100% | 57 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-25 11:27:01 (GMT+7) |
-| 503 | `136.85.17.239` | 100% | 38 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-15 09:29:37 (GMT+7) |
-| 504 | `136.85.30.120` | 100% | 69 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 505 | `136.85.57.243` | 100% | 48 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-25 02:38:54 (GMT+7) |
-| 506 | `136.86.237.80` | 38% | 6 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-17 03:56:43 (GMT+7) |
-| 507 | `136.87.39.171` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-18 06:06:49 (GMT+7) |
-| 508 | `136.87.87.169` | 100% | 55 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 16:49:03 (GMT+7) |
-| 509 | `136.87.156.40` | 100% | 92 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-19 07:30:01 (GMT+7) |
-| 510 | `136.90.50.132` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-19 09:36:26 (GMT+7) |
-| 511 | `136.90.68.246` | 100% | 40 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-12 19:40:43 (GMT+7) |
-| 512 | `136.90.102.249` | 100% | 40 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-15 09:30:15 (GMT+7) |
-| 513 | `136.92.19.126` | 100% | 49 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-25 03:28:55 (GMT+7) |
-| 514 | `136.92.32.59` | 100% | 67 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-18 16:17:13 (GMT+7) |
-| 515 | `136.92.33.110` | 100% | 30 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-15 09:36:27 (GMT+7) |
-| 516 | `136.107.27.201` | 100% | 107 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-19 16:43:16 (GMT+7) |
-| 517 | `136.107.196.121` | 100% | 35 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-17 19:46:40 (GMT+7) |
-| 518 | `136.110.96.167` | 100% | 48 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-19 01:41:19 (GMT+7) |
-| 519 | `138.3.211.255` | 100% | 395 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-tokyo-1) | Japan | Tokyo | Tokyo | AS31898 Oracle Corporation | Tidak | 2026-10-14 10:17:24 (GMT+7) |
-| 520 | `139.99.124.184` | 0% | 0 | Data Center / Hosting | OVH SAS | OVH Singapore PTE. LTD | Singapore | Central Singapore | Singapore | AS16276 OVH SAS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 521 | `140.206.194.113` | 16% | 6 | Residential / ISP | China Unicom Shanghai network | Unicom SH | China | Beijing | Jinrongjie | AS17621 China Unicom Shanghai network | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 522 | `141.11.46.189` | 9% | 3 | Residential / ISP | Komi LLC | - | Singapore | North West | Singapore | AS401243 Komi LLC | Tidak | 2026-10-11 14:53:09 (GMT+7) |
-| 523 | `142.91.24.71` | 0% | 0 | Data Center / Hosting | Leaseweb USA, Inc. | Leaseweb USA, Inc | United States | California | San Jose | AS7203 Leaseweb USA, Inc. | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 524 | `143.244.57.82` | 100% | 1,346 | Data Center / Hosting | Datacamp Limited | Cdn77 PAR | France | Île-de-France | Paris | AS60068 Datacamp Limited | Ya | 2026-10-10 07:02:41 (GMT+7) |
-| 525 | `143.244.57.121` | 100% | 1,576 | Data Center / Hosting | Datacamp Limited | Cdn77 PAR | France | Île-de-France | Paris | AS60068 Datacamp Limited | Ya | 2026-10-11 20:29:14 (GMT+7) |
-| 526 | `143.255.58.130` | 0% | 0 | Data Center / Hosting | HostDime.com, Inc. | HostDime.com.mx S.A. de C.V | Mexico | Jalisco | Guadalajara | AS33182 HostDime.com, Inc. | Tidak | 2026-10-28 15:54:44 (GMT+7) |
-| 527 | `144.31.247.145` | 0% | 0 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 528 | `144.172.94.4` | 100% | 195 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Ya | 2026-10-12 22:31:17 (GMT+7) |
-| 529 | `144.172.104.28` | 0% | 0 | Data Center / Hosting | RouterHosting LLC | FranTech Solutions | United States | Nevada | Las Vegas | AS14956 RouterHosting LLC | Tidak | 2026-10-09 18:02:46 (GMT+7) |
-| 530 | `145.241.125.113` | 100% | 303 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (me-dubai-1) | United Arab Emirates | Dubai | Dubai | AS31898 Oracle Corporation | Tidak | 2026-10-17 03:56:43 (GMT+7) |
-| 531 | `146.70.14.44` | 31% | 11 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Indonesia | Indonesia | South Papua | Muting | AS9009 M247 Europe SRL | Ya | 2026-10-27 07:18:34 (GMT+7) |
-| 532 | `146.70.48.182` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Dublin | Ireland | Leinster | Dublin | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:54:44 (GMT+7) |
-| 533 | `146.70.195.37` | 0% | 4 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Los Angeles | United States | California | Los Angeles | AS9009 M247 Europe SRL | Ya | 2026-10-22 21:21:11 (GMT+7) |
-| 534 | `147.185.132.18` | 0% | 5,847 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-28 09:56:23 (GMT+7) |
-| 535 | `147.185.132.159` | 0% | 5,017 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-28 09:56:23 (GMT+7) |
-| 536 | `150.251.225.170` | 100% | 88 | Residential / ISP | Datacamp Limited | Private Customer | Austria | Vienna | Vienna | AS212238 Datacamp Limited | Tidak | 2026-10-19 04:47:21 (GMT+7) |
-| 537 | `151.244.119.197` | 0% | 0 | Residential / ISP | PT Perwira Media Solusi | IPv4TradeHub | Indonesia | Jakarta | Jakarta | AS211407 AS Perwira Media | Tidak | 2026-10-22 00:37:55 (GMT+7) |
-| 538 | `152.89.162.170` | 0% | 0 | Data Center / Hosting | M247 Europe | M247 LTD | Switzerland | Zurich | Zurich | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:44:49 (GMT+7) |
-| 539 | `155.212.37.46` | 28% | 8 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 540 | `155.212.37.127` | 21% | 9 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 06:46:55 (GMT+7) |
-| 541 | `155.212.37.128` | 24% | 5 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 11:19:13 (GMT+7) |
-| 542 | `155.212.37.164` | 46% | 21 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 11:19:13 (GMT+7) |
-| 543 | `155.212.37.175` | 28% | 6 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 544 | `155.212.109.130` | 39% | 9 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 06:34:46 (GMT+7) |
-| 545 | `155.212.109.170` | 34% | 8 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 546 | `155.212.109.172` | 2% | 1 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 547 | `155.212.109.224` | 15% | 3 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 548 | `156.244.11.188` | 0% | 0 | Residential / ISP | Lightnode Limited | Lightnode Limited | Saudi Arabia | Riyadh Region | Riyadh | AS154177 LIGHT NODE LIMITED | Tidak | 2026-10-28 15:44:49 (GMT+7) |
-| 549 | `156.245.205.12` | 100% | 45 | Residential / ISP | Zillion Network Inc. | Hong Kong Lightlayer Technology Co., Limited | Hong Kong | Kowloon | Hong Kong | AS54801 Zillion Network Inc. | Tidak | 2026-10-11 12:08:07 (GMT+7) |
-| 550 | `158.23.176.177` | 100% | 1,834 | Residential / ISP | Microsoft Corporation | Microsoft Azure Cloud (mexicocentral) | Mexico | Querétaro | Querétaro City | AS8075 Microsoft Corporation | Tidak | 2026-10-11 05:54:43 (GMT+7) |
-| 551 | `158.58.173.8` | 0% | 0 | Data Center / Hosting | Seflow S.N.C. Di Marco Brame' & C. | Seflow Mgmt | Italy | Lombardy | Milan | AS49367 Seflow s.r.l. | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 552 | `158.101.21.209` | 100% | 218 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (us-phoenix-1) | United States | Arizona | Phoenix | AS31898 Oracle Corporation | Tidak | 2026-10-12 05:45:50 (GMT+7) |
-| 553 | `158.140.180.90` | 34% | 23 | Residential / ISP | MYREPUBLIC | - | Indonesia | Banten | South Tangerang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 554 | `159.65.82.81` | 100% | 37 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United Kingdom | England | Slough | AS14061 DigitalOcean, LLC | Tidak | 2026-10-10 11:25:03 (GMT+7) |
-| 555 | `160.178.215.158` | 96% | 21 | Residential / ISP | Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM | MarocTelecomASDL | Morocco | Rabat-Salé-Kénitra | Rabat | AS36903 Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM | Tidak | 2026-10-19 04:15:21 (GMT+7) |
-| 556 | `160.202.35.102` | 97% | 34 | Residential / ISP | Angkor Data Communication | Mekongnet | Cambodia | Phnom Penh | Phnom Penh | AS38235 ANGKOR DATA COMMUNICATION | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 557 | `161.120.186.93` | 100% | 83 | Residential / ISP | TENCENT-CN | - | Malaysia | Selangor | Shah Alam | AS132203 Tencent Building, Kejizhongyi Avenue | Tidak | 2026-10-24 17:04:33 (GMT+7) |
-| 558 | `163.128.55.60` | 0% | 0 | Residential / ISP | PT MASHANZ SUMBER TERBUKA | PT MASHANZ SUMBER TERBUKA | Indonesia | Banten | Cipacung Landeuh | AS154547 PT MASHANZ SUMBER TERBUKA | Tidak | 2026-10-29 00:45:07 (GMT+7) |
-| 559 | `163.172.110.103` | 0% | 0 | Data Center / Hosting | Scaleway SAS | ONLINE | France | Île-de-France | Paris | AS12876 Scaleway SAS | Tidak | 2026-10-28 15:54:44 (GMT+7) |
-| 560 | `163.223.210.8` | 100% | 251 | Residential / ISP | EZ TECHNOLOGY COMPANY LIMITED | Anh Dao Phuc Technology Company Limited | Vietnam | Hanoi | Hanoi | AS150895 EZ TECHNOLOGY COMPANY LIMITED | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 561 | `164.52.195.81` | 0% | 0 | Residential / ISP | E2E Networks Limited | E2E Networks Limited | India | Uttar Pradesh | Noida | AS132420 E2E NETWORKS | Tidak | 2026-10-28 15:37:47 (GMT+7) |
-| 562 | `165.154.205.203` | 0% | 0 | Data Center / Hosting | Scloud Pte Ltd | Scloud Pte Ltd | Singapore | North West | Singapore | AS142002 Scloud Pte Ltd | Tidak | 2026-10-16 12:51:28 (GMT+7) |
-| 563 | `165.154.236.126` | 0% | 0 | Data Center / Hosting | Scloud Pte Ltd | Scloud Pte Ltd | Singapore | North West | Singapore | AS142002 Scloud Pte Ltd | Tidak | 2026-10-14 18:47:44 (GMT+7) |
-| 564 | `165.154.236.195` | 0% | 0 | Data Center / Hosting | Scloud Pte Ltd | Scloud Pte Ltd | Singapore | North West | Singapore | AS142002 Scloud Pte Ltd | Tidak | 2026-10-14 18:39:27 (GMT+7) |
-| 565 | `165.227.84.14` | 100% | 842 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United States | New Jersey | North Bergen | AS14061 DigitalOcean, LLC | Tidak | 2026-10-23 15:52:27 (GMT+7) |
-| 566 | `167.71.75.206` | 100% | 68 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | The Netherlands | North Holland | Amsterdam | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 12:46:26 (GMT+7) |
-| 567 | `167.88.173.161` | 100% | 390 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | Singapore | North West | Singapore | AS14956 RouterHosting LLC | Tidak | 2026-10-25 18:34:39 (GMT+7) |
-| 568 | `167.99.181.249` | 100% | 1,140 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Canada | Ontario | Toronto | AS14061 DigitalOcean, LLC | Ya | 2026-10-14 14:10:22 (GMT+7) |
-| 569 | `167.103.64.108` | 0% | 0 | Data Center / Hosting | ZSCALER, INC. | Zscaler Singapore | Singapore | North West | Singapore | AS53813 ZSCALER, INC. | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 570 | `167.172.80.26` | 100% | 44 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-21 05:52:59 (GMT+7) |
-| 571 | `167.172.232.142` | 100% | 1,307 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United States | New Jersey | Clifton | AS14061 DigitalOcean, LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 572 | `167.235.186.173` | 100% | 110 | Data Center / Hosting | Hetzner Online GmbH | Hetzner | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-10-24 02:11:01 (GMT+7) |
-| 573 | `168.107.94.222` | 100% | 56 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-singapore-1) | Singapore | Central Singapore | Singapore | AS31898 Oracle Corporation | Tidak | 2026-10-28 07:08:17 (GMT+7) |
-| 574 | `168.144.241.80` | 99% | 17 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-16 09:01:21 (GMT+7) |
-| 575 | `169.40.142.202` | 100% | 1,569 | Residential / ISP | Zkillu SAS | Private Customer | France | Île-de-France | Saint-Denis | AS215599 Zkillu SAS | Tidak | 2026-10-24 06:39:37 (GMT+7) |
-| 576 | `170.64.163.177` | 100% | 45 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Australia | New South Wales | Sydney | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 06:34:46 (GMT+7) |
-| 577 | `170.83.176.147` | 0% | 0 | Residential / ISP | Todas LAS Redes SA | Indonesia Company | Indonesia | Jakarta | Jakarta | AS264850 TODAS LAS REDES SA | Tidak | 2026-10-25 18:34:39 (GMT+7) |
-| 578 | `170.168.30.83` | 28% | 8 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:12:35 (GMT+7) |
-| 579 | `170.168.30.136` | 40% | 12 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 580 | `170.168.30.139` | 2% | 1 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 581 | `170.168.30.156` | 26% | 7 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:07:44 (GMT+7) |
-| 582 | `170.168.30.190` | 9% | 2 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 583 | `170.168.30.209` | 21% | 3 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 584 | `170.168.30.215` | 1% | 1 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 585 | `170.168.30.238` | 26% | 12 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 586 | `170.168.173.16` | 28% | 5 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Groningen | De Wilp | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 587 | `172.237.81.246` | 100% | 27 | Data Center / Hosting | Akamai Technologies, Inc. | Akamai Technologies, Inc. | Singapore | South East | Singapore | AS63949 Akamai Connected Cloud | Tidak | 2026-10-28 03:33:44 (GMT+7) |
-| 588 | `173.208.214.226` | 100% | 248 | Data Center / Hosting | WholeSale Internet | Advanced Computer Specialists, LLC | United States | Missouri | Kansas City | AS32097 WholeSale Internet, Inc. | Tidak | 2026-10-11 19:14:51 (GMT+7) |
-| 589 | `176.103.48.42` | 0% | 0 | Data Center / Hosting | Ivanov Vitaliy Sergeevich | XServer | Ukraine | Kyiv City | Kyiv |  | Tidak | 2026-10-28 15:44:49 (GMT+7) |
-| 590 | `176.125.231.70` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Europe | United Arab Emirates | Dubai | Dubai | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:41:34 (GMT+7) |
-| 591 | `176.234.231.136` | 100% | 28 | Residential / ISP | SUPERONLINE-Broadband | Superonline Iletisim Hizmetleri | Türkiye | Gaziantep | Gaziantep | AS34984 Superonline Iletisim Hizmetleri A.S. | Tidak | 2026-10-17 09:01:50 (GMT+7) |
-| 592 | `177.104.161.142` | 100% | 1,273 | Residential / ISP | EVEO Serviços de Internet Ltda. | Eveo S.A | Brazil | São Paulo | Brooklin | AS53107 EVEO S.A. | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 593 | `178.16.54.167` | 100% | 349 | Residential / ISP | Omegatech LTD | Omegatech LTD | The Netherlands | North Holland | Amsterdam | AS202412 Omegatech LTD | Tidak | 2026-10-18 16:37:00 (GMT+7) |
-| 594 | `178.73.235.125` | 49% | 31 | Data Center / Hosting | GleSYS AB | Internet Vikings International AB | Sweden | Stockholm County | Stockholm | AS42708 Glesys AB | Tidak | 2026-10-13 05:35:11 (GMT+7) |
-| 595 | `178.128.22.37` | 14% | 2 | Data Center / Hosting | DigitalOcean, LLC | Digitalocean | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-21 06:47:30 (GMT+7) |
-| 596 | `178.159.7.86` | 0% | 0 | Data Center / Hosting | UK Dedicated Servers Limited | Win007 | United Kingdom | England | London | AS42831 UK Dedicated Servers Limited | Tidak | 2026-10-28 15:37:47 (GMT+7) |
-| 597 | `179.43.168.230` | 0% | 0 | Data Center / Hosting | Private Layer INC | Private Layer Inc | Switzerland | Zurich | Rümlang | AS51852 Private Layer INC | Tidak | 2026-10-28 15:23:45 (GMT+7) |
-| 598 | `180.242.129.241` | 0% | 8 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | West Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 599 | `180.242.181.12` | 0% | 1 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | East Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 600 | `180.242.181.47` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | East Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 601 | `180.242.181.58` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | East Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 602 | `180.252.95.161` | 0% | 1 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | West Java | Bogor | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 603 | `180.253.187.145` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Maluku | Ambon City | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-12 12:36:20 (GMT+7) |
-| 604 | `182.6.1.71` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | Banten | Tangerang | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-17 22:45:43 (GMT+7) |
-| 605 | `182.9.56.25` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | North Sumatra | Medan | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-29 14:29:19 (GMT+7) |
-| 606 | `182.10.98.175` | 19% | 5 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Bandung | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 607 | `182.10.129.81` | 9% | 18 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Bandung | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-21 05:52:59 (GMT+7) |
-| 608 | `182.253.176.248` | 0% | 0 | Residential / ISP | BIZNET | - | Indonesia | West Java | Bandung | AS17451 BIZNET NETWORKS | Tidak | 2026-10-19 01:38:44 (GMT+7) |
-| 609 | `184.105.247.194` | 100% | 3,216 | Data Center / Hosting | Hurricane Electric LLC | The Shadow Server Foundation | United States | Kansas | Shawnee | AS6939 Hurricane Electric LLC | Tidak | 2026-10-25 10:04:00 (GMT+7) |
-| 610 | `184.105.247.195` | 100% | 3,366 | Data Center / Hosting | Hurricane Electric LLC | The Shadow Server Foundation | United States | Kansas | Shawnee | AS6939 Hurricane Electric LLC | Tidak | 2026-10-13 18:22:07 (GMT+7) |
-| 611 | `184.105.247.196` | 100% | 3,193 | Data Center / Hosting | Hurricane Electric LLC | The Shadow Server Foundation | United States | Kansas | Shawnee | AS6939 Hurricane Electric LLC | Tidak | 2026-10-14 18:54:17 (GMT+7) |
-| 612 | `184.196.75.18` | 0% | 0 | Residential / ISP | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-22 01:07:18 (GMT+7) |
-| 613 | `185.17.107.20` | 0% | 0 | Data Center / Hosting | Keliweb S.R.L | Dedicated Cloud | Italy | Lombardy | Milan | AS202675 Keliweb S.R.L | Tidak | 2026-10-28 15:35:23 (GMT+7) |
-| 614 | `185.30.32.176` | 100% | 888 | Data Center / Hosting | webgo GmbH | webgo GmbH | Germany | Free and Hanseatic City of Hamburg | Hamburg | AS48324 webgo GmbH | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 615 | `185.50.25.60` | 100% | 193 | Data Center / Hosting | Beget LLC | Beget | Russia | St.-Petersburg | St Petersburg | AS198610 Beget LLC | Tidak | 2026-10-16 08:14:33 (GMT+7) |
-| 616 | `185.61.219.43` | 12% | 4 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 06:40:46 (GMT+7) |
-| 617 | `185.61.219.157` | 14% | 4 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:13:19 (GMT+7) |
-| 618 | `185.61.219.158` | 15% | 3 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 619 | `185.61.219.206` | 31% | 12 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 620 | `185.77.167.165` | 0% | 0 | Residential / ISP | Jakarta-Broadband | - | Indonesia | Jakarta | Jakarta | AS201341 trafficforce, UAB | Ya | 2026-10-14 14:10:22 (GMT+7) |
-| 621 | `185.84.181.48` | 0% | 0 | Residential / ISP | Bilintel Network | Bilintel Bilisim Ticaret Limited | Türkiye | Istanbul | Istanbul | AS201128 Bilintel Bilisim Ticaret Limited Sirketi | Tidak | 2026-10-28 15:48:51 (GMT+7) |
-| 622 | `185.148.147.95` | 0% | 0 | Data Center / Hosting | Belcloud LTD | Belcloud LTD | Bulgaria | Sofia-Capital | Sofia | AS44901 Belcloud LTD | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 623 | `185.164.35.23` | 0% | 0 | Data Center / Hosting | Globalhost d.o.o. - Web Hosting Solutions | - | Bosnia and Herzegovina | Federation of Bosnia and Herzegovina | Novi Travnik | AS200698 Globalhost d.o.o. | Tidak | 2026-10-28 15:35:23 (GMT+7) |
-| 624 | `185.177.72.75` | 100% | 943 | Residential / ISP | Bucklog SARL | FBW NETWORKS | France | Île-de-France | Vélizy-Villacoublay | AS211590 Bucklog SARL | Tidak | 2026-10-17 19:40:40 (GMT+7) |
-| 625 | `185.183.106.51` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Barcelona | Spain | Madrid | Madrid | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:35:23 (GMT+7) |
-| 626 | `185.187.169.202` | 100% | 25 | Data Center / Hosting | Contabo GmbH | Contabo GmbH | France | Grand Est | Lauterbourg | AS51167 Contabo GmbH | Tidak | 2026-10-24 17:14:47 (GMT+7) |
-| 627 | `185.191.171.1` | 100% | 996 | Data Center / Hosting | SEMrush CY LTD | SEMrush CY LTD | United States | District of Columbia | Washington | AS209366 SEMrush CY LTD | Tidak | 2026-10-24 19:20:21 (GMT+7) |
-| 628 | `185.218.86.14` | 100% | 142 | Data Center / Hosting | TC DATACENTER LIMITED | TC DATACENTER LIMITED | Hong Kong | Central and Western | Sheung Wan | AS218785 TC DATACENTER LIMITED | Tidak | 2026-10-15 13:56:39 (GMT+7) |
-| 629 | `185.230.124.42` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 LTD | Spain | Cantabria | Santander | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:23:45 (GMT+7) |
-| 630 | `185.230.126.75` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Los Angeles | United States | California | Los Angeles | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:37:47 (GMT+7) |
-| 631 | `185.244.212.214` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Vienna | Austria | Vienna | Vienna | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:44:49 (GMT+7) |
-| 632 | `185.246.87.11` | 0% | 0 | Data Center / Hosting | Ikoula Net SAS | Ikoula DED Servers Eppes | France | Île-de-France | Paris | AS21409 Ikoula Net SAS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 633 | `185.246.175.227` | 46% | 14 | Data Center / Hosting | HostRoyale Technologies Pvt Ltd | Bright Data Limited | United States | California | San Francisco | AS207990 HostRoyale Technologies Pvt Ltd | Ya | 2026-10-21 09:26:09 (GMT+7) |
-| 634 | `186.250.243.146` | 0% | 0 | Data Center / Hosting | Engetronics Internet Datacenter | Engetronics Internet Datacenter | Brazil | Federal District | Brasília | AS53221 ENGETRONICS INTERNET DATACENTER | Tidak | 2026-10-28 15:23:45 (GMT+7) |
-| 635 | `188.126.89.180` | 0% | 0 | Data Center / Hosting | GleSYS AB | Dedicated servers | Finland | Uusimaa | Helsinki | AS42708 Glesys AB | Tidak | 2026-10-28 15:37:47 (GMT+7) |
-| 636 | `188.214.132.57` | 0% | 0 | Data Center / Hosting | UAB Cherry Servers | Balticservers LT Dedicated | Lithuania | Siauliai | Šiauliai | AS16125 UAB Cherry Servers | Tidak | 2026-10-28 15:27:55 (GMT+7) |
-| 637 | `188.241.120.6` | 0% | 0 | Data Center / Hosting | Hydra Communications Ltd | Hydra Communications Ltd | Switzerland | Zurich | Zurich | AS25369 Hydra Communications Ltd | Ya | 2026-10-28 15:54:44 (GMT+7) |
-| 638 | `190.92.174.183` | 100% | 1,949 | Data Center / Hosting | WHG Hosting Services Ltd | WHG Hosting Services Ltd | India | Maharashtra | Navi Mumbai | AS199404 WHG Hosting Services Ltd | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 639 | `190.123.44.20` | 0% | 0 | Data Center / Hosting | Panamaserver.com | Panamaserver.com | Panama | Provincia de Panamá | Bella Vista | AS52284 Panamaserver.com | Tidak | 2026-10-28 15:37:47 (GMT+7) |
-| 640 | `191.222.35.50` | 0% | 0 | Residential / ISP | PT Perwira Media Solusi | IPv4TradeHub | Indonesia | Jakarta | Jakarta | AS211407 AS Perwira Media | Tidak | 2026-10-16 23:18:09 (GMT+7) |
-| 641 | `192.34.84.114` | 0% | 0 | Data Center / Hosting | AxcelX Technologies LLC | AxcelX Technologies LLC | United States | Massachusetts | Boston | AS33083 AxcelX Technologies LLC | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 642 | `192.227.120.209` | 0% | 0 | Data Center / Hosting | Cloud South | Cloud South | United States | Florida | Boca Raton | AS13886 Cloud South | Tidak | 2026-10-28 15:41:34 (GMT+7) |
-| 643 | `192.253.248.9` | 100% | 73 | Data Center / Hosting | Limited Network LTD | Secure Internet LLC | United Kingdom | England | City of London | AS213790 Limited Network LTD | Ya | 2026-10-14 14:10:22 (GMT+7) |
-| 644 | `192.255.142.83` | 0% | 0 | Data Center / Hosting | HostPapa | HostPapa | United States | Texas | Dallas | AS36352 HostPapa | Tidak | 2026-10-24 07:02:16 (GMT+7) |
-| 645 | `194.104.11.21` | 4% | 6 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:12:51 (GMT+7) |
-| 646 | `194.104.11.96` | 4% | 1 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 647 | `194.104.11.158` | 26% | 7 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 10:27:03 (GMT+7) |
-| 648 | `194.104.11.201` | 28% | 5 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 649 | `194.110.207.106` | 0% | 0 | Data Center / Hosting | Gigahost | Gigahost | Norway | Vestfold | Sandefjord | AS56655 Gigahost AS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 650 | `194.182.163.216` | 0% | 0 | Data Center / Hosting | Akenes SA | Akenes SA | Switzerland | Geneva | Geneva | AS61098 Akenes SA | Tidak | 2026-10-28 15:48:51 (GMT+7) |
-| 651 | `194.233.91.189` | 55% | 99 | Data Center / Hosting | Contabo Asia Private Limited | Contabo Asia Private Limited | Singapore | Central Singapore | Singapore | AS141995 Contabo Asia Private Limited | Tidak | 2026-10-22 13:42:16 (GMT+7) |
-| 652 | `195.178.110.22` | 100% | 2,380 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-09 16:17:28 (GMT+7) |
-| 653 | `195.178.110.105` | 100% | 2,571 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-27 15:53:48 (GMT+7) |
-| 654 | `195.178.110.159` | 100% | 2,053 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-23 18:09:30 (GMT+7) |
-| 655 | `195.178.110.211` | 100% | 2,080 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-13 14:48:49 (GMT+7) |
-| 656 | `195.178.110.242` | 100% | 3,077 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-17 09:01:50 (GMT+7) |
-| 657 | `196.127.129.126` | 100% | 20 | Residential / ISP | MEDITELECOM | MEDITELECOM | Morocco | Casablanca-Settat | Casablanca | AS36925 MEDITELECOM | Tidak | 2026-10-16 06:25:23 (GMT+7) |
-| 658 | `198.235.24.197` | 0% | 5,576 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 07:40:52 (GMT+7) |
-| 659 | `199.65.59.166` | 0% | 0 | Residential / ISP | Johnson & | Johnson & | United States | New Jersey | Raritan |  | Tidak | 2026-10-28 11:20:37 (GMT+7) |
-| 660 | `199.119.216.173` | 0% | 0 | Residential / ISP | Provision Data Systems Inc. | Provision Data Systems Inc. | Canada | British Columbia | Kelowna | AS25999 Provision Data Systems Inc. | Tidak | 2026-10-28 15:54:44 (GMT+7) |
-| 661 | `199.165.159.33` | 100% | 824 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-18 17:55:57 (GMT+7) |
-| 662 | `199.165.159.41` | 100% | 646 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-14 15:30:21 (GMT+7) |
-| 663 | `199.165.159.53` | 100% | 233 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-15 11:43:04 (GMT+7) |
-| 664 | `199.165.159.57` | 100% | 1,209 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-24 10:59:05 (GMT+7) |
-| 665 | `199.165.159.161` | 100% | 256 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
-| 666 | `199.165.159.167` | 100% | 102 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
-| 667 | `199.165.159.185` | 100% | 233 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
-| 668 | `199.165.159.190` | 100% | 80 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
-| 669 | `199.165.159.191` | 100% | 69 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 10:11:57 (GMT+7) |
-| 670 | `200.122.246.58` | 100% | 187 | Residential / ISP | UNE EPM TELECOMUNICACIONES S.A | Administradora Ciudadela Universitaria S | Colombia | Bogota D.C. | Bogotá | AS13489 UNE EPM TELECOMUNICACIONES S.A. | Tidak | 2026-10-24 20:55:50 (GMT+7) |
-| 671 | `202.46.68.236` | 38% | 15 | Residential / ISP | PT. Indonesia Comnet Plus | - | Indonesia | West Java | Bandung | AS9341 PT INDONESIA COMNETS PLUS | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 672 | `202.73.26.31` | 100% | 105 | Data Center / Hosting | PT.Semut Data Indonesia | - | Indonesia | West Java | Bogor | AS141892 CV Andhika Pratama Sanggoro | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 673 | `202.152.202.132` | 0% | 0 | Residential / ISP | PT. Bakrie Telecom Tbk | - | Indonesia | West Java | Cikarang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-15 09:11:41 (GMT+7) |
-| 674 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 675 | `205.209.107.98` | 0% | 0 | Data Center / Hosting | Interserver, Inc | Host Department NJ, LLC | United States | New Jersey | Englewood Cliffs | AS19318 Interserver, Inc | Tidak | 2026-10-28 15:23:45 (GMT+7) |
-| 676 | `205.210.31.106` | 0% | 5,756 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-28 09:56:23 (GMT+7) |
-| 677 | `205.210.31.226` | 0% | 5,145 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 10:13:04 (GMT+7) |
-| 678 | `205.210.31.228` | 0% | 5,859 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 10:13:04 (GMT+7) |
-| 679 | `205.210.31.244` | 0% | 5,437 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 10:13:04 (GMT+7) |
-| 680 | `205.210.31.250` | 0% | 5,821 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-10 21:07:39 (GMT+7) |
-| 681 | `206.81.24.227` | 100% | 1,429 | Data Center / Hosting | DigitalOcean, LLC | Digital Ocean | Germany | Hesse | Frankfurt am Main | AS14061 DigitalOcean, LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 682 | `206.189.12.235` | 100% | 20 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | The Netherlands | North Holland | Amsterdam | AS14061 DigitalOcean, LLC | Tidak | 2026-10-14 11:51:40 (GMT+7) |
-| 683 | `206.189.152.58` | 100% | 30 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 684 | `207.175.36.105` | 100% | 44 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-15 09:34:02 (GMT+7) |
-| 685 | `207.175.82.167` | 71% | 12 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-20 23:48:56 (GMT+7) |
-| 686 | `207.175.150.69` | 100% | 79 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-18 16:37:00 (GMT+7) |
-| 687 | `207.175.199.227` | 100% | 164 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-23 16:16:47 (GMT+7) |
-| 688 | `207.244.109.178` | 0% | 0 | Data Center / Hosting | Leaseweb USA, Inc. | Leaseweb USA, Inc. | United States | Virginia | Manassas | AS30633 Leaseweb USA, Inc. | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 689 | `209.38.21.106` | 42% | 6 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Australia | New South Wales | Sydney | AS14061 DigitalOcean, LLC | Ya | 2026-10-15 16:44:01 (GMT+7) |
-| 690 | `209.182.233.14` | 18% | 28 | Data Center / Hosting | HIVELOCITY, Inc. | Strasmore, Inc. | India | Maharashtra | Mumbai | AS29802 HIVELOCITY, Inc. | Tidak | 2026-10-14 15:30:21 (GMT+7) |
-| 691 | `212.66.107.209` | 0% | 0 | Residential / ISP | Giuliano Claudio Peritore trading as "Panservice s.a.s. di Cuseo Fabrizio & C." | Panservice s.a.s. di Cuseo Fabrizio & C. | Italy | Lazio | Latina | AS20912 Giuliano Claudio Peritore trading as "Panservice s.a.s. di Cuseo Fabrizio & C." | Tidak | 2026-10-28 15:48:51 (GMT+7) |
-| 692 | `212.237.217.163` | 0% | 0 | Data Center / Hosting | Hostkey B.V. | Hostkey B V | Finland | Uusimaa | Helsinki | AS57043 HOSTKEY B.V. | Tidak | 2026-10-09 18:02:46 (GMT+7) |
-| 693 | `213.133.99.205` | 0% | 0 | Data Center / Hosting | Hetzner Online GmbH | Hetzner | Germany | Bavaria | Nuremberg | AS24940 Hetzner Online GmbH | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 694 | `213.179.204.132` | 0% | 0 | Residential / ISP | i3D.net B.V | i3Dnet Dedi usscz1 | United States | California | Santa Clara | AS49544 i3D.net B.V | Tidak | 2026-10-28 15:41:34 (GMT+7) |
-| 695 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-09 10:42:58 (GMT+7) |
-| 696 | `213.209.159.133` | 100% | 5,845 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-12 05:03:21 (GMT+7) |
-| 697 | `213.232.122.59` | 1% | 1 | Residential / ISP | Finegroupservers | Fine Group Servers Solutions LLC | Ukraine | Kyiv City | Kyiv | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 698 | `213.232.122.158` | 26% | 7 | Residential / ISP | Finegroupservers | Fine Group Servers Solutions LLC | Ukraine | Kyiv City | Kyiv | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 699 | `213.232.122.197` | 18% | 5 | Residential / ISP | Finegroupservers | Fine Group Servers Solutions LLC | Ukraine | Kyiv City | Kyiv | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
-| 700 | `213.246.39.161` | 0% | 0 | Data Center / Hosting | Ikoula Net SAS | - | France | Île-de-France | Boulogne-Billancourt | AS21409 Ikoula Net SAS | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 701 | `213.246.45.155` | 0% | 0 | Data Center / Hosting | Ikoula Ripe | - | France | Grand Est | Reims | AS21409 Ikoula Net SAS | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 702 | `216.151.1.166` | 0% | 0 | Data Center / Hosting | Opus Interactive | Opus Interactive | United States | Oregon | Portland | AS14380 Opus Interactive | Tidak | 2026-10-28 15:31:24 (GMT+7) |
-| 703 | `216.194.172.242` | 100% | 98 | Data Center / Hosting | InMotion Hosting, Inc. | InMotion Hosting, Inc | United States | California | Los Angeles | AS22611 InMotion Hosting, Inc. | Tidak | 2026-10-22 13:16:04 (GMT+7) |
-| 704 | `217.182.195.34` | 0% | 0 | Data Center / Hosting | OVH SAS | OVH | France | Hauts-de-France | Roubaix | AS16276 OVH SAS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
-| 705 | `221.121.154.217` | 0% | 0 | Data Center / Hosting | Servers Australia Pty. Ltd | Servers Australia Pty Ltd Wholesale Services | Australia | New South Wales | Sydney | AS45671 Wholesale Services Provider | Tidak | 2026-10-28 15:41:34 (GMT+7) |
-| 706 | `222.124.191.185` | 100% | 1,521 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-16 12:51:28 (GMT+7) |
-| 707 | `2001:448a:a050:2c43:e104:9d71:297f:ab09` | 0% | 0 | Residential / ISP | Telekomunikasi Indonesia | Implementasi Telkom 2019 | Indonesia | West Java | Bandung | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 708 | `2001:ee0:4d73:2230:7ca8:74ff:8217:dfbb` | 4% | 3 | Residential / ISP | VNPT | Vietnam Internet Network Information Center | Vietnam | Ho Chi Minh | Ho Chi Minh City | AS45899 VNPT Corp | Tidak | 2026-10-27 19:05:27 (GMT+7) |
-| 709 | `2400:6180:0:d2:0:3:46bf:0` | 15% | 2 | Data Center / Hosting | DigitalOcean, LLC | Digital Ocean | Malaysia | Sabah | Papar | AS14061 DigitalOcean, LLC | Tidak | 2026-10-26 16:33:24 (GMT+7) |
-| 710 | `2400:d320:2353:8642::1` | 41% | 6 | Data Center / Hosting | Contabo Asia Private Limited | Contabo Asia Private Limited | Japan | Tokyo | Tokyo | AS141995 Contabo Asia Private Limited | Tidak | 2026-10-17 03:56:43 (GMT+7) |
-| 711 | `2402:8780:106a:73eb:2de5:5d62:541f:7ccd` | 34% | 5 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-26 22:35:57 (GMT+7) |
-| 712 | `2402:8780:106a:73eb:44cb:935a:ea93:b47e` | 63% | 18 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-16 23:18:09 (GMT+7) |
-| 713 | `2600:1900:4120:ceed:0:429::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west2) | United States | California | Los Angeles | AS396982 Google LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 714 | `2600:1f18:fde:7210:7752:a59:d2d6:2235` | 0% | 0 | Data Center / Hosting | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-27 12:31:20 (GMT+7) |
-| 715 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 716 | `2604:2dc0:303::4:0:164` | 0% | 7 | Data Center / Hosting | OVH SAS | OVH US LLC | United States | New Jersey | Secaucus | AS16276 OVH SAS | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 717 | `2604:4300:a:30e:463d:e7f9:c8a6:d18b` | 100% | 38 | Data Center / Hosting | Nocix, LLC | Nocix, LLC | United States | Missouri | North Kansas City | AS33387 Nocix, LLC | Tidak | 2026-10-16 06:25:23 (GMT+7) |
-| 718 | `2604:a00:101:a:216:3eff:fe2f:c698` | 100% | 99 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-16 12:59:51 (GMT+7) |
-| 719 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 720 | `2a0a:20c0:f001:307::4` | 100% | 150 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-19 07:30:01 (GMT+7) |
-| 721 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 722 | `2a10:3c0:101:0:1:15:0:5` | 81% | 104 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | The Netherlands | North Holland | Amsterdam | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-10-27 05:23:28 (GMT+7) |
-| 723 | `2a10:3c0:4:2:1:32:0:5` | 92% | 106 | Residential / ISP | Zenlayer Inc | ICG ZEN LAX | United States | California | Los Angeles | AS21859 Zenlayer Inc | Tidak | 2026-10-23 23:52:52 (GMT+7) |
-| 724 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
-| 725 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
-| 726 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
-| 727 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
+| 430 | `103.75.173.13` | 0% | 0 | Data Center / Hosting | QUALYS, Inc. | Qualys Security Tech Services Pvt. Ltd | India | Maharashtra | Navi Mumbai | AS27385 QUALYS, Inc. | Tidak | 2026-10-29 16:01:08 (GMT+7) |
+| 431 | `103.75.173.27` | 1% | 1 | Data Center / Hosting | QUALYS, Inc. | Qualys Security Tech Services Pvt. Ltd | India | Maharashtra | Navi Mumbai | AS27385 QUALYS, Inc. | Tidak | 2026-10-26 17:40:30 (GMT+7) |
+| 432 | `103.77.106.172` | 100% | 31 | Residential / ISP | PT Berkah Solusi Teknologi Informasi | - | Indonesia | Jakarta | Jakarta | AS135450 PT Berkah Solusi Teknologi Informasi | Tidak | 2026-10-14 15:30:21 (GMT+7) |
+| 433 | `103.109.244.9` | 0% | 0 | Data Center / Hosting | HostRoyale Technologies Pvt Ltd | HostRoyale Technologies Pvt Ltd | Belgium | Flanders | Antwerp | AS39486 HostRoyale Technologies Pvt Ltd | Ya | 2026-10-28 15:37:47 (GMT+7) |
+| 434 | `103.109.244.19` | 0% | 0 | Data Center / Hosting | HostRoyale Technologies Pvt Ltd | HostRoyale Technologies Pvt Ltd | Belgium | Flanders | Antwerp | AS39486 HostRoyale Technologies Pvt Ltd | Ya | 2026-10-28 15:54:44 (GMT+7) |
+| 435 | `103.115.20.244` | 17% | 6 | Residential / ISP | PMYNET | - | Indonesia | West Java | Subang | AS149925 PT Sakti Wijaya Network | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 436 | `103.117.145.182` | 0% | 0 | Residential / ISP | Netsec Limited | Netsec | Hong Kong | Kowloon | Hong Kong | AS45753 Netsec Limited | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 437 | `103.117.145.186` | 0% | 0 | Residential / ISP | Netsec Limited | Netsec | Hong Kong | Kowloon | Hong Kong | AS45753 Netsec Limited | Tidak | 2026-10-23 10:40:06 (GMT+7) |
+| 438 | `103.120.168.19` | 0% | 2 | Residential / ISP | PT. Eka Mas Republik | Myrepublic | Indonesia | West Java | Bekasi | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 439 | `103.121.23.2` | 0% | 2 | Residential / ISP | PT. Eka Mas Republik | Myrepublic | Indonesia | West Java | Depok | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 440 | `103.121.182.114` | 0% | 0 | Residential / ISP | PT. Cyberindo Aditama | CBN | Indonesia | Jakarta | Jakarta | AS135478 PT. Cyberindo Aditama | Tidak | 2026-10-28 09:56:23 (GMT+7) |
+| 441 | `103.130.18.36` | 85% | 33 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-18 22:07:23 (GMT+7) |
+| 442 | `103.130.18.149` | 75% | 25 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-15 16:44:01 (GMT+7) |
+| 443 | `103.130.18.154` | 8% | 7 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-28 00:49:55 (GMT+7) |
+| 444 | `103.130.18.230` | 97% | 37 | Residential / ISP | PT. Eka Mas Republik | PT. SANFARIZKA INDOTAMA CIPTA | Indonesia | Jakarta | North Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-19 16:43:16 (GMT+7) |
+| 445 | `103.136.59.159` | 0% | 4 | Residential / ISP | MORATELINDONAP | - | Indonesia | Banten | Tangerang | AS131111 PT Mora Telematika Indonesia | Tidak | 2026-10-19 01:38:44 (GMT+7) |
+| 446 | `103.168.147.235` | 100% | 291 | Data Center / Hosting | PT Herza Digital Indonesia | Herza.ID | Indonesia | Jakarta | South Jakarta | AS140443 PT Herza Digital Indonesia | Ya | 2026-10-16 16:18:35 (GMT+7) |
+| 447 | `103.173.139.100` | 25% | 6 | Residential / ISP | PT Serayu Multi Connection | PT Serayu Multi Connection | Indonesia | Central Java | Semarang | AS147078 PT Serayu Multi Connection | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 448 | `103.173.140.185` | 100% | 77 | Residential / ISP | WIFIAN ID | Diazanetworks | Indonesia | Central Java | Brak | AS58485 WIFIAN ID | Tidak | 2026-10-27 09:28:14 (GMT+7) |
+| 449 | `103.235.74.79` | 37% | 7 | Residential / ISP | PT Ikubaru Indonesia | PT Ikubaru Indonesia | Indonesia | Jakarta | Jakarta | AS135444 PT Ikubaru Indonesia | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 450 | `103.253.27.137` | 97% | 26 | Mobile / Cellular | EN Technologies Pte Ltd | AXGN | Singapore | South West | Singapore | AS133210 EN Technologies Pte Ltd | Ya | 2026-10-23 16:16:47 (GMT+7) |
+| 451 | `104.43.242.236` | 100% | 106 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralus) | United States | Iowa | Des Moines | AS8075 Microsoft Corporation | Tidak | 2026-10-14 11:15:34 (GMT+7) |
+| 452 | `104.46.232.28` | 100% | 734 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (japanwest) | Japan | Ōsaka | Osaka | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 453 | `104.155.84.24` | 33% | 7 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 454 | `104.164.173.150` | 28% | 25 | Data Center / Hosting | EGIHosting | EGIHosting | United States | California | Santa Clara | AS18779 EGIHosting | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 455 | `104.196.71.146` | 100% | 32 | Data Center / Hosting | Google LLC | Google Cloud (us-east1) | United States | South Carolina | North Charleston | AS396982 Google LLC | Tidak | 2026-10-18 17:25:00 (GMT+7) |
+| 456 | `104.196.193.152` | 100% | 69 | Data Center / Hosting | Google LLC | Google Cloud (us-east1) | United States | South Carolina | North Charleston | AS396982 Google LLC | Tidak | 2026-10-18 16:11:29 (GMT+7) |
+| 457 | `104.198.83.12` | 100% | 37 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-25 02:10:54 (GMT+7) |
+| 458 | `104.199.36.53` | 100% | 868 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-13 10:11:50 (GMT+7) |
+| 459 | `104.208.73.227` | 100% | 2,844 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (eastasia) | Hong Kong | Central and Western District | Hong Kong | AS8075 Microsoft Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 460 | `107.161.145.178` | 0% | 0 | Residential / ISP | LightWave Networks | LightWave Networks | United States | Pennsylvania | Philadelphia | AS12167 LightWave Networks | Tidak | 2026-10-28 15:27:55 (GMT+7) |
+| 461 | `108.181.61.26` | 0% | 0 | Data Center / Hosting | Psychz Networks | TELUS Communications Inc. | India | Maharashtra | Mumbai | AS40676 Psychz Networks | Tidak | 2026-10-28 15:37:47 (GMT+7) |
+| 462 | `109.69.64.25` | 0% | 0 | Data Center / Hosting | PLUTEX GmbH | PLUTEX GmbH | Germany | Bremen | Bremen | AS49855 PLUTEX GmbH | Tidak | 2026-10-28 15:37:47 (GMT+7) |
+| 463 | `109.69.66.45` | 0% | 0 | Data Center / Hosting | PLUTEX GmbH | PLUTEX GmbH | Germany | Bremen | Bremen | AS49855 PLUTEX GmbH | Tidak | 2026-10-28 15:44:49 (GMT+7) |
+| 464 | `109.71.247.180` | 100% | 161 | Data Center / Hosting | JSC "TIMEWEB" | JSC "TIMEWEB" | Russia | Moscow | Moscow | AS9123 JSC TIMEWEB | Tidak | 2026-10-18 23:36:19 (GMT+7) |
+| 465 | `109.203.189.32` | 12% | 2 | Data Center / Hosting | Free Range Cloud Hosting Inc. | Mnttr | United States | New York | New York | AS53356 Free Range Cloud Hosting Inc. | Tidak | 2026-10-21 09:26:09 (GMT+7) |
+| 466 | `109.235.61.161` | 0% | 0 | Data Center / Hosting | Vautron Rechenzentrum AG | - | Germany | Bavaria | Regensburg | AS25504 Vautron Rechenzentrum AG | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 467 | `109.248.149.165` | 0% | 0 | Data Center / Hosting | SIA RixHost | Dataclub S.A | Latvia | Riga | Riga | AS52048 SIA RixHost | Tidak | 2026-10-28 15:35:23 (GMT+7) |
+| 468 | `110.78.149.115` | 3% | 1 | Residential / ISP | CAT-BB | - | Thailand | Chon Buri | Pattaya | AS131090 National Telecom Public Company Limited | Tidak | 2026-10-28 03:22:59 (GMT+7) |
+| 469 | `114.12.4.254` | 0% | 0 | Mobile / Cellular | PT. INDOSAT Tbk | - | Indonesia | Jakarta | North Jakarta | AS4761 INDOSAT Internet Network Provider | Tidak | 2026-10-25 18:34:39 (GMT+7) |
+| 470 | `114.12.14.41` | 0% | 0 | Mobile / Cellular | IOH-B2B | - | Indonesia | Central Java | Semarang | AS4761 INDOSAT Internet Network Provider | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 471 | `114.122.79.218` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Bandung | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-12 22:31:17 (GMT+7) |
+| 472 | `116.202.32.247` | 100% | 58 | Data Center / Hosting | Hetzner Online GmbH | Hetzner Online GmbH | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-10-12 12:36:20 (GMT+7) |
+| 473 | `121.41.14.112` | 69% | 26 | Data Center / Hosting | Hangzhou Alibaba Advertising Co., Ltd. | Alibaba.com LLC | China | Zhejiang | Hangzhou | AS37963 Hangzhou Alibaba Advertising Co.,Ltd. | Tidak | 2026-10-12 11:50:07 (GMT+7) |
+| 474 | `124.123.44.65` | 100% | 151 | Residential / ISP | Beam Telecom | Beam Telecom Pvt Ltd | India | Telangana | Hyderabad | AS55577 Atria Convergence Technologies Ltd., | Tidak | 2026-10-17 11:45:49 (GMT+7) |
+| 475 | `129.121.127.81` | 100% | 541 | Residential / ISP | Oracle Corporation | - | United States | Virginia | Ashburn | AS31898 Oracle Corporation | Tidak | 2026-10-15 16:45:21 (GMT+7) |
+| 476 | `130.12.180.117` | 100% | 5,045 | Data Center / Hosting | Netiface LLC | Virtualine Technologies | The Netherlands | North Holland | Amsterdam | AS202412 Omegatech LTD | Tidak | 2026-10-14 15:30:21 (GMT+7) |
+| 477 | `130.49.10.54` | 21% | 4 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 478 | `130.49.10.121` | 32% | 6 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 479 | `130.49.10.145` | 36% | 9 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 480 | `130.49.10.187` | 14% | 3 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 481 | `130.49.10.191` | 11% | 4 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Limburg | Posterholt | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 482 | `130.49.79.38` | 0% | 2 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Zeeland | Zierikzee | AS35830 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 483 | `130.49.79.62` | 0% | 3 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Zeeland | Zierikzee | AS35830 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 484 | `130.49.79.180` | 28% | 10 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Zeeland | Zierikzee | AS35830 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 485 | `131.100.1.42` | 0% | 0 | Data Center / Hosting | Anexia Cloud Solutions GmbH | Anexia South America Sociedad Anonima | Colombia | Antioquia | Medellín | AS42473 Anexia Cloud Solutions GmbH | Tidak | 2026-10-28 15:48:51 (GMT+7) |
+| 486 | `131.153.96.186` | 0% | 0 | Data Center / Hosting | PHOENIX NAP, LLC. | Secured Servers LLC | Serbia | Belgrade | Belgrade | AS207134 PHOENIX NAP, LLC. | Tidak | 2026-10-28 15:54:44 (GMT+7) |
+| 487 | `132.196.60.168` | 100% | 1,003 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (centralus) | United States | Iowa | Des Moines | AS8075 Microsoft Corporation | Tidak | 2026-10-12 22:31:17 (GMT+7) |
+| 488 | `133.18.105.82` | 1% | 1 | Residential / ISP | KAGOYA JAPAN Inc. | - | Japan | Kyoto | Fushimi-ku | AS24282 KAGOYA JAPAN Inc. | Tidak | 2026-10-11 12:40:32 (GMT+7) |
+| 489 | `134.185.85.61` | 100% | 1,074 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-singapore-1) | Singapore | Central Singapore | Singapore | AS31898 Oracle Corporation | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 490 | `134.209.25.199` | 100% | 1,181 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United Kingdom | England | Slough | AS14061 DigitalOcean, LLC | Tidak | 2026-10-23 15:53:27 (GMT+7) |
+| 491 | `134.209.87.132` | 78% | 13 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | The Netherlands | North Holland | Amsterdam | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 16:25:09 (GMT+7) |
+| 492 | `135.225.181.163` | 39% | 16 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (swedencentral) | Sweden | Gävleborg County | Gävle | AS8075 Microsoft Corporation | Tidak | 2026-10-23 21:15:13 (GMT+7) |
+| 493 | `136.64.164.70` | 100% | 82 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-25 13:56:02 (GMT+7) |
+| 494 | `136.66.53.74` | 100% | 99 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-19 16:43:16 (GMT+7) |
+| 495 | `136.66.58.120` | 100% | 125 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-21 19:12:14 (GMT+7) |
+| 496 | `136.67.85.222` | 100% | 38 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-15 09:35:18 (GMT+7) |
+| 497 | `136.69.198.59` | 100% | 61 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 05:39:57 (GMT+7) |
+| 498 | `136.69.253.165` | 100% | 49 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 08:31:59 (GMT+7) |
+| 499 | `136.70.25.185` | 100% | 63 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 06:46:58 (GMT+7) |
+| 500 | `136.70.72.114` | 100% | 92 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-19 07:05:23 (GMT+7) |
+| 501 | `136.70.99.135` | 100% | 31 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-16 09:39:50 (GMT+7) |
+| 502 | `136.70.233.186` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 503 | `136.71.78.193` | 100% | 57 | Data Center / Hosting | Google LLC | Google Cloud (us-central1) | United States | Iowa | Council Bluffs | AS396982 Google LLC | Tidak | 2026-10-25 11:27:01 (GMT+7) |
+| 504 | `136.85.17.239` | 100% | 38 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-15 09:29:37 (GMT+7) |
+| 505 | `136.85.30.120` | 100% | 69 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 506 | `136.85.57.243` | 100% | 48 | Data Center / Hosting | Google LLC | Google Cloud (asia-southeast1) | Singapore | Central Singapore | Singapore | AS396982 Google LLC | Tidak | 2026-10-25 02:38:54 (GMT+7) |
+| 507 | `136.86.237.80` | 38% | 6 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-17 03:56:43 (GMT+7) |
+| 508 | `136.87.39.171` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-18 06:06:49 (GMT+7) |
+| 509 | `136.87.87.169` | 100% | 55 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-25 16:49:03 (GMT+7) |
+| 510 | `136.87.156.40` | 100% | 92 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-10-19 07:30:01 (GMT+7) |
+| 511 | `136.90.50.132` | 100% | 71 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-19 09:36:26 (GMT+7) |
+| 512 | `136.90.68.246` | 100% | 40 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-12 19:40:43 (GMT+7) |
+| 513 | `136.90.102.249` | 100% | 40 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-15 09:30:15 (GMT+7) |
+| 514 | `136.92.19.126` | 100% | 49 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-25 03:28:55 (GMT+7) |
+| 515 | `136.92.32.59` | 100% | 67 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-18 16:17:13 (GMT+7) |
+| 516 | `136.92.33.110` | 100% | 30 | Data Center / Hosting | Google LLC | Google Cloud (europe-west3) | Germany | Hesse | Frankfurt | AS396982 Google LLC | Tidak | 2026-10-15 09:36:27 (GMT+7) |
+| 517 | `136.107.27.201` | 100% | 107 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-19 16:43:16 (GMT+7) |
+| 518 | `136.107.196.121` | 100% | 35 | Data Center / Hosting | Google LLC | Google Cloud (us-east4) | United States | Washington, D.C. | Washington | AS396982 Google LLC | Tidak | 2026-10-17 19:46:40 (GMT+7) |
+| 519 | `136.110.96.167` | 100% | 48 | Data Center / Hosting | Google LLC | Google Cloud (asia-northeast1) | Japan | Tokyo | Tokyo | AS396982 Google LLC | Tidak | 2026-10-19 01:41:19 (GMT+7) |
+| 520 | `138.3.211.255` | 100% | 395 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-tokyo-1) | Japan | Tokyo | Tokyo | AS31898 Oracle Corporation | Tidak | 2026-10-14 10:17:24 (GMT+7) |
+| 521 | `139.99.124.184` | 0% | 0 | Data Center / Hosting | OVH SAS | OVH Singapore PTE. LTD | Singapore | Central Singapore | Singapore | AS16276 OVH SAS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 522 | `140.206.194.113` | 16% | 6 | Residential / ISP | China Unicom Shanghai network | Unicom SH | China | Beijing | Jinrongjie | AS17621 China Unicom Shanghai network | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 523 | `141.11.46.189` | 9% | 3 | Residential / ISP | Komi LLC | - | Singapore | North West | Singapore | AS401243 Komi LLC | Tidak | 2026-10-11 14:53:09 (GMT+7) |
+| 524 | `142.91.24.71` | 0% | 0 | Data Center / Hosting | Leaseweb USA, Inc. | Leaseweb USA, Inc | United States | California | San Jose | AS7203 Leaseweb USA, Inc. | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 525 | `143.244.57.82` | 100% | 1,346 | Data Center / Hosting | Datacamp Limited | Cdn77 PAR | France | Île-de-France | Paris | AS60068 Datacamp Limited | Ya | 2026-10-10 07:02:41 (GMT+7) |
+| 526 | `143.244.57.121` | 100% | 1,576 | Data Center / Hosting | Datacamp Limited | Cdn77 PAR | France | Île-de-France | Paris | AS60068 Datacamp Limited | Ya | 2026-10-11 20:29:14 (GMT+7) |
+| 527 | `143.255.58.130` | 0% | 0 | Data Center / Hosting | HostDime.com, Inc. | HostDime.com.mx S.A. de C.V | Mexico | Jalisco | Guadalajara | AS33182 HostDime.com, Inc. | Tidak | 2026-10-28 15:54:44 (GMT+7) |
+| 528 | `144.31.247.145` | 0% | 0 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 529 | `144.172.94.4` | 100% | 195 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Ya | 2026-10-12 22:31:17 (GMT+7) |
+| 530 | `144.172.104.28` | 0% | 0 | Data Center / Hosting | RouterHosting LLC | FranTech Solutions | United States | Nevada | Las Vegas | AS14956 RouterHosting LLC | Tidak | 2026-10-09 18:02:46 (GMT+7) |
+| 531 | `145.241.125.113` | 100% | 303 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (me-dubai-1) | United Arab Emirates | Dubai | Dubai | AS31898 Oracle Corporation | Tidak | 2026-10-17 03:56:43 (GMT+7) |
+| 532 | `146.70.14.44` | 31% | 11 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Indonesia | Indonesia | South Papua | Muting | AS9009 M247 Europe SRL | Ya | 2026-10-27 07:18:34 (GMT+7) |
+| 533 | `146.70.48.182` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Dublin | Ireland | Leinster | Dublin | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:54:44 (GMT+7) |
+| 534 | `146.70.195.37` | 0% | 4 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Los Angeles | United States | California | Los Angeles | AS9009 M247 Europe SRL | Ya | 2026-10-22 21:21:11 (GMT+7) |
+| 535 | `147.185.132.18` | 0% | 5,847 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-28 09:56:23 (GMT+7) |
+| 536 | `147.185.132.159` | 0% | 5,017 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-28 09:56:23 (GMT+7) |
+| 537 | `150.251.225.170` | 100% | 88 | Residential / ISP | Datacamp Limited | Private Customer | Austria | Vienna | Vienna | AS212238 Datacamp Limited | Tidak | 2026-10-19 04:47:21 (GMT+7) |
+| 538 | `151.244.119.197` | 0% | 0 | Residential / ISP | PT Perwira Media Solusi | IPv4TradeHub | Indonesia | Jakarta | Jakarta | AS211407 AS Perwira Media | Tidak | 2026-10-22 00:37:55 (GMT+7) |
+| 539 | `152.89.162.170` | 0% | 0 | Data Center / Hosting | M247 Europe | M247 LTD | Switzerland | Zurich | Zurich | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:44:49 (GMT+7) |
+| 540 | `155.212.37.46` | 28% | 8 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 541 | `155.212.37.127` | 21% | 9 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 06:46:55 (GMT+7) |
+| 542 | `155.212.37.128` | 24% | 5 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 11:19:13 (GMT+7) |
+| 543 | `155.212.37.164` | 46% | 21 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 11:19:13 (GMT+7) |
+| 544 | `155.212.37.175` | 28% | 6 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Gelderland | Eefde | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 545 | `155.212.109.130` | 39% | 9 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 06:34:46 (GMT+7) |
+| 546 | `155.212.109.170` | 34% | 8 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 547 | `155.212.109.172` | 2% | 1 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 548 | `155.212.109.224` | 15% | 3 | Data Center / Hosting | Fast Servers (Pty) Ltd | Fine Group Servers Solutions LLC | The Netherlands | Utrecht | Baarn | AS43444 Fast Servers (Pty) Ltd | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 549 | `156.244.11.188` | 0% | 0 | Residential / ISP | Lightnode Limited | Lightnode Limited | Saudi Arabia | Riyadh Region | Riyadh | AS154177 LIGHT NODE LIMITED | Tidak | 2026-10-28 15:44:49 (GMT+7) |
+| 550 | `156.245.205.12` | 100% | 45 | Residential / ISP | Zillion Network Inc. | Hong Kong Lightlayer Technology Co., Limited | Hong Kong | Kowloon | Hong Kong | AS54801 Zillion Network Inc. | Tidak | 2026-10-11 12:08:07 (GMT+7) |
+| 551 | `157.55.39.194` | 0% | 186 | Data Center / Hosting | Microsoft Corporation | Microsoft Azure Cloud (westus2) | United States | Washington | Quincy | AS8075 Microsoft Corporation | Tidak | 2026-10-29 16:01:08 (GMT+7) |
+| 552 | `158.23.176.177` | 100% | 1,834 | Residential / ISP | Microsoft Corporation | Microsoft Azure Cloud (mexicocentral) | Mexico | Querétaro | Querétaro City | AS8075 Microsoft Corporation | Tidak | 2026-10-11 05:54:43 (GMT+7) |
+| 553 | `158.58.173.8` | 0% | 0 | Data Center / Hosting | Seflow S.N.C. Di Marco Brame' & C. | Seflow Mgmt | Italy | Lombardy | Milan | AS49367 Seflow s.r.l. | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 554 | `158.101.21.209` | 100% | 218 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (us-phoenix-1) | United States | Arizona | Phoenix | AS31898 Oracle Corporation | Tidak | 2026-10-12 05:45:50 (GMT+7) |
+| 555 | `158.140.180.90` | 34% | 23 | Residential / ISP | MYREPUBLIC | - | Indonesia | Banten | South Tangerang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 556 | `159.65.82.81` | 100% | 37 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United Kingdom | England | Slough | AS14061 DigitalOcean, LLC | Tidak | 2026-10-10 11:25:03 (GMT+7) |
+| 557 | `160.178.215.158` | 96% | 21 | Residential / ISP | Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM | MarocTelecomASDL | Morocco | Rabat-Salé-Kénitra | Rabat | AS36903 Office National des Postes et Telecommunications ONPT (Maroc Telecom) / IAM | Tidak | 2026-10-19 04:15:21 (GMT+7) |
+| 558 | `160.202.35.102` | 97% | 34 | Residential / ISP | Angkor Data Communication | Mekongnet | Cambodia | Phnom Penh | Phnom Penh | AS38235 ANGKOR DATA COMMUNICATION | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 559 | `161.120.186.93` | 100% | 83 | Residential / ISP | TENCENT-CN | - | Malaysia | Selangor | Shah Alam | AS132203 Tencent Building, Kejizhongyi Avenue | Tidak | 2026-10-24 17:04:33 (GMT+7) |
+| 560 | `163.128.55.60` | 0% | 0 | Residential / ISP | PT MASHANZ SUMBER TERBUKA | PT MASHANZ SUMBER TERBUKA | Indonesia | Banten | Cipacung Landeuh | AS154547 PT MASHANZ SUMBER TERBUKA | Tidak | 2026-10-29 00:45:07 (GMT+7) |
+| 561 | `163.172.110.103` | 0% | 0 | Data Center / Hosting | Scaleway SAS | ONLINE | France | Île-de-France | Paris | AS12876 Scaleway SAS | Tidak | 2026-10-28 15:54:44 (GMT+7) |
+| 562 | `163.223.210.8` | 100% | 251 | Residential / ISP | EZ TECHNOLOGY COMPANY LIMITED | Anh Dao Phuc Technology Company Limited | Vietnam | Hanoi | Hanoi | AS150895 EZ TECHNOLOGY COMPANY LIMITED | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 563 | `164.52.195.81` | 0% | 0 | Residential / ISP | E2E Networks Limited | E2E Networks Limited | India | Uttar Pradesh | Noida | AS132420 E2E NETWORKS | Tidak | 2026-10-28 15:37:47 (GMT+7) |
+| 564 | `165.154.205.203` | 0% | 0 | Data Center / Hosting | Scloud Pte Ltd | Scloud Pte Ltd | Singapore | North West | Singapore | AS142002 Scloud Pte Ltd | Tidak | 2026-10-16 12:51:28 (GMT+7) |
+| 565 | `165.154.236.126` | 0% | 0 | Data Center / Hosting | Scloud Pte Ltd | Scloud Pte Ltd | Singapore | North West | Singapore | AS142002 Scloud Pte Ltd | Tidak | 2026-10-14 18:47:44 (GMT+7) |
+| 566 | `165.154.236.195` | 0% | 0 | Data Center / Hosting | Scloud Pte Ltd | Scloud Pte Ltd | Singapore | North West | Singapore | AS142002 Scloud Pte Ltd | Tidak | 2026-10-14 18:39:27 (GMT+7) |
+| 567 | `165.227.84.14` | 100% | 842 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United States | New Jersey | North Bergen | AS14061 DigitalOcean, LLC | Tidak | 2026-10-23 15:52:27 (GMT+7) |
+| 568 | `167.71.75.206` | 100% | 68 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | The Netherlands | North Holland | Amsterdam | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 12:46:26 (GMT+7) |
+| 569 | `167.88.173.161` | 100% | 390 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | Singapore | North West | Singapore | AS14956 RouterHosting LLC | Tidak | 2026-10-25 18:34:39 (GMT+7) |
+| 570 | `167.99.181.249` | 100% | 1,140 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Canada | Ontario | Toronto | AS14061 DigitalOcean, LLC | Ya | 2026-10-14 14:10:22 (GMT+7) |
+| 571 | `167.103.64.108` | 0% | 0 | Data Center / Hosting | ZSCALER, INC. | Zscaler Singapore | Singapore | North West | Singapore | AS53813 ZSCALER, INC. | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 572 | `167.172.80.26` | 100% | 44 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-21 05:52:59 (GMT+7) |
+| 573 | `167.172.232.142` | 100% | 1,307 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | United States | New Jersey | Clifton | AS14061 DigitalOcean, LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 574 | `167.235.186.173` | 100% | 110 | Data Center / Hosting | Hetzner Online GmbH | Hetzner | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-10-24 02:11:01 (GMT+7) |
+| 575 | `168.107.94.222` | 100% | 56 | Data Center / Hosting | Oracle Corporation | Oracle Cloud Infrastructure (ap-singapore-1) | Singapore | Central Singapore | Singapore | AS31898 Oracle Corporation | Tidak | 2026-10-28 07:08:17 (GMT+7) |
+| 576 | `168.144.241.80` | 99% | 17 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-16 09:01:21 (GMT+7) |
+| 577 | `169.40.142.202` | 100% | 1,569 | Residential / ISP | Zkillu SAS | Private Customer | France | Île-de-France | Saint-Denis | AS215599 Zkillu SAS | Tidak | 2026-10-24 06:39:37 (GMT+7) |
+| 578 | `170.64.163.177` | 100% | 45 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Australia | New South Wales | Sydney | AS14061 DigitalOcean, LLC | Tidak | 2026-10-13 06:34:46 (GMT+7) |
+| 579 | `170.83.176.147` | 0% | 0 | Residential / ISP | Todas LAS Redes SA | Indonesia Company | Indonesia | Jakarta | Jakarta | AS264850 TODAS LAS REDES SA | Tidak | 2026-10-25 18:34:39 (GMT+7) |
+| 580 | `170.168.30.83` | 28% | 8 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:12:35 (GMT+7) |
+| 581 | `170.168.30.136` | 40% | 12 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 582 | `170.168.30.139` | 2% | 1 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 583 | `170.168.30.156` | 26% | 7 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:07:44 (GMT+7) |
+| 584 | `170.168.30.190` | 9% | 2 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 585 | `170.168.30.209` | 21% | 3 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 586 | `170.168.30.215` | 1% | 1 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 587 | `170.168.30.238` | 26% | 12 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Overijssel | Olst | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 588 | `170.168.173.16` | 28% | 5 | Residential / ISP | Alex Largman | Fine Group Servers Solutions LLC | The Netherlands | Groningen | De Wilp | AS59651 AS QualityNetwork | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 589 | `172.237.81.246` | 100% | 27 | Data Center / Hosting | Akamai Technologies, Inc. | Akamai Technologies, Inc. | Singapore | South East | Singapore | AS63949 Akamai Connected Cloud | Tidak | 2026-10-28 03:33:44 (GMT+7) |
+| 590 | `173.208.214.226` | 100% | 248 | Data Center / Hosting | WholeSale Internet | Advanced Computer Specialists, LLC | United States | Missouri | Kansas City | AS32097 WholeSale Internet, Inc. | Tidak | 2026-10-11 19:14:51 (GMT+7) |
+| 591 | `176.103.48.42` | 0% | 0 | Data Center / Hosting | Ivanov Vitaliy Sergeevich | XServer | Ukraine | Kyiv City | Kyiv |  | Tidak | 2026-10-28 15:44:49 (GMT+7) |
+| 592 | `176.125.231.70` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Europe | United Arab Emirates | Dubai | Dubai | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:41:34 (GMT+7) |
+| 593 | `176.234.231.136` | 100% | 28 | Residential / ISP | SUPERONLINE-Broadband | Superonline Iletisim Hizmetleri | Türkiye | Gaziantep | Gaziantep | AS34984 Superonline Iletisim Hizmetleri A.S. | Tidak | 2026-10-17 09:01:50 (GMT+7) |
+| 594 | `177.104.161.142` | 100% | 1,273 | Residential / ISP | EVEO Serviços de Internet Ltda. | Eveo S.A | Brazil | São Paulo | Brooklin | AS53107 EVEO S.A. | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 595 | `178.16.54.167` | 100% | 349 | Residential / ISP | Omegatech LTD | Omegatech LTD | The Netherlands | North Holland | Amsterdam | AS202412 Omegatech LTD | Tidak | 2026-10-18 16:37:00 (GMT+7) |
+| 596 | `178.73.235.125` | 49% | 31 | Data Center / Hosting | GleSYS AB | Internet Vikings International AB | Sweden | Stockholm County | Stockholm | AS42708 Glesys AB | Tidak | 2026-10-13 05:35:11 (GMT+7) |
+| 597 | `178.128.22.37` | 14% | 2 | Data Center / Hosting | DigitalOcean, LLC | Digitalocean | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-21 06:47:30 (GMT+7) |
+| 598 | `178.159.7.86` | 0% | 0 | Data Center / Hosting | UK Dedicated Servers Limited | Win007 | United Kingdom | England | London | AS42831 UK Dedicated Servers Limited | Tidak | 2026-10-28 15:37:47 (GMT+7) |
+| 599 | `179.43.168.230` | 0% | 0 | Data Center / Hosting | Private Layer INC | Private Layer Inc | Switzerland | Zurich | Rümlang | AS51852 Private Layer INC | Tidak | 2026-10-28 15:23:45 (GMT+7) |
+| 600 | `180.242.129.241` | 0% | 8 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | West Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 601 | `180.242.181.12` | 0% | 1 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | East Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 602 | `180.242.181.47` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | East Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 603 | `180.242.181.58` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | East Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 604 | `180.252.95.161` | 0% | 1 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | West Java | Bogor | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 605 | `180.253.187.145` | 0% | 0 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Maluku | Ambon City | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-12 12:36:20 (GMT+7) |
+| 606 | `182.6.1.71` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | Banten | Tangerang | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-17 22:45:43 (GMT+7) |
+| 607 | `182.9.56.25` | 0% | 0 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | North Sumatra | Medan | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-29 14:29:19 (GMT+7) |
+| 608 | `182.10.98.175` | 19% | 5 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Bandung | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 609 | `182.10.129.81` | 9% | 18 | Data Center / Hosting | PT Telekomunikasi Selular Indonesia | - | Indonesia | West Java | Bandung | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-10-21 05:52:59 (GMT+7) |
+| 610 | `182.253.176.248` | 0% | 0 | Residential / ISP | BIZNET | - | Indonesia | West Java | Bandung | AS17451 BIZNET NETWORKS | Tidak | 2026-10-19 01:38:44 (GMT+7) |
+| 611 | `184.105.247.194` | 100% | 3,216 | Data Center / Hosting | Hurricane Electric LLC | The Shadow Server Foundation | United States | Kansas | Shawnee | AS6939 Hurricane Electric LLC | Tidak | 2026-10-25 10:04:00 (GMT+7) |
+| 612 | `184.105.247.195` | 100% | 3,366 | Data Center / Hosting | Hurricane Electric LLC | The Shadow Server Foundation | United States | Kansas | Shawnee | AS6939 Hurricane Electric LLC | Tidak | 2026-10-13 18:22:07 (GMT+7) |
+| 613 | `184.105.247.196` | 100% | 3,193 | Data Center / Hosting | Hurricane Electric LLC | The Shadow Server Foundation | United States | Kansas | Shawnee | AS6939 Hurricane Electric LLC | Tidak | 2026-10-14 18:54:17 (GMT+7) |
+| 614 | `184.196.75.18` | 0% | 0 | Residential / ISP | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-22 01:07:18 (GMT+7) |
+| 615 | `185.17.107.20` | 0% | 0 | Data Center / Hosting | Keliweb S.R.L | Dedicated Cloud | Italy | Lombardy | Milan | AS202675 Keliweb S.R.L | Tidak | 2026-10-28 15:35:23 (GMT+7) |
+| 616 | `185.30.32.176` | 100% | 888 | Data Center / Hosting | webgo GmbH | webgo GmbH | Germany | Free and Hanseatic City of Hamburg | Hamburg | AS48324 webgo GmbH | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 617 | `185.50.25.60` | 100% | 193 | Data Center / Hosting | Beget LLC | Beget | Russia | St.-Petersburg | St Petersburg | AS198610 Beget LLC | Tidak | 2026-10-16 08:14:33 (GMT+7) |
+| 618 | `185.61.219.43` | 12% | 4 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 06:40:46 (GMT+7) |
+| 619 | `185.61.219.157` | 14% | 4 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:13:19 (GMT+7) |
+| 620 | `185.61.219.158` | 15% | 3 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 621 | `185.61.219.206` | 31% | 12 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 622 | `185.77.167.165` | 0% | 0 | Residential / ISP | Jakarta-Broadband | - | Indonesia | Jakarta | Jakarta | AS201341 trafficforce, UAB | Ya | 2026-10-14 14:10:22 (GMT+7) |
+| 623 | `185.84.181.48` | 0% | 0 | Residential / ISP | Bilintel Network | Bilintel Bilisim Ticaret Limited | Türkiye | Istanbul | Istanbul | AS201128 Bilintel Bilisim Ticaret Limited Sirketi | Tidak | 2026-10-28 15:48:51 (GMT+7) |
+| 624 | `185.148.147.95` | 0% | 0 | Data Center / Hosting | Belcloud LTD | Belcloud LTD | Bulgaria | Sofia-Capital | Sofia | AS44901 Belcloud LTD | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 625 | `185.164.35.23` | 0% | 0 | Data Center / Hosting | Globalhost d.o.o. - Web Hosting Solutions | - | Bosnia and Herzegovina | Federation of Bosnia and Herzegovina | Novi Travnik | AS200698 Globalhost d.o.o. | Tidak | 2026-10-28 15:35:23 (GMT+7) |
+| 626 | `185.177.72.75` | 100% | 943 | Residential / ISP | Bucklog SARL | FBW NETWORKS | France | Île-de-France | Vélizy-Villacoublay | AS211590 Bucklog SARL | Tidak | 2026-10-17 19:40:40 (GMT+7) |
+| 627 | `185.183.106.51` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Barcelona | Spain | Madrid | Madrid | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:35:23 (GMT+7) |
+| 628 | `185.187.169.202` | 100% | 25 | Data Center / Hosting | Contabo GmbH | Contabo GmbH | France | Grand Est | Lauterbourg | AS51167 Contabo GmbH | Tidak | 2026-10-24 17:14:47 (GMT+7) |
+| 629 | `185.191.171.1` | 100% | 996 | Data Center / Hosting | SEMrush CY LTD | SEMrush CY LTD | United States | District of Columbia | Washington | AS209366 SEMrush CY LTD | Tidak | 2026-10-24 19:20:21 (GMT+7) |
+| 630 | `185.218.86.14` | 100% | 142 | Data Center / Hosting | TC DATACENTER LIMITED | TC DATACENTER LIMITED | Hong Kong | Central and Western | Sheung Wan | AS218785 TC DATACENTER LIMITED | Tidak | 2026-10-15 13:56:39 (GMT+7) |
+| 631 | `185.230.124.42` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 LTD | Spain | Cantabria | Santander | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:23:45 (GMT+7) |
+| 632 | `185.230.126.75` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Ltd Los Angeles | United States | California | Los Angeles | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:37:47 (GMT+7) |
+| 633 | `185.244.212.214` | 0% | 0 | Data Center / Hosting | M247 Europe SRL | M247 Vienna | Austria | Vienna | Vienna | AS9009 M247 Europe SRL | Ya | 2026-10-28 15:44:49 (GMT+7) |
+| 634 | `185.246.87.11` | 0% | 0 | Data Center / Hosting | Ikoula Net SAS | Ikoula DED Servers Eppes | France | Île-de-France | Paris | AS21409 Ikoula Net SAS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 635 | `185.246.175.227` | 46% | 14 | Data Center / Hosting | HostRoyale Technologies Pvt Ltd | Bright Data Limited | United States | California | San Francisco | AS207990 HostRoyale Technologies Pvt Ltd | Ya | 2026-10-21 09:26:09 (GMT+7) |
+| 636 | `186.250.243.146` | 0% | 0 | Data Center / Hosting | Engetronics Internet Datacenter | Engetronics Internet Datacenter | Brazil | Federal District | Brasília | AS53221 ENGETRONICS INTERNET DATACENTER | Tidak | 2026-10-28 15:23:45 (GMT+7) |
+| 637 | `188.126.89.180` | 0% | 0 | Data Center / Hosting | GleSYS AB | Dedicated servers | Finland | Uusimaa | Helsinki | AS42708 Glesys AB | Tidak | 2026-10-28 15:37:47 (GMT+7) |
+| 638 | `188.214.132.57` | 0% | 0 | Data Center / Hosting | UAB Cherry Servers | Balticservers LT Dedicated | Lithuania | Siauliai | Šiauliai | AS16125 UAB Cherry Servers | Tidak | 2026-10-28 15:27:55 (GMT+7) |
+| 639 | `188.241.120.6` | 0% | 0 | Data Center / Hosting | Hydra Communications Ltd | Hydra Communications Ltd | Switzerland | Zurich | Zurich | AS25369 Hydra Communications Ltd | Ya | 2026-10-28 15:54:44 (GMT+7) |
+| 640 | `190.92.174.183` | 100% | 1,949 | Data Center / Hosting | WHG Hosting Services Ltd | WHG Hosting Services Ltd | India | Maharashtra | Navi Mumbai | AS199404 WHG Hosting Services Ltd | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 641 | `190.123.44.20` | 0% | 0 | Data Center / Hosting | Panamaserver.com | Panamaserver.com | Panama | Provincia de Panamá | Bella Vista | AS52284 Panamaserver.com | Tidak | 2026-10-28 15:37:47 (GMT+7) |
+| 642 | `191.222.35.50` | 0% | 0 | Residential / ISP | PT Perwira Media Solusi | IPv4TradeHub | Indonesia | Jakarta | Jakarta | AS211407 AS Perwira Media | Tidak | 2026-10-16 23:18:09 (GMT+7) |
+| 643 | `192.34.84.114` | 0% | 0 | Data Center / Hosting | AxcelX Technologies LLC | AxcelX Technologies LLC | United States | Massachusetts | Boston | AS33083 AxcelX Technologies LLC | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 644 | `192.227.120.209` | 0% | 0 | Data Center / Hosting | Cloud South | Cloud South | United States | Florida | Boca Raton | AS13886 Cloud South | Tidak | 2026-10-28 15:41:34 (GMT+7) |
+| 645 | `192.253.248.9` | 100% | 73 | Data Center / Hosting | Limited Network LTD | Secure Internet LLC | United Kingdom | England | City of London | AS213790 Limited Network LTD | Ya | 2026-10-14 14:10:22 (GMT+7) |
+| 646 | `192.255.142.83` | 0% | 0 | Data Center / Hosting | HostPapa | HostPapa | United States | Texas | Dallas | AS36352 HostPapa | Tidak | 2026-10-24 07:02:16 (GMT+7) |
+| 647 | `194.104.11.21` | 4% | 6 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:12:51 (GMT+7) |
+| 648 | `194.104.11.96` | 4% | 1 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 649 | `194.104.11.158` | 26% | 7 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Ya | 2026-10-13 10:27:03 (GMT+7) |
+| 650 | `194.104.11.201` | 28% | 5 | Data Center / Hosting | PureVoltage Hosting Inc. | TrafficTransitSolution LLC | United States | New York | New York | AS26548 PureVoltage Hosting Inc. | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 651 | `194.110.207.106` | 0% | 0 | Data Center / Hosting | Gigahost | Gigahost | Norway | Vestfold | Sandefjord | AS56655 Gigahost AS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 652 | `194.182.163.216` | 0% | 0 | Data Center / Hosting | Akenes SA | Akenes SA | Switzerland | Geneva | Geneva | AS61098 Akenes SA | Tidak | 2026-10-28 15:48:51 (GMT+7) |
+| 653 | `194.233.91.189` | 55% | 99 | Data Center / Hosting | Contabo Asia Private Limited | Contabo Asia Private Limited | Singapore | Central Singapore | Singapore | AS141995 Contabo Asia Private Limited | Tidak | 2026-10-22 13:42:16 (GMT+7) |
+| 654 | `195.178.110.22` | 100% | 2,380 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-09 16:17:28 (GMT+7) |
+| 655 | `195.178.110.105` | 100% | 2,571 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-27 15:53:48 (GMT+7) |
+| 656 | `195.178.110.159` | 100% | 2,053 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-23 18:09:30 (GMT+7) |
+| 657 | `195.178.110.211` | 100% | 2,080 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-13 14:48:49 (GMT+7) |
+| 658 | `195.178.110.242` | 100% | 3,077 | Data Center / Hosting | Techoff SRV Limited | Techoff SRV Limited | Andorra | Andorra la Vella | Andorra la Vella | AS48090 TECHOFF SRV LIMITED | Ya | 2026-10-17 09:01:50 (GMT+7) |
+| 659 | `196.127.129.126` | 100% | 20 | Residential / ISP | MEDITELECOM | MEDITELECOM | Morocco | Casablanca-Settat | Casablanca | AS36925 MEDITELECOM | Tidak | 2026-10-16 06:25:23 (GMT+7) |
+| 660 | `198.235.24.197` | 0% | 5,576 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 07:40:52 (GMT+7) |
+| 661 | `199.65.59.166` | 0% | 0 | Residential / ISP | Johnson & | Johnson & | United States | New Jersey | Raritan |  | Tidak | 2026-10-28 11:20:37 (GMT+7) |
+| 662 | `199.119.216.173` | 0% | 0 | Residential / ISP | Provision Data Systems Inc. | Provision Data Systems Inc. | Canada | British Columbia | Kelowna | AS25999 Provision Data Systems Inc. | Tidak | 2026-10-28 15:54:44 (GMT+7) |
+| 663 | `199.165.159.33` | 100% | 824 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-18 17:55:57 (GMT+7) |
+| 664 | `199.165.159.41` | 100% | 646 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-14 15:30:21 (GMT+7) |
+| 665 | `199.165.159.53` | 100% | 233 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-15 11:43:04 (GMT+7) |
+| 666 | `199.165.159.57` | 100% | 1,209 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-24 10:59:05 (GMT+7) |
+| 667 | `199.165.159.161` | 100% | 256 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
+| 668 | `199.165.159.167` | 100% | 102 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
+| 669 | `199.165.159.185` | 100% | 233 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
+| 670 | `199.165.159.190` | 100% | 80 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 11:20:37 (GMT+7) |
+| 671 | `199.165.159.191` | 100% | 69 | Data Center / Hosting | The Shadowserver Foundation, Inc. | The Shadowserver Foundation, Inc. | United States | California | Pleasanton | AS22168 The Shadowserver Foundation, Inc. | Tidak | 2026-10-28 10:11:57 (GMT+7) |
+| 672 | `200.122.246.58` | 100% | 187 | Residential / ISP | UNE EPM TELECOMUNICACIONES S.A | Administradora Ciudadela Universitaria S | Colombia | Bogota D.C. | Bogotá | AS13489 UNE EPM TELECOMUNICACIONES S.A. | Tidak | 2026-10-24 20:55:50 (GMT+7) |
+| 673 | `202.46.68.236` | 38% | 15 | Residential / ISP | PT. Indonesia Comnet Plus | - | Indonesia | West Java | Bandung | AS9341 PT INDONESIA COMNETS PLUS | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 674 | `202.73.26.31` | 100% | 105 | Data Center / Hosting | PT.Semut Data Indonesia | - | Indonesia | West Java | Bogor | AS141892 CV Andhika Pratama Sanggoro | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 675 | `202.152.202.132` | 0% | 0 | Residential / ISP | PT. Bakrie Telecom Tbk | - | Indonesia | West Java | Cikarang | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-15 09:11:41 (GMT+7) |
+| 676 | `203.153.20.23` | 25% | 6 | Residential / ISP | PT Mayatama Solusindo | Mayatama | Indonesia | Riau | Rimba Sekampung | AS131769 PT Mayatama Solusindo | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 677 | `205.209.107.98` | 0% | 0 | Data Center / Hosting | Interserver, Inc | Host Department NJ, LLC | United States | New Jersey | Englewood Cliffs | AS19318 Interserver, Inc | Tidak | 2026-10-28 15:23:45 (GMT+7) |
+| 678 | `205.210.31.106` | 0% | 5,756 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-28 09:56:23 (GMT+7) |
+| 679 | `205.210.31.226` | 0% | 5,145 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 10:13:04 (GMT+7) |
+| 680 | `205.210.31.228` | 0% | 5,859 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 10:13:04 (GMT+7) |
+| 681 | `205.210.31.244` | 0% | 5,437 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-26 10:13:04 (GMT+7) |
+| 682 | `205.210.31.250` | 0% | 5,821 | Data Center / Hosting | Google LLC | Palo Alto Networks, Inc | United States | California | Santa Clara | AS396982 Google LLC | Tidak | 2026-10-10 21:07:39 (GMT+7) |
+| 683 | `206.81.24.227` | 100% | 1,429 | Data Center / Hosting | DigitalOcean, LLC | Digital Ocean | Germany | Hesse | Frankfurt am Main | AS14061 DigitalOcean, LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 684 | `206.189.12.235` | 100% | 20 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | The Netherlands | North Holland | Amsterdam | AS14061 DigitalOcean, LLC | Tidak | 2026-10-14 11:51:40 (GMT+7) |
+| 685 | `206.189.152.58` | 100% | 30 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Singapore | South West | Singapore | AS14061 DigitalOcean, LLC | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 686 | `207.175.36.105` | 100% | 44 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-15 09:34:02 (GMT+7) |
+| 687 | `207.175.82.167` | 71% | 12 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-20 23:48:56 (GMT+7) |
+| 688 | `207.175.150.69` | 100% | 79 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-18 16:37:00 (GMT+7) |
+| 689 | `207.175.199.227` | 100% | 164 | Data Center / Hosting | Google LLC | Google Cloud (europe-west1) | Belgium | Brussels Capital | Brussels | AS396982 Google LLC | Tidak | 2026-10-23 16:16:47 (GMT+7) |
+| 690 | `207.244.109.178` | 0% | 0 | Data Center / Hosting | Leaseweb USA, Inc. | Leaseweb USA, Inc. | United States | Virginia | Manassas | AS30633 Leaseweb USA, Inc. | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 691 | `209.38.21.106` | 42% | 6 | Data Center / Hosting | DigitalOcean, LLC | DigitalOcean, LLC | Australia | New South Wales | Sydney | AS14061 DigitalOcean, LLC | Ya | 2026-10-15 16:44:01 (GMT+7) |
+| 692 | `209.182.233.14` | 18% | 28 | Data Center / Hosting | HIVELOCITY, Inc. | Strasmore, Inc. | India | Maharashtra | Mumbai | AS29802 HIVELOCITY, Inc. | Tidak | 2026-10-14 15:30:21 (GMT+7) |
+| 693 | `212.66.107.209` | 0% | 0 | Residential / ISP | Giuliano Claudio Peritore trading as "Panservice s.a.s. di Cuseo Fabrizio & C." | Panservice s.a.s. di Cuseo Fabrizio & C. | Italy | Lazio | Latina | AS20912 Giuliano Claudio Peritore trading as "Panservice s.a.s. di Cuseo Fabrizio & C." | Tidak | 2026-10-28 15:48:51 (GMT+7) |
+| 694 | `212.237.217.163` | 0% | 0 | Data Center / Hosting | Hostkey B.V. | Hostkey B V | Finland | Uusimaa | Helsinki | AS57043 HOSTKEY B.V. | Tidak | 2026-10-09 18:02:46 (GMT+7) |
+| 695 | `213.133.99.205` | 0% | 0 | Data Center / Hosting | Hetzner Online GmbH | Hetzner | Germany | Bavaria | Nuremberg | AS24940 Hetzner Online GmbH | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 696 | `213.179.204.132` | 0% | 0 | Residential / ISP | i3D.net B.V | i3Dnet Dedi usscz1 | United States | California | Santa Clara | AS49544 i3D.net B.V | Tidak | 2026-10-28 15:41:34 (GMT+7) |
+| 697 | `213.209.159.84` | 100% | 5,478 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-09 10:42:58 (GMT+7) |
+| 698 | `213.209.159.133` | 100% | 5,845 | Residential / ISP | Feo Prest SRL | Feo Prest SRL | Germany | North Rhine-Westphalia | Aachen | AS208137 Feo Prest SRL | Ya | 2026-10-12 05:03:21 (GMT+7) |
+| 699 | `213.232.122.59` | 1% | 1 | Residential / ISP | Finegroupservers | Fine Group Servers Solutions LLC | Ukraine | Kyiv City | Kyiv | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 700 | `213.232.122.158` | 26% | 7 | Residential / ISP | Finegroupservers | Fine Group Servers Solutions LLC | Ukraine | Kyiv City | Kyiv | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 701 | `213.232.122.197` | 18% | 5 | Residential / ISP | Finegroupservers | Fine Group Servers Solutions LLC | Ukraine | Kyiv City | Kyiv | AS59651 AS QualityNetwork | Tidak | 2026-10-13 10:27:03 (GMT+7) |
+| 702 | `213.246.39.161` | 0% | 0 | Data Center / Hosting | Ikoula Net SAS | - | France | Île-de-France | Boulogne-Billancourt | AS21409 Ikoula Net SAS | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 703 | `213.246.45.155` | 0% | 0 | Data Center / Hosting | Ikoula Ripe | - | France | Grand Est | Reims | AS21409 Ikoula Net SAS | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 704 | `216.151.1.166` | 0% | 0 | Data Center / Hosting | Opus Interactive | Opus Interactive | United States | Oregon | Portland | AS14380 Opus Interactive | Tidak | 2026-10-28 15:31:24 (GMT+7) |
+| 705 | `216.194.172.242` | 100% | 98 | Data Center / Hosting | InMotion Hosting, Inc. | InMotion Hosting, Inc | United States | California | Los Angeles | AS22611 InMotion Hosting, Inc. | Tidak | 2026-10-22 13:16:04 (GMT+7) |
+| 706 | `217.182.195.34` | 0% | 0 | Data Center / Hosting | OVH SAS | OVH | France | Hauts-de-France | Roubaix | AS16276 OVH SAS | Tidak | 2026-10-28 15:19:11 (GMT+7) |
+| 707 | `221.121.154.217` | 0% | 0 | Data Center / Hosting | Servers Australia Pty. Ltd | Servers Australia Pty Ltd Wholesale Services | Australia | New South Wales | Sydney | AS45671 Wholesale Services Provider | Tidak | 2026-10-28 15:41:34 (GMT+7) |
+| 708 | `222.124.191.185` | 100% | 1,521 | Residential / ISP | PT. TELKOM INDONESIA | - | Indonesia | Jakarta | Jakarta | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-16 12:51:28 (GMT+7) |
+| 709 | `2001:448a:a050:2c43:e104:9d71:297f:ab09` | 0% | 0 | Residential / ISP | Telekomunikasi Indonesia | Implementasi Telkom 2019 | Indonesia | West Java | Bandung | AS7713 PT Telekomunikasi Indonesia | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 710 | `2001:ee0:4d73:2230:7ca8:74ff:8217:dfbb` | 4% | 3 | Residential / ISP | VNPT | Vietnam Internet Network Information Center | Vietnam | Ho Chi Minh | Ho Chi Minh City | AS45899 VNPT Corp | Tidak | 2026-10-27 19:05:27 (GMT+7) |
+| 711 | `2400:6180:0:d2:0:3:46bf:0` | 15% | 2 | Data Center / Hosting | DigitalOcean, LLC | Digital Ocean | Malaysia | Sabah | Papar | AS14061 DigitalOcean, LLC | Tidak | 2026-10-26 16:33:24 (GMT+7) |
+| 712 | `2400:d320:2353:8642::1` | 41% | 6 | Data Center / Hosting | Contabo Asia Private Limited | Contabo Asia Private Limited | Japan | Tokyo | Tokyo | AS141995 Contabo Asia Private Limited | Tidak | 2026-10-17 03:56:43 (GMT+7) |
+| 713 | `2402:8780:106a:73eb:2de5:5d62:541f:7ccd` | 34% | 5 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-26 22:35:57 (GMT+7) |
+| 714 | `2402:8780:106a:73eb:44cb:935a:ea93:b47e` | 63% | 18 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-16 23:18:09 (GMT+7) |
+| 715 | `2600:1900:4120:ceed:0:429::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west2) | United States | California | Los Angeles | AS396982 Google LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 716 | `2600:1f18:fde:7210:7752:a59:d2d6:2235` | 0% | 0 | Data Center / Hosting | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-27 12:31:20 (GMT+7) |
+| 717 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 718 | `2604:2dc0:303::4:0:164` | 0% | 7 | Data Center / Hosting | OVH SAS | OVH US LLC | United States | New Jersey | Secaucus | AS16276 OVH SAS | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 719 | `2604:4300:a:30e:463d:e7f9:c8a6:d18b` | 100% | 38 | Data Center / Hosting | Nocix, LLC | Nocix, LLC | United States | Missouri | North Kansas City | AS33387 Nocix, LLC | Tidak | 2026-10-16 06:25:23 (GMT+7) |
+| 720 | `2604:a00:101:a:216:3eff:fe2f:c698` | 100% | 99 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-16 12:59:51 (GMT+7) |
+| 721 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 722 | `2a0a:20c0:f001:307::4` | 100% | 150 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-19 07:30:01 (GMT+7) |
+| 723 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 724 | `2a10:3c0:101:0:1:15:0:5` | 81% | 104 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | The Netherlands | North Holland | Amsterdam | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-10-27 05:23:28 (GMT+7) |
+| 725 | `2a10:3c0:4:2:1:32:0:5` | 92% | 106 | Residential / ISP | Zenlayer Inc | ICG ZEN LAX | United States | California | Los Angeles | AS21859 Zenlayer Inc | Tidak | 2026-10-23 23:52:52 (GMT+7) |
+| 726 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
+| 727 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
+| 728 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
+| 729 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
 
 ---
 
