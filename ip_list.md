@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 1026 IP
-- **Waktu Pembaruan Terakhir**: 2026-11-02 12:54:30 (GMT+7)
+- **Total IP Terverifikasi**: 1027 IP
+- **Waktu Pembaruan Terakhir**: 2026-11-02 13:54:31 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -19,7 +19,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | :--- | :--- | :--- | :--- | :--- |
 | **Tinggi (High Risk)** | >= 50% | 512 | 49.9% | Aktif dilaporkan melakukan serangan siber |
 | **Sedang (Suspicious)** | 1% - 49% | 125 | 12.2% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 389 | 37.9% | Tidak ada catatan laporan serangan aktif |
+| **Bersih / Rendah (Clean)** | 0% | 390 | 38.0% | Tidak ada catatan laporan serangan aktif |
 
 *Total akumulasi laporan insiden keamanan global yang tercatat: **401,321 laporan**.*
 
@@ -27,7 +27,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
 | **Data Center / Hosting** | 811 | 79.0% |
-| **Residential / ISP** | 205 | 20.0% |
+| **Residential / ISP** | 206 | 20.1% |
 | **Mobile / Cellular** | 10 | 1.0% |
 
 ### 3. Top 5 Negara Asal Terbanyak
@@ -43,7 +43,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | Peringkat | ISP / Organisasi Jaringan | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
 | 1 | Google LLC | 394 | 38.4% |
-| 2 | Microsoft Corporation | 59 | 5.8% |
+| 2 | Microsoft Corporation | 59 | 5.7% |
 | 3 | Hurricane Electric LLC | 22 | 2.1% |
 | 4 | PT. TELKOM INDONESIA | 19 | 1.9% |
 | 5 | PT Telekomunikasi Selular Indonesia | 19 | 1.9% |
@@ -1070,16 +1070,17 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 1014 | `2a01:4f8:2240:1428::a011` | 0% | 1 | Data Center / Hosting | Hetzner Online GmbH | - | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-11-01 06:41:50 (GMT+7) |
 | 1015 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
 | 1016 | `2a02:c207:2360:6375::1` | 23% | 3 | Data Center / Hosting | Contabo GmbH | Contabo GmbH | France | Grand Est | Lauterbourg | AS51167 Contabo GmbH | Tidak | 2026-10-31 14:10:00 (GMT+7) |
-| 1017 | `2a0a:20c0:f001:307::4` | 100% | 150 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-19 07:30:01 (GMT+7) |
-| 1018 | `2a0a:20c0:f001:308::4` | 100% | 330 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-30 19:35:28 (GMT+7) |
-| 1019 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 1020 | `2a0f:ca80:b00b:80cc::5` | 0% | 0 | Residential / ISP | TechTies Inc. | TechTies Inc | The Netherlands | North Holland | Amsterdam | AS197170 TechTies Inc. | Tidak | 2026-10-31 11:47:52 (GMT+7) |
-| 1021 | `2a10:3c0:101:0:1:15:0:5` | 81% | 104 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | The Netherlands | North Holland | Amsterdam | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-10-27 05:23:28 (GMT+7) |
-| 1022 | `2a10:3c0:4:2:1:32:0:5` | 92% | 106 | Residential / ISP | Zenlayer Inc | ICG ZEN LAX | United States | California | Los Angeles | AS21859 Zenlayer Inc | Tidak | 2026-10-23 23:52:52 (GMT+7) |
-| 1023 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
-| 1024 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
-| 1025 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
-| 1026 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
+| 1017 | `2a09:bac1:3180::3d0:60` | 0% | 0 | Residential / ISP | Cloudflare, Inc. | Cloudflare WARP | Hong Kong | Kowloon | Hong Kong | AS13335 Cloudflare, Inc. | Ya | 2026-11-02 13:54:31 (GMT+7) |
+| 1018 | `2a0a:20c0:f001:307::4` | 100% | 150 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-19 07:30:01 (GMT+7) |
+| 1019 | `2a0a:20c0:f001:308::4` | 100% | 330 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-30 19:35:28 (GMT+7) |
+| 1020 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 1021 | `2a0f:ca80:b00b:80cc::5` | 0% | 0 | Residential / ISP | TechTies Inc. | TechTies Inc | The Netherlands | North Holland | Amsterdam | AS197170 TechTies Inc. | Tidak | 2026-10-31 11:47:52 (GMT+7) |
+| 1022 | `2a10:3c0:101:0:1:15:0:5` | 81% | 104 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | The Netherlands | North Holland | Amsterdam | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-10-27 05:23:28 (GMT+7) |
+| 1023 | `2a10:3c0:4:2:1:32:0:5` | 92% | 106 | Residential / ISP | Zenlayer Inc | ICG ZEN LAX | United States | California | Los Angeles | AS21859 Zenlayer Inc | Tidak | 2026-10-23 23:52:52 (GMT+7) |
+| 1024 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
+| 1025 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
+| 1026 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
+| 1027 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
 
 ---
 
