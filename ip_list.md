@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 1351 IP
-- **Waktu Pembaruan Terakhir**: 2026-11-08 18:49:23 (GMT+7)
+- **Total IP Terverifikasi**: 1350 IP
+- **Waktu Pembaruan Terakhir**: 2026-11-08 18:50:23 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -17,9 +17,9 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 ### 1. Klasifikasi Tingkat Ancaman (AbuseIPDB Threat Level)
 | Tingkat Risiko | Kriteria Skor | Jumlah IP | Persentase | Status / Keterangan |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tinggi (High Risk)** | >= 50% | 745 | 55.1% | Aktif dilaporkan melakukan serangan siber |
+| **Tinggi (High Risk)** | >= 50% | 745 | 55.2% | Aktif dilaporkan melakukan serangan siber |
 | **Sedang (Suspicious)** | 1% - 49% | 172 | 12.7% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 433 | 32.1% | Tidak ada catatan laporan serangan aktif |
+| **Bersih / Rendah (Clean)** | 0% | 432 | 32.0% | Tidak ada catatan laporan serangan aktif |
 
 *Total akumulasi laporan insiden keamanan global yang tercatat: **481,309 laporan**.*
 
@@ -28,13 +28,13 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | :--- | :--- | :--- |
 | **Data Center / Hosting** | 1002 | 74.2% |
 | **Residential / ISP** | 338 | 25.0% |
-| **Mobile / Cellular** | 10 | 0.7% |
+| **Mobile / Cellular** | 9 | 0.7% |
 
 ### 3. Top 5 Negara Asal Terbanyak
 | Peringkat | Negara | Jumlah IP | Persentase |
 | :-: | :--- | :--- | :--- |
 | 1 | United States | 416 | 30.8% |
-| 2 | Indonesia | 187 | 13.8% |
+| 2 | Indonesia | 186 | 13.8% |
 | 3 | The Netherlands | 119 | 8.8% |
 | 4 | Germany | 111 | 8.2% |
 | 5 | Singapore | 53 | 3.9% |
@@ -1312,99 +1312,98 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 1256 | `2402:8780:106a:73eb:2de5:5d62:541f:7ccd` | 34% | 5 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-26 22:35:57 (GMT+7) |
 | 1257 | `2402:8780:106a:73eb:44cb:935a:ea93:b47e` | 63% | 18 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-16 23:18:09 (GMT+7) |
 | 1258 | `2402:8780:106a:b403:954a:ee9c:e998:5308` | 49% | 9 | Residential / ISP | MYREPUBLIC | - | Indonesia | Jakarta | Jakarta | AS63859 PT. Eka Mas Republik | Tidak | 2026-10-31 14:10:00 (GMT+7) |
-| 1259 | `2404:c0:3e1b:7174:dbc:e59b:287:e366` | 0% | 0 | Mobile / Cellular | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | Bali | Singaraja | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-07 14:38:07 (GMT+7) |
-| 1260 | `2404:c0:9603:69a4:b066:7526:9d9b:26fc` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | North Sumatra | Medan | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-05 17:53:28 (GMT+7) |
-| 1261 | `2404:c0:ab01:18a5:52d2:d557:b20e:b2ad` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | West Java | Cirebon | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-04 21:45:19 (GMT+7) |
-| 1262 | `2404:c0:ab01:18a5:ef34:f069:2ba0:7263` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | West Java | Cirebon | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-06 06:35:26 (GMT+7) |
-| 1263 | `2407:0:3f6f:1544:2024:4fc9:bd1c:9719` | 0% | 0 | Residential / ISP | PT. INDOSAT Tbk | PT. INDOSAT Tbk | Indonesia | Jakarta | Jakarta | AS4761 INDOSAT Internet Network Provider | Tidak | 2026-11-05 20:49:30 (GMT+7) |
-| 1264 | `2600:1900:0:4001::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
-| 1265 | `2600:1900:0:4001::101` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
-| 1266 | `2600:1900:0:4001::1900` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
-| 1267 | `2600:1900:0:4001::201` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
-| 1268 | `2600:1900:0:4001::301` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
-| 1269 | `2600:1900:0:4001::601` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
-| 1270 | `2600:1900:0:4001::800` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
-| 1271 | `2600:1900:0:4003::` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
-| 1272 | `2600:1900:0:4003::101` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
-| 1273 | `2600:1900:0:4003::1201` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
-| 1274 | `2600:1900:0:4003::1300` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
-| 1275 | `2600:1900:0:4003::1400` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
-| 1276 | `2600:1900:0:4003::1501` | 0% | 4 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
-| 1277 | `2600:1900:0:4003::1700` | 0% | 5 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
-| 1278 | `2600:1900:0:4003::1a00` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
-| 1279 | `2600:1900:0:4003::1b00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:37:40 (GMT+7) |
-| 1280 | `2600:1900:0:4003::1d01` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
-| 1281 | `2600:1900:0:4003::800` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
-| 1282 | `2600:1900:0:4003::900` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
-| 1283 | `2600:1900:0:4003::901` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
-| 1284 | `2600:1900:0:4003::c01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:58:29 (GMT+7) |
-| 1285 | `2600:1900:0:4003::f00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
-| 1286 | `2600:1900:0:4004::1` | 0% | 4 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
-| 1287 | `2600:1900:0:4004::100` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:16:49 (GMT+7) |
-| 1288 | `2600:1900:0:4004::1001` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
-| 1289 | `2600:1900:0:4004::1301` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
-| 1290 | `2600:1900:0:4004::1400` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
-| 1291 | `2600:1900:0:4004::1500` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
-| 1292 | `2600:1900:0:4004::1600` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:37:40 (GMT+7) |
-| 1293 | `2600:1900:0:4004::1701` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
-| 1294 | `2600:1900:0:4004::1900` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:58:29 (GMT+7) |
-| 1295 | `2600:1900:0:4004::1a01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:47:53 (GMT+7) |
-| 1296 | `2600:1900:0:4004::1d00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
-| 1297 | `2600:1900:0:4004::1d01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:50:47 (GMT+7) |
-| 1298 | `2600:1900:0:4004::301` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:50:47 (GMT+7) |
-| 1299 | `2600:1900:0:4004::601` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
-| 1300 | `2600:1900:0:4004::901` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
-| 1301 | `2600:1900:0:4004::f00` | 0% | 4 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:50:47 (GMT+7) |
-| 1302 | `2600:1900:0:4005::100` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
-| 1303 | `2600:1900:0:4005::1401` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
-| 1304 | `2600:1900:0:4005::1800` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
-| 1305 | `2600:1900:0:4005::1a00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
-| 1306 | `2600:1900:0:4005::1a01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
-| 1307 | `2600:1900:0:4005::1b01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:37:40 (GMT+7) |
-| 1308 | `2600:1900:0:4005::1d00` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
-| 1309 | `2600:1900:0:4005::1e01` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
-| 1310 | `2600:1900:0:4005::1f01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
-| 1311 | `2600:1900:0:4005::500` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
-| 1312 | `2600:1900:0:4005::701` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:58:29 (GMT+7) |
-| 1313 | `2600:1900:0:4005::b00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
-| 1314 | `2600:1900:0:4005::b01` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:16:49 (GMT+7) |
-| 1315 | `2600:1900:0:4006::1001` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
-| 1316 | `2600:1900:0:4006::1300` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
-| 1317 | `2600:1900:0:4006::1601` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
-| 1318 | `2600:1900:0:4006::1901` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
-| 1319 | `2600:1900:0:4006::1b00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
-| 1320 | `2600:1900:0:4006::1b01` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:16:49 (GMT+7) |
-| 1321 | `2600:1900:0:4006::301` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
-| 1322 | `2600:1900:0:4006::501` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:47:53 (GMT+7) |
-| 1323 | `2600:1900:0:4006::600` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
-| 1324 | `2600:1900:0:4006::900` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
-| 1325 | `2600:1900:0:4006::a01` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
-| 1326 | `2600:1900:0:4006::c00` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
-| 1327 | `2600:1900:4120:ceed:0:429::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west2) | United States | California | Los Angeles | AS396982 Google LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
-| 1328 | `2600:1f18:fde:7210:7752:a59:d2d6:2235` | 0% | 0 | Data Center / Hosting | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-27 12:31:20 (GMT+7) |
-| 1329 | `2600:1f18:fde:722c:3f09:77b1:26d9:20c` | 0% | 0 | Data Center / Hosting | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-11-02 10:58:53 (GMT+7) |
-| 1330 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 1331 | `2604:2dc0:303::4:0:164` | 0% | 7 | Data Center / Hosting | OVH SAS | OVH US LLC | United States | New Jersey | Secaucus | AS16276 OVH SAS | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 1332 | `2604:4300:a:30e:463d:e7f9:c8a6:d18b` | 100% | 38 | Data Center / Hosting | Nocix, LLC | Nocix, LLC | United States | Missouri | North Kansas City | AS33387 Nocix, LLC | Tidak | 2026-10-16 06:25:23 (GMT+7) |
-| 1333 | `2604:a00:101:a:216:3eff:fe2f:c698` | 100% | 99 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-16 12:59:51 (GMT+7) |
-| 1334 | `2604:a880:800:14:0:3:ce29:c000` | 0% | 0 | Data Center / Hosting | DigitalOcean, LLC | Digital Ocean | United States | New Jersey | Clifton | AS14061 DigitalOcean, LLC | Tidak | 2026-11-08 11:05:19 (GMT+7) |
-| 1335 | `2605:a140:2366:1229::1` | 34% | 5 | Data Center / Hosting | Contabo Inc. | Contabo Inc | United States | Missouri | St Louis | AS40021 Contabo Inc. | Tidak | 2026-11-04 22:03:11 (GMT+7) |
-| 1336 | `2a01:4f8:2240:1428::a011` | 0% | 1 | Data Center / Hosting | Hetzner Online GmbH | - | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-11-01 06:41:50 (GMT+7) |
-| 1337 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
-| 1338 | `2a02:c207:2360:6375::1` | 23% | 3 | Data Center / Hosting | Contabo GmbH | Contabo GmbH | France | Grand Est | Lauterbourg | AS51167 Contabo GmbH | Tidak | 2026-10-31 14:10:00 (GMT+7) |
-| 1339 | `2a0a:20c0:f001:307::4` | 100% | 150 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-19 07:30:01 (GMT+7) |
-| 1340 | `2a0a:20c0:f001:308::4` | 100% | 330 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-30 19:35:28 (GMT+7) |
-| 1341 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
-| 1342 | `2a0f:ca80:b00b:80cc::5` | 0% | 0 | Residential / ISP | TechTies Inc. | TechTies Inc | The Netherlands | North Holland | Amsterdam | AS197170 TechTies Inc. | Tidak | 2026-10-31 11:47:52 (GMT+7) |
-| 1343 | `2a10:3c0:100:0:1:36:0:5` | 71% | 94 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | United States | Illinois | Chicago | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-11-04 22:50:47 (GMT+7) |
-| 1344 | `2a10:3c0:101:0:1:15:0:5` | 81% | 104 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | The Netherlands | North Holland | Amsterdam | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-10-27 05:23:28 (GMT+7) |
-| 1345 | `2a10:3c0:4:2:1:32:0:5` | 92% | 106 | Residential / ISP | Zenlayer Inc | ICG ZEN LAX | United States | California | Los Angeles | AS21859 Zenlayer Inc | Tidak | 2026-10-23 23:52:52 (GMT+7) |
-| 1346 | `2a10:3c0:5:0:1:24:0:5` | 86% | 100 | Residential / ISP | Zenlayer Inc | ICG ZEN DFW | United States | Texas | Dallas | AS21859 Zenlayer Inc | Tidak | 2026-11-04 21:48:19 (GMT+7) |
-| 1347 | `2a10:3c0:5:1:1:7:0:5` | 72% | 121 | Residential / ISP | Zenlayer Inc | ICG ZEN DFW | United States | Texas | Dallas | AS21859 Zenlayer Inc | Tidak | 2026-11-04 07:16:53 (GMT+7) |
-| 1348 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
-| 1349 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
-| 1350 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
-| 1351 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
+| 1259 | `2404:c0:9603:69a4:b066:7526:9d9b:26fc` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | North Sumatra | Medan | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-05 17:53:28 (GMT+7) |
+| 1260 | `2404:c0:ab01:18a5:52d2:d557:b20e:b2ad` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | West Java | Cirebon | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-04 21:45:19 (GMT+7) |
+| 1261 | `2404:c0:ab01:18a5:ef34:f069:2ba0:7263` | 0% | 0 | Residential / ISP | PT. Telekomunikasi Selular (Telkomsel) Indonesia | - | Indonesia | West Java | Cirebon | AS23693 PT. Telekomunikasi Selular | Tidak | 2026-11-06 06:35:26 (GMT+7) |
+| 1262 | `2407:0:3f6f:1544:2024:4fc9:bd1c:9719` | 0% | 0 | Residential / ISP | PT. INDOSAT Tbk | PT. INDOSAT Tbk | Indonesia | Jakarta | Jakarta | AS4761 INDOSAT Internet Network Provider | Tidak | 2026-11-05 20:49:30 (GMT+7) |
+| 1263 | `2600:1900:0:4001::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
+| 1264 | `2600:1900:0:4001::101` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
+| 1265 | `2600:1900:0:4001::1900` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
+| 1266 | `2600:1900:0:4001::201` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
+| 1267 | `2600:1900:0:4001::301` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
+| 1268 | `2600:1900:0:4001::601` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
+| 1269 | `2600:1900:0:4001::800` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
+| 1270 | `2600:1900:0:4003::` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
+| 1271 | `2600:1900:0:4003::101` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
+| 1272 | `2600:1900:0:4003::1201` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
+| 1273 | `2600:1900:0:4003::1300` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
+| 1274 | `2600:1900:0:4003::1400` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
+| 1275 | `2600:1900:0:4003::1501` | 0% | 4 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
+| 1276 | `2600:1900:0:4003::1700` | 0% | 5 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
+| 1277 | `2600:1900:0:4003::1a00` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
+| 1278 | `2600:1900:0:4003::1b00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:37:40 (GMT+7) |
+| 1279 | `2600:1900:0:4003::1d01` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
+| 1280 | `2600:1900:0:4003::800` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
+| 1281 | `2600:1900:0:4003::900` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
+| 1282 | `2600:1900:0:4003::901` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
+| 1283 | `2600:1900:0:4003::c01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:58:29 (GMT+7) |
+| 1284 | `2600:1900:0:4003::f00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
+| 1285 | `2600:1900:0:4004::1` | 0% | 4 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
+| 1286 | `2600:1900:0:4004::100` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:16:49 (GMT+7) |
+| 1287 | `2600:1900:0:4004::1001` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
+| 1288 | `2600:1900:0:4004::1301` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
+| 1289 | `2600:1900:0:4004::1400` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
+| 1290 | `2600:1900:0:4004::1500` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
+| 1291 | `2600:1900:0:4004::1600` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:37:40 (GMT+7) |
+| 1292 | `2600:1900:0:4004::1701` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
+| 1293 | `2600:1900:0:4004::1900` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:58:29 (GMT+7) |
+| 1294 | `2600:1900:0:4004::1a01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:47:53 (GMT+7) |
+| 1295 | `2600:1900:0:4004::1d00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
+| 1296 | `2600:1900:0:4004::1d01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:50:47 (GMT+7) |
+| 1297 | `2600:1900:0:4004::301` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:50:47 (GMT+7) |
+| 1298 | `2600:1900:0:4004::601` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
+| 1299 | `2600:1900:0:4004::901` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:10:40 (GMT+7) |
+| 1300 | `2600:1900:0:4004::f00` | 0% | 4 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:50:47 (GMT+7) |
+| 1301 | `2600:1900:0:4005::100` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
+| 1302 | `2600:1900:0:4005::1401` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
+| 1303 | `2600:1900:0:4005::1800` | 0% | 3 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
+| 1304 | `2600:1900:0:4005::1a00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
+| 1305 | `2600:1900:0:4005::1a01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
+| 1306 | `2600:1900:0:4005::1b01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:37:40 (GMT+7) |
+| 1307 | `2600:1900:0:4005::1d00` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
+| 1308 | `2600:1900:0:4005::1e01` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
+| 1309 | `2600:1900:0:4005::1f01` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
+| 1310 | `2600:1900:0:4005::500` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:14:08 (GMT+7) |
+| 1311 | `2600:1900:0:4005::701` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:58:29 (GMT+7) |
+| 1312 | `2600:1900:0:4005::b00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
+| 1313 | `2600:1900:0:4005::b01` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:16:49 (GMT+7) |
+| 1314 | `2600:1900:0:4006::1001` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:22:43 (GMT+7) |
+| 1315 | `2600:1900:0:4006::1300` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:41:32 (GMT+7) |
+| 1316 | `2600:1900:0:4006::1601` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 20:41:18 (GMT+7) |
+| 1317 | `2600:1900:0:4006::1901` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:53:25 (GMT+7) |
+| 1318 | `2600:1900:0:4006::1b00` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:16:24 (GMT+7) |
+| 1319 | `2600:1900:0:4006::1b01` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:16:49 (GMT+7) |
+| 1320 | `2600:1900:0:4006::301` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
+| 1321 | `2600:1900:0:4006::501` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:47:53 (GMT+7) |
+| 1322 | `2600:1900:0:4006::600` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:01:25 (GMT+7) |
+| 1323 | `2600:1900:0:4006::900` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:20:19 (GMT+7) |
+| 1324 | `2600:1900:0:4006::a01` | 0% | 2 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 19:04:32 (GMT+7) |
+| 1325 | `2600:1900:0:4006::c00` | 0% | 1 | Data Center / Hosting | Google LLC | Google Cloud (us-west1) | United States | Oregon | The Dalles | AS396982 Google LLC | Tidak | 2026-11-01 18:12:29 (GMT+7) |
+| 1326 | `2600:1900:4120:ceed:0:429::` | 0% | 0 | Data Center / Hosting | Google LLC | Google Cloud (us-west2) | United States | California | Los Angeles | AS396982 Google LLC | Tidak | 2026-10-14 14:10:22 (GMT+7) |
+| 1327 | `2600:1f18:fde:7210:7752:a59:d2d6:2235` | 0% | 0 | Data Center / Hosting | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-10-27 12:31:20 (GMT+7) |
+| 1328 | `2600:1f18:fde:722c:3f09:77b1:26d9:20c` | 0% | 0 | Data Center / Hosting | Amazon.com, Inc. | AWS EC2 (us-east-1) | United States | Virginia | Ashburn | AS14618 Amazon.com, Inc. | Tidak | 2026-11-02 10:58:53 (GMT+7) |
+| 1329 | `2602:fa59:10:f1::1` | 100% | 119 | Data Center / Hosting | RouterHosting LLC | RouterHosting LLC | United States | Utah | Ogden | AS14956 RouterHosting LLC | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 1330 | `2604:2dc0:303::4:0:164` | 0% | 7 | Data Center / Hosting | OVH SAS | OVH US LLC | United States | New Jersey | Secaucus | AS16276 OVH SAS | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 1331 | `2604:4300:a:30e:463d:e7f9:c8a6:d18b` | 100% | 38 | Data Center / Hosting | Nocix, LLC | Nocix, LLC | United States | Missouri | North Kansas City | AS33387 Nocix, LLC | Tidak | 2026-10-16 06:25:23 (GMT+7) |
+| 1332 | `2604:a00:101:a:216:3eff:fe2f:c698` | 100% | 99 | Data Center / Hosting | Interserver, Inc | Interserver, Inc | United States | New Jersey | Secaucus | AS19318 Interserver, Inc | Tidak | 2026-10-16 12:59:51 (GMT+7) |
+| 1333 | `2604:a880:800:14:0:3:ce29:c000` | 0% | 0 | Data Center / Hosting | DigitalOcean, LLC | Digital Ocean | United States | New Jersey | Clifton | AS14061 DigitalOcean, LLC | Tidak | 2026-11-08 11:05:19 (GMT+7) |
+| 1334 | `2605:a140:2366:1229::1` | 34% | 5 | Data Center / Hosting | Contabo Inc. | Contabo Inc | United States | Missouri | St Louis | AS40021 Contabo Inc. | Tidak | 2026-11-04 22:03:11 (GMT+7) |
+| 1335 | `2a01:4f8:2240:1428::a011` | 0% | 1 | Data Center / Hosting | Hetzner Online GmbH | - | Germany | Saxony | Falkenstein | AS24940 Hetzner Online GmbH | Tidak | 2026-11-01 06:41:50 (GMT+7) |
+| 1336 | `2a01:ecc0:200:82f::2` | 1% | 1 | Data Center / Hosting | U1 DIGITAL SERVICES LTD | u1host Amsterdam | The Netherlands | North Holland | Amsterdam | AS213877 U1 DIGITAL SERVICES LTD | Tidak | 2026-10-09 10:42:58 (GMT+7) |
+| 1337 | `2a02:c207:2360:6375::1` | 23% | 3 | Data Center / Hosting | Contabo GmbH | Contabo GmbH | France | Grand Est | Lauterbourg | AS51167 Contabo GmbH | Tidak | 2026-10-31 14:10:00 (GMT+7) |
+| 1338 | `2a0a:20c0:f001:307::4` | 100% | 150 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-19 07:30:01 (GMT+7) |
+| 1339 | `2a0a:20c0:f001:308::4` | 100% | 330 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-30 19:35:28 (GMT+7) |
+| 1340 | `2a0a:20c0:f001:3609:ae1f:6bff:fec9:6030` | 100% | 200 | Residential / ISP | Geronimo Ramirez Computer Network | Fidel Ernesto Geronimo Ramirez trading as Geronimo Ramirez Computer Network | Switzerland | Zurich | Wetzikon | AS264617 GRUPO PANAGLOBAL 15 S.A | Tidak | 2026-10-20 11:29:48 (GMT+7) |
+| 1341 | `2a0f:ca80:b00b:80cc::5` | 0% | 0 | Residential / ISP | TechTies Inc. | TechTies Inc | The Netherlands | North Holland | Amsterdam | AS197170 TechTies Inc. | Tidak | 2026-10-31 11:47:52 (GMT+7) |
+| 1342 | `2a10:3c0:100:0:1:36:0:5` | 71% | 94 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | United States | Illinois | Chicago | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-11-04 22:50:47 (GMT+7) |
+| 1343 | `2a10:3c0:101:0:1:15:0:5` | 81% | 104 | Residential / ISP | NSEC - Sistemas Informaticos, S.A. | ICG ORD Inap | The Netherlands | North Holland | Amsterdam | AS211680 NSEC - Sistemas Informaticos, S.A. | Tidak | 2026-10-27 05:23:28 (GMT+7) |
+| 1344 | `2a10:3c0:4:2:1:32:0:5` | 92% | 106 | Residential / ISP | Zenlayer Inc | ICG ZEN LAX | United States | California | Los Angeles | AS21859 Zenlayer Inc | Tidak | 2026-10-23 23:52:52 (GMT+7) |
+| 1345 | `2a10:3c0:5:0:1:24:0:5` | 86% | 100 | Residential / ISP | Zenlayer Inc | ICG ZEN DFW | United States | Texas | Dallas | AS21859 Zenlayer Inc | Tidak | 2026-11-04 21:48:19 (GMT+7) |
+| 1346 | `2a10:3c0:5:1:1:7:0:5` | 72% | 121 | Residential / ISP | Zenlayer Inc | ICG ZEN DFW | United States | Texas | Dallas | AS21859 Zenlayer Inc | Tidak | 2026-11-04 07:16:53 (GMT+7) |
+| 1347 | `2a11:6100:0:126d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-17 04:01:10 (GMT+7) |
+| 1348 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
+| 1349 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
+| 1350 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
 
 ---
 
