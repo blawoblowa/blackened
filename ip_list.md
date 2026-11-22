@@ -6,8 +6,8 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 
 ## Metadata Dokumen
 - **Format Database Tersedia**: `ip_list.txt` dan `ip_list.csv`
-- **Total IP Terverifikasi**: 1615 IP
-- **Waktu Pembaruan Terakhir**: 2026-11-22 19:06:52 (GMT+7)
+- **Total IP Terverifikasi**: 1616 IP
+- **Waktu Pembaruan Terakhir**: 2026-11-22 19:33:52 (GMT+7)
 - **Status Sinkronisasi**: Terurut & Bebas Duplikasi (Tersinkronisasi Otomatis)
 
 ---
@@ -19,14 +19,14 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | :--- | :--- | :--- | :--- | :--- |
 | **Tinggi (High Risk)** | >= 50% | 868 | 53.7% | Aktif dilaporkan melakukan serangan siber |
 | **Sedang (Suspicious)** | 1% - 49% | 243 | 15.0% | Terindikasi aktivitas anomali / mencurigakan |
-| **Bersih / Rendah (Clean)** | 0% | 502 | 31.1% | Tidak ada catatan laporan serangan aktif |
+| **Bersih / Rendah (Clean)** | 0% | 503 | 31.1% | Tidak ada catatan laporan serangan aktif |
 
 *Total akumulasi laporan insiden keamanan global yang tercatat: **534,140 laporan**.*
 
 ### 2. Distribusi Tipe Infrastruktur Jaringan
 | Tipe Infrastruktur | Jumlah IP | Persentase |
 | :--- | :--- | :--- |
-| **Data Center / Hosting** | 1139 | 70.5% |
+| **Data Center / Hosting** | 1140 | 70.5% |
 | **Residential / ISP** | 464 | 28.7% |
 | **Mobile / Cellular** | 11 | 0.7% |
 
@@ -36,7 +36,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 1 | United States | 464 | 28.7% |
 | 2 | Indonesia | 220 | 13.6% |
 | 3 | The Netherlands | 125 | 7.7% |
-| 4 | Germany | 122 | 7.6% |
+| 4 | Germany | 122 | 7.5% |
 | 5 | Singapore | 68 | 4.2% |
 
 ### 4. Top 5 Penyedia Layanan / Cloud Provider
@@ -1669,6 +1669,7 @@ Dokumen ini dihasilkan secara otomatis oleh `run.sh` melalui integrasi modul `ge
 | 1613 | `2a11:6100:0:147d::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-16 12:51:28 (GMT+7) |
 | 1614 | `2a11:6100:0:1555::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 00:27:19 (GMT+7) |
 | 1615 | `2a11:6100:0:180a::` | 0% | 0 | Data Center / Hosting | SOLLUTIUM EU Sp z.o.o. | SOLLUTIUM EU Sp z.o.o | The Netherlands | North Holland | Haarlem | AS43641 SOLLUTIUM EU Sp z.o.o. | Tidak | 2026-10-22 01:55:17 (GMT+7) |
+| 1616 | `2a12:5940:6c55::2` | 0% | 0 | Data Center / Hosting | Aeza Group LLC | Aeza Network Vienna | United Kingdom | England | London | AS210644 AEZA GROUP LLC | Tidak | 2026-11-22 19:33:52 (GMT+7) |
 
 ---
 
